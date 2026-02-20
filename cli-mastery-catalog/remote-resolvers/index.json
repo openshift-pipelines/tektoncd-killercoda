@@ -1,0 +1,40 @@
+{
+  "title": "Remote Resolvers -- Fetch Tasks Without Installing Them",
+  "description": "Learn how to use Hub, Git, Cluster, and Bundle resolvers to fetch Tasks at runtime!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Use the Hub Resolver to fetch from Artifact Hub",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Use the Git Resolver to fetch from a Git repository",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Use the Cluster Resolver for in-cluster Tasks",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Compare resolver types and choose the right one",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
