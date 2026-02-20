@@ -36,11 +36,6 @@
       "title": "Object and Array Params/Results",
       "description": "Learn how to use object and array types for complex data passing!",
       "path": "object-array-params"
-    },
-    {
-      "title": "Pipelines in Pipelines",
-      "description": "Learn how to compose Pipelines by referencing other Pipelines as Tasks!",
-      "path": "pipelines-in-pipelines"
     }
   ]
 }
