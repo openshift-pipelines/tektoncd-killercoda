@@ -1,0 +1,115 @@
+name: E2E Tutorial Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tutorial:
+        description: 'Single tutorial path to test (empty = all)'
+        required: false
+        type: string
+
+jobs:
+  discover:
+    name: Discover tutorials
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.find.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find tutorial directories
+        id: find
+        env:
+          INPUT_TUTORIAL: ${{ inputs.tutorial }}
+        run: |
+          if [[ -n "${INPUT_TUTORIAL}" ]]; then
+            # Manual dispatch with a specific tutorial -- validate path exists
+            if [[ ! -d "${INPUT_TUTORIAL}" ]]; then
+              echo "Error: tutorial path not found: ${INPUT_TUTORIAL}"
+              exit 1
+            fi
+            MATRIX=$(printf '%s' "${INPUT_TUTORIAL}" | jq -R -c '[.]')
+          else
+            # Auto-discover all tutorials with index.json containing steps
+            MATRIX=$(find . -name index.json -not -path './.git/*' -not -path './test/*' \
+              | while read -r idx; do
+                  # Only include if it has a steps array with at least one entry
+                  if jq -e '.details.steps | length > 0' "$idx" > /dev/null 2>&1; then
+                    dirname "$idx" | sed 's|^\./||'
+                  fi
+                done \
+              | sort \
+              | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          fi
+          echo "matrix=${MATRIX}" >> "$GITHUB_OUTPUT"
+          echo "Discovered tutorials:"
+          echo "$MATRIX" | jq .
+
+  e2e:
+    name: "E2E: ${{ matrix.tutorial }}"
+    needs: discover
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        tutorial: ${{ fromJson(needs.discover.outputs.matrix) }}
+      fail-fast: false
+      max-parallel: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: e2e-test
+          wait: 120s
+
+      - name: Verify cluster ready
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+          echo "Cluster is ready"
+
+      - name: Run E2E test
+        env:
+          TUTORIAL_PATH: ${{ matrix.tutorial }}
+          NO_COLOR: "1"
+        run: |
+          chmod +x test/e2e-runner.sh test/extract-bash-blocks.sh test/lib.sh
+          ./test/e2e-runner.sh "${TUTORIAL_PATH}" --log-dir /tmp/e2e-logs
+
+      - name: Upload logs on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-logs-${{ hashFiles(format('{0}/index.json', matrix.tutorial)) }}
+          path: /tmp/e2e-logs/
+          retention-days: 7
+
+  e2e-summary:
+    name: E2E Summary
+    needs: e2e
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check results
+        env:
+          E2E_RESULT: ${{ needs.e2e.result }}
+        run: |
+          if [[ "${E2E_RESULT}" == "success" ]]; then
+            echo "All E2E tutorial tests passed!"
+            exit 0
+          elif [[ "${E2E_RESULT}" == "failure" ]]; then
+            echo "Some E2E tutorial tests failed. Check individual job logs for details."
+            exit 1
+          elif [[ "${E2E_RESULT}" == "cancelled" ]]; then
+            echo "E2E tests were cancelled."
+            exit 1
+          else
+            echo "E2E tests status: ${E2E_RESULT}"
+            exit 1
+          fi
