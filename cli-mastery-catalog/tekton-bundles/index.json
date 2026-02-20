@@ -1,0 +1,35 @@
+{
+  "title": "Tekton Bundles -- Package and Share Tasks as OCI Artifacts",
+  "description": "Learn how to package Tekton Tasks into OCI bundles and reference them in PipelineRuns!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Create and push a Tekton Bundle",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Use a Bundle in a PipelineRun",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Bundle versioning and multi-resource bundles",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
