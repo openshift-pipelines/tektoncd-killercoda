@@ -61,7 +61,7 @@ kubectl get taskrun "$TASKRUN_NAME" \
   -o jsonpath="{.metadata.annotations.chains\.tekton\.dev/payload-taskrun-$TASKRUN_NAME}" \
   | base64 -d > /tmp/payload.raw
 
-cosign verify-blob --key cosign.pub --signature /tmp/signature.raw /tmp/payload.raw
+cosign verify-blob --key cosign.pub --signature /tmp/signature.raw --insecure-ignore-tlog /tmp/payload.raw
 ```
 
 If verification succeeds, you will see `Verified OK`. This confirms:

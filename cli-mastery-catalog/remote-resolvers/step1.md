@@ -61,8 +61,7 @@ TaskRun is created.
 Wait for the TaskRun to start and then view the logs:
 
 ```bash
-kubectl wait --for=condition=Succeeded=False --for=condition=Succeeded=True \
-  taskrun/hub-resolver-demo --timeout=120s 2>/dev/null || true
+kubectl wait --for=condition=Succeeded taskrun/hub-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
 ```bash

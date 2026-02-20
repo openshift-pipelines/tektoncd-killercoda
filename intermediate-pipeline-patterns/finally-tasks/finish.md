@@ -19,8 +19,8 @@ notifications in Tekton Pipelines.
 |-------|---------|
 | `Succeeded` | All regular Tasks succeeded |
 | `Failed` | One or more regular Tasks failed |
-| `Completed` | Mix of succeeded and failed Tasks |
-| `None` | No regular Tasks ran (all skipped or no tasks defined) |
+| `Completed` | All Tasks that ran succeeded, but some were skipped |
+| `None` | One or more Tasks still pending, running, cancelled, or timed out |
 
 ## Key rules for Finally Tasks
 

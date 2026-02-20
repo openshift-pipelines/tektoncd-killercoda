@@ -32,7 +32,6 @@ spec:
     - name: url
       value: "https://tekton.dev"
     - name: options
-      type: array
       value:
         - "-s"
         - "-o"
@@ -61,8 +60,7 @@ The TaskRun also passes runtime parameters (`url` and `options`) to the resolved
 Wait for the TaskRun to complete and view the logs:
 
 ```bash
-kubectl wait --for=condition=Succeeded=False --for=condition=Succeeded=True \
-  taskrun/git-resolver-demo --timeout=120s 2>/dev/null || true
+kubectl wait --for=condition=Succeeded taskrun/git-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
 ```bash

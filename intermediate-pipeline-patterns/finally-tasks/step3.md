@@ -5,8 +5,8 @@ Finally Tasks can access information about the Pipeline's execution using
 
 - **`$(context.pipelineRun.name)`** -- the name of the current PipelineRun
 - **`$(tasks.status)`** -- the aggregate status of all non-finally Tasks:
-  `Succeeded`, `Failed`, `Completed` (mix of successes and failures), or `None`
-  (no regular Tasks or all skipped)
+  `Succeeded`, `Failed`, `Completed` (all succeeded but some were skipped), or
+  `None` (one or more Tasks still pending, running, cancelled, or timed out)
 
 This lets you build a status reporter that knows whether the Pipeline succeeded
 or failed.
@@ -41,9 +41,9 @@ spec:
         elif [ "\$(params.pipeline-status)" = "Failed" ]; then
           echo "  Result: ONE OR MORE TASKS FAILED"
         elif [ "\$(params.pipeline-status)" = "Completed" ]; then
-          echo "  Result: MIXED (some succeeded, some failed)"
+          echo "  Result: ALL SUCCEEDED (some tasks were skipped)"
         else
-          echo "  Result: NO REGULAR TASKS RAN"
+          echo "  Result: STATUS PENDING (tasks still running or cancelled)"
         fi
         echo "========================================="
 EOF

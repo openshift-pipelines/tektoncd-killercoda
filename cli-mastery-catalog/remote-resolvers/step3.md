@@ -87,8 +87,7 @@ The Cluster Resolver parameters are straightforward:
 ## Watch the TaskRun
 
 ```bash
-kubectl wait --for=condition=Succeeded=False --for=condition=Succeeded=True \
-  taskrun/cluster-resolver-demo --timeout=120s 2>/dev/null || true
+kubectl wait --for=condition=Succeeded taskrun/cluster-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
 ```bash

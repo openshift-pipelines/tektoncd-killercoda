@@ -25,7 +25,7 @@ kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-trigg
   -n tekton-pipelines --timeout=120s
 
 # Install the Tekton CLI (tkn)
-TKN_VERSION=$(curl -s https://api.github.com/repos/tektoncd/cli/releases/latest | grep '"tag_name"' | sed -E 's/.*"v([^"]+)".*/\1/')
+TKN_VERSION="0.43.0"
 curl -LO "https://github.com/tektoncd/cli/releases/download/v${TKN_VERSION}/tkn_${TKN_VERSION}_Linux_x86_64.tar.gz"
 tar xvzf "tkn_${TKN_VERSION}_Linux_x86_64.tar.gz" -C /usr/local/bin/ tkn
 rm -f "tkn_${TKN_VERSION}_Linux_x86_64.tar.gz"
