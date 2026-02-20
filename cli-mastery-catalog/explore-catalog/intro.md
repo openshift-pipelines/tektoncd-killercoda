@@ -16,9 +16,9 @@ container images, running tests, and much more.
 ## Where to find them
 
 The Tekton Catalog is hosted on **Artifact Hub** at
-[artifacthub.io](https://artifacthub.io/packages/search?kind=13). The old
-`hub.tekton.dev` site has been retired. All catalog discovery now happens
-through Artifact Hub.
+[artifacthub.io](https://artifacthub.io/packages/search?kind=13). The previous
+Tekton Hub site has been retired. All catalog discovery now happens through
+Artifact Hub.
 
 ## What you will learn
 

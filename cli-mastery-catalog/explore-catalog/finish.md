@@ -5,8 +5,8 @@ Tekton Catalog!
 
 ## What you learned
 
-- How to find Tekton Tasks on **Artifact Hub** (the replacement for the retired
-  hub.tekton.dev)
+- How to find Tekton Tasks on **Artifact Hub** (the current home of the Tekton
+  Catalog)
 - How to install catalog Tasks like **git-clone** and **kaniko** directly from
   the Tekton Catalog GitHub repository
 - How catalog Tasks follow **conventions** for parameters, workspaces, and
