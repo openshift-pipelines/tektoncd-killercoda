@@ -1,0 +1,40 @@
+{
+  "title": "Custom Interceptors",
+  "description": "Learn how to build a custom HTTP interceptor service for Tekton Triggers!",
+  "difficulty": "Advanced",
+  "time": "35 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Understand the interceptor HTTP protocol",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Build a custom interceptor service",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Register and use the custom interceptor",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Test the custom interceptor end-to-end",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

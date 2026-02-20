@@ -1,0 +1,35 @@
+{
+  "title": "TriggerGroups and ClusterTriggerBindings",
+  "description": "Learn how to scale triggers across namespaces with shared bindings!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Create ClusterTriggerBindings for shared bindings",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Use TriggerGroups for multi-trigger EventListeners",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Scale triggers across namespaces",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

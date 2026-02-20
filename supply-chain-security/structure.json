@@ -18,9 +18,19 @@
       "path": "slsa-provenance"
     },
     {
+      "title": "Transparency Logs with Rekor",
+      "description": "Learn how to publish to and query transparency logs for build provenance!",
+      "path": "transparency-logs"
+    },
+    {
       "title": "End-to-End Secure Pipeline: Clone, Build, Sign, Verify",
       "description": "Build a complete supply chain security pipeline with Tekton Chains, cosign signing, and SLSA provenance!",
       "path": "end-to-end-secure-pipeline"
+    },
+    {
+      "title": "Signing with HashiCorp Vault KMS",
+      "description": "Learn how to use Vault as a Chains signing backend with the Transit engine!",
+      "path": "vault-kms-signing"
     },
     {
       "title": "Policy Enforcement: Block Unsigned Images with Kyverno",

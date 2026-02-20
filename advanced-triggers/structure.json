@@ -16,6 +16,16 @@
       "title": "Interceptor Chaining: Filter, Transform, and Route Events",
       "description": "Learn how to chain multiple interceptors for production event processing in Tekton Triggers!",
       "path": "interceptor-chaining"
+    },
+    {
+      "title": "Custom Interceptors",
+      "description": "Learn how to build a custom HTTP interceptor service for Tekton Triggers!",
+      "path": "custom-interceptors"
+    },
+    {
+      "title": "TriggerGroups and ClusterTriggerBindings",
+      "description": "Learn how to scale triggers across namespaces with shared bindings!",
+      "path": "triggergroups-clusterbindings"
     }
   ]
 }

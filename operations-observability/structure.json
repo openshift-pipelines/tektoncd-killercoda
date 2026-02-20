@@ -8,6 +8,11 @@
       "path": "install-with-operator"
     },
     {
+      "title": "Configure Feature Flags via TektonConfig",
+      "description": "Learn how to configure Tekton behavior with feature flags and the Operator!",
+      "path": "feature-flags-tektonconfig"
+    },
+    {
       "title": "Automatic Pruning of Pipeline/TaskRuns",
       "description": "Learn how to automatically clean up old PipelineRuns and TaskRuns!",
       "path": "automatic-pruning"
@@ -26,6 +31,11 @@
       "title": "Results Log Storage with MinIO",
       "description": "Configure Tekton Results to store pipeline logs in S3-compatible MinIO storage!",
       "path": "results-log-storage-minio"
+    },
+    {
+      "title": "Configure Results Retention Policies",
+      "description": "Learn how to manage Results data lifecycle and automated cleanup!",
+      "path": "results-retention-policies"
     }
   ]
 }

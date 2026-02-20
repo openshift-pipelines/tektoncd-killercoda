@@ -1,0 +1,35 @@
+{
+  "title": "Transparency Logs with Rekor",
+  "description": "Learn how to publish to and query transparency logs for build provenance!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Understand and configure transparency logs",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Find your entry in the Rekor log",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Verify using the transparency log",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

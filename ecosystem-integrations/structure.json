@@ -11,6 +11,11 @@
       "title": "Tekton + Vault: Pipeline Secrets Management",
       "description": "Integrate HashiCorp Vault with Tekton Pipelines for secure secrets injection!",
       "path": "tekton-vault-secrets"
+    },
+    {
+      "title": "Debugging with Breakpoints",
+      "description": "Learn how to interactively debug failed Tasks using the alpha breakpoint API!",
+      "path": "debug-breakpoints"
     }
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "title": "Configure Results Retention Policies",
+  "description": "Learn how to manage Results data lifecycle and automated cleanup!",
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Understand Results retention",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Configure retention policies",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Verify automated cleanup",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

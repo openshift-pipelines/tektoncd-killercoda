@@ -1,0 +1,35 @@
+{
+  "title": "Debugging with Breakpoints",
+  "description": "Learn how to interactively debug failed Tasks using the alpha breakpoint API!",
+  "difficulty": "Advanced",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Enable breakpoint debugging",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Interact with the paused container",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Continue or abort after debugging",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

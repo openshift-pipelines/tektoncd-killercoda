@@ -31,6 +31,16 @@
       "title": "Retries, Timeouts, and Error Handling",
       "description": "Learn how to handle failures with retries, timeouts, and error strategies!",
       "path": "retries-timeouts"
+    },
+    {
+      "title": "Object and Array Parameters",
+      "description": "Learn how to use structured parameter types beyond simple strings!",
+      "path": "object-array-params"
+    },
+    {
+      "title": "Pipelines in Pipelines: Nested Composition",
+      "description": "Learn how to compose Pipelines within Pipelines for large-scale CI/CD!",
+      "path": "pipelines-in-pipelines"
     }
   ]
 }

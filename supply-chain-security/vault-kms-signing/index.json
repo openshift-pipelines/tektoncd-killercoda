@@ -1,0 +1,35 @@
+{
+  "title": "Signing with HashiCorp Vault KMS",
+  "description": "Learn how to use Vault as a Chains signing backend with the Transit engine!",
+  "difficulty": "Advanced",
+  "time": "35 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Set up Vault as a Chains signing backend",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Sign TaskRuns using Vault KMS",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Verify signatures signed by Vault",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

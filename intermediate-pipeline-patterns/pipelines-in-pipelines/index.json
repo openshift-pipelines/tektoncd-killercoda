@@ -1,0 +1,35 @@
+{
+  "title": "Pipelines in Pipelines: Nested Composition",
+  "description": "Learn how to compose Pipelines within Pipelines for large-scale CI/CD!",
+  "difficulty": "Advanced",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Create a child Pipeline",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Reference a Pipeline from a PipelineTask",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Pass params and results between parent and child",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
