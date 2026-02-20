@@ -1,0 +1,16 @@
+{
+  "title": "Getting Started",
+  "description": "Learn the basics of Tekton Pipelines and Dashboard",
+  "items": [
+    {
+      "title": "Tekton Basic Pipeline",
+      "description": "Learn how to build a basic Tekton Pipeline!",
+      "path": "basic-pipeline"
+    },
+    {
+      "title": "Tekton Dashboard",
+      "description": "Learn how to use the Tekton Dashboard to monitor and manage your pipelines!",
+      "path": "dashboard"
+    }
+  ]
+}

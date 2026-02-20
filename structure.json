@@ -1,0 +1,11 @@
+{
+  "title": "Tekton Tutorials",
+  "description": "Interactive tutorials for learning Tekton CI/CD",
+  "items": [
+    {
+      "title": "Getting Started",
+      "description": "Learn the basics of Tekton Pipelines and Dashboard",
+      "path": "getting-started"
+    }
+  ]
+}

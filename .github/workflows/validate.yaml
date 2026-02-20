@@ -1,0 +1,82 @@
+name: Validate Tutorials
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating all JSON files..."
+          errors=0
+          for f in $(find . -name "*.json" -not -path "./.git/*"); do
+            if ! jq . "$f" > /dev/null 2>&1; then
+              echo "INVALID JSON: $f"
+              errors=$((errors + 1))
+            else
+              echo "OK: $f"
+            fi
+          done
+          if [ $errors -gt 0 ]; then
+            echo "$errors JSON file(s) failed validation"
+            exit 1
+          fi
+
+      - name: Check step file references
+        run: |
+          echo "Checking that all referenced files exist..."
+          errors=0
+          for idx in $(find . -name "index.json" -not -path "./.git/*"); do
+            dir=$(dirname "$idx")
+            echo "Checking $idx..."
+
+            # Check intro text
+            intro=$(jq -r '.details.intro.text // empty' "$idx")
+            if [ -n "$intro" ] && [ ! -f "$dir/$intro" ]; then
+              echo "  MISSING intro: $dir/$intro"
+              errors=$((errors + 1))
+            fi
+
+            # Check intro background script
+            bg=$(jq -r '.details.intro.background // empty' "$idx")
+            if [ -n "$bg" ] && [ ! -f "$dir/$bg" ]; then
+              echo "  MISSING background: $dir/$bg"
+              errors=$((errors + 1))
+            fi
+
+            # Check step texts
+            for step_file in $(jq -r '.details.steps[].text' "$idx"); do
+              if [ ! -f "$dir/$step_file" ]; then
+                echo "  MISSING step: $dir/$step_file"
+                errors=$((errors + 1))
+              fi
+            done
+
+            # Check verify scripts
+            for verify_file in $(jq -r '.details.steps[].verify // empty' "$idx"); do
+              if [ -n "$verify_file" ] && [ ! -f "$dir/$verify_file" ]; then
+                echo "  MISSING verify: $dir/$verify_file"
+                errors=$((errors + 1))
+              fi
+            done
+
+            # Check finish text
+            finish=$(jq -r '.details.finish.text // empty' "$idx")
+            if [ -n "$finish" ] && [ ! -f "$dir/$finish" ]; then
+              echo "  MISSING finish: $dir/$finish"
+              errors=$((errors + 1))
+            fi
+          done
+
+          if [ $errors -gt 0 ]; then
+            echo "$errors file reference(s) are missing"
+            exit 1
+          fi
+          echo "All file references are valid!"
