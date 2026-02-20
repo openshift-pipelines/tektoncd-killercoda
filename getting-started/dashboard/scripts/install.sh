@@ -16,8 +16,9 @@ kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-pipelines \
   -n tekton-pipelines --timeout=120s
 
-# Install the Tekton Dashboard (latest stable release)
-kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
+# Install the Tekton Dashboard in read-write mode (allows creating resources from UI)
+curl -sL https://raw.githubusercontent.com/tektoncd/dashboard/main/scripts/release-installer \
+  | bash -s -- install latest --read-write
 
 # Wait for Dashboard pod to be ready
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-dashboard \

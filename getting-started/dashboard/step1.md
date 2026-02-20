@@ -2,8 +2,9 @@
 
 ## Verify the installation
 
-It might take a minute or two for the environment to install Tekton Pipelines
-and the Dashboard. Check if the pods are running:
+It takes approximately 3-4 minutes for the environment to install Tekton
+Pipelines and the Dashboard (images are pulled from the internet on each
+start). Check if the pods are running:
 
 ```bash
 kubectl get pods -n tekton-pipelines
