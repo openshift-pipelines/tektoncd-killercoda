@@ -6,6 +6,41 @@
       "title": "Getting Started",
       "description": "Learn the basics of Tekton Pipelines and Dashboard",
       "path": "getting-started"
+    },
+    {
+      "title": "Intermediate Pipeline Patterns",
+      "description": "Master advanced Tekton Pipeline features for production CI/CD",
+      "path": "intermediate-pipeline-patterns"
+    },
+    {
+      "title": "Supply Chain Security",
+      "description": "Secure your CI/CD pipeline with Tekton Chains, signing, and attestation",
+      "path": "supply-chain-security"
+    },
+    {
+      "title": "Advanced Triggers and Event Processing",
+      "description": "Build production event-driven pipelines with interceptors and webhooks",
+      "path": "advanced-triggers"
+    },
+    {
+      "title": "Operations and Observability",
+      "description": "Run Tekton in production with the Operator, Results, and monitoring",
+      "path": "operations-observability"
+    },
+    {
+      "title": "Dashboard Advanced",
+      "description": "Production Dashboard configuration, RBAC, extensions, and integrations",
+      "path": "dashboard-advanced"
+    },
+    {
+      "title": "CLI Mastery and Catalog",
+      "description": "Master the tkn CLI, Tekton Bundles, and catalog discovery",
+      "path": "cli-mastery-catalog"
+    },
+    {
+      "title": "Ecosystem Integrations",
+      "description": "Real-world integration patterns: ArgoCD, Vault, Buildpacks, and more",
+      "path": "ecosystem-integrations"
     }
   ]
 }
