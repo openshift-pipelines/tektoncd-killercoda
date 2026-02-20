@@ -1,0 +1,16 @@
+{
+  "title": "Install Tekton with the Operator",
+  "description": "Learn how to install and manage Tekton using the Tekton Operator and TektonConfig!",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "intro": { "text": "intro.md", "background": "scripts/install.sh" },
+    "steps": [
+      { "title": "Explore the Operator and TektonConfig", "text": "step1.md", "verify": "scripts/verify-step1.sh" },
+      { "title": "Manage component versions and profiles", "text": "step2.md", "verify": "scripts/verify-step2.sh" },
+      { "title": "Configure Tekton via TektonConfig", "text": "step3.md", "verify": "scripts/verify-step3.sh" }
+    ],
+    "finish": { "text": "finish.md" }
+  },
+  "backend": { "imageid": "kubernetes-kubeadm-1node" }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Automatic Pruning of Pipeline and TaskRuns",
+  "description": "Learn how to automatically clean up old PipelineRuns and TaskRuns with the Tekton Operator!",
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
+  "details": {
+    "intro": { "text": "intro.md", "background": "scripts/install.sh" },
+    "steps": [
+      { "title": "See the problem: accumulated runs", "text": "step1.md", "verify": "scripts/verify-step1.sh" },
+      { "title": "Configure automatic pruning via TektonConfig", "text": "step2.md", "verify": "scripts/verify-step2.sh" },
+      { "title": "Verify pruning works", "text": "step3.md", "verify": "scripts/verify-step3.sh" }
+    ],
+    "finish": { "text": "finish.md" }
+  },
+  "backend": { "imageid": "kubernetes-kubeadm-1node" }
+}

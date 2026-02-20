@@ -1,0 +1,40 @@
+{
+  "title": "tkn CLI Deep Dive -- Mastering Tekton from the Command Line",
+  "description": "Master advanced tkn commands for debugging, output formatting, and operational management!",
+  "difficulty": "Intermediate",
+  "time": "30 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Create resources and explore tkn list/describe",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Master tkn logs and run management",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Output formatting: JSON, YAML, and jq integration",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Advanced tkn: start with params and dry-run",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

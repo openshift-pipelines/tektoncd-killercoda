@@ -1,0 +1,35 @@
+{
+  "title": "Matrix -- Fan-Out for Multi-Platform Builds",
+  "description": "Learn how to fan out Tasks across parameter combinations for multi-platform testing!",
+  "difficulty": "Advanced",
+  "time": "30 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Basic Matrix: run a Task across multiple parameters",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Inspect fan-out TaskRuns",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Matrix with include for specific combinations",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

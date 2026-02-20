@@ -1,0 +1,17 @@
+{
+  "title": "Tekton + ArgoCD: GitOps CI/CD Pipeline",
+  "description": "Build a complete CI/CD pipeline with Tekton for CI and ArgoCD for GitOps deployment!",
+  "difficulty": "Intermediate",
+  "time": "30 minutes",
+  "details": {
+    "intro": { "text": "intro.md", "background": "scripts/install.sh" },
+    "steps": [
+      { "title": "Set up a GitOps repository", "text": "step1.md", "verify": "scripts/verify-step1.sh" },
+      { "title": "Create a Tekton CI Pipeline", "text": "step2.md", "verify": "scripts/verify-step2.sh" },
+      { "title": "Connect CI to CD: Tekton triggers ArgoCD sync", "text": "step3.md", "verify": "scripts/verify-step3.sh" },
+      { "title": "Production patterns: auto-sync and health checks", "text": "step4.md", "verify": "scripts/verify-step4.sh" }
+    ],
+    "finish": { "text": "finish.md" }
+  },
+  "backend": { "imageid": "kubernetes-kubeadm-1node" }
+}
