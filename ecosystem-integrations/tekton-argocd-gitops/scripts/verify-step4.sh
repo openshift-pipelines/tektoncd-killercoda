@@ -1,3 +1,3 @@
 #!/bin/bash
-# Verify step 4: demo-app Deployment exists in the default namespace
-kubectl get deployment demo-app --no-headers 2>/dev/null | wc -l | grep -q '[1-9]'
+# Verify step 4: demo-app Deployment was updated to nginx:1.26 by auto-sync
+kubectl get deployment demo-app -o jsonpath='{.spec.template.spec.containers[0].image}' 2>/dev/null | grep -q 'nginx:1.2'

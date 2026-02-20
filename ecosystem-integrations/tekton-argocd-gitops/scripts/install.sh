@@ -33,6 +33,9 @@ ARGOCD_VERSION="2.13.3"
 curl -sSL -o /usr/local/bin/argocd "https://github.com/argoproj/argo-cd/releases/download/v${ARGOCD_VERSION}/argocd-linux-amd64"
 chmod +x /usr/local/bin/argocd
 
+# Ensure git uses 'master' as default branch (consistent across Git versions)
+git config --global init.defaultBranch master
+
 # Set up local bare Git repo for GitOps demo
 git init --bare /opt/gitops-repo.git
 
