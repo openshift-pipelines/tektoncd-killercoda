@@ -16,6 +16,16 @@
       "title": "SLSA Provenance Deep Dive",
       "description": "Learn how to generate and inspect SLSA provenance attestations!",
       "path": "slsa-provenance"
+    },
+    {
+      "title": "End-to-End Secure Pipeline: Clone, Build, Sign, Verify",
+      "description": "Build a complete supply chain security pipeline with Tekton Chains, cosign signing, and SLSA provenance!",
+      "path": "end-to-end-secure-pipeline"
+    },
+    {
+      "title": "Policy Enforcement: Block Unsigned Images with Kyverno",
+      "description": "Enforce supply chain security policies by blocking unsigned container images with Kyverno and Tekton Chains!",
+      "path": "policy-enforcement-kyverno"
     }
   ]
 }

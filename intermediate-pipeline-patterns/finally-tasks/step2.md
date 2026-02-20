@@ -1,7 +1,7 @@
 # Finally Tasks run on failure too
 
 The real value of Finally Tasks is that they execute even when regular Tasks
-**fail**. This guarantees your cleanup logic always runs -- just like a
+**fail**. This guarantees your cleanup logic always runs - just like a
 `try/finally` block in programming.
 
 ## Create a failing Task

@@ -4,7 +4,7 @@
 
 Tekton stores every PipelineRun and TaskRun as a Kubernetes custom resource.
 Under the hood, Kubernetes keeps these objects in **etcd**, a key-value store
-designed for cluster state -- not for long-term data retention.
+designed for cluster state - not for long-term data retention.
 
 As your cluster runs hundreds or thousands of pipelines, the etcd database
 grows. Cluster administrators solve this by **pruning** old runs, but once
@@ -15,10 +15,10 @@ the success rate of our build pipeline last month?"
 
 Tekton Results consists of three main components:
 
-1. **Watcher** -- monitors the Kubernetes API for completed PipelineRuns and
+1. **Watcher** - monitors the Kubernetes API for completed PipelineRuns and
    TaskRuns and sends their data to the API server
-2. **API Server** -- a gRPC/REST service that stores and serves result data
-3. **PostgreSQL** -- the backing database for long-term storage
+2. **API Server** - a gRPC/REST service that stores and serves result data
+3. **PostgreSQL** - the backing database for long-term storage
 
 The watcher runs in the background and automatically captures every completed
 run. No changes to your existing Pipelines or Tasks are needed.

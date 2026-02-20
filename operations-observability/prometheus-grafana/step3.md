@@ -168,10 +168,10 @@ done
 ```
 
 After these runs complete, the Grafana dashboard will show:
-- **Running PipelineRuns** -- the current count of active runs
-- **Running TaskRuns** -- the current count of active TaskRuns
-- **PipelineRun Duration** -- a time-series graph showing average duration
-- **Total PipelineRuns/TaskRuns** -- cumulative counts
+- **Running PipelineRuns** - the current count of active runs
+- **Running TaskRuns** - the current count of active TaskRuns
+- **PipelineRun Duration** - a time-series graph showing average duration
+- **Total PipelineRuns/TaskRuns** - cumulative counts
 
 In a real production environment, you would access the Grafana UI in your
 browser and see these panels updating in real time.

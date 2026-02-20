@@ -12,7 +12,7 @@ kubectl get tektonconfig config -o jsonpath='{.spec.pruner}' 2>/dev/null
 echo ""
 ```
 
-If this is empty, no pruning is configured -- which means runs will accumulate
+If this is empty, no pruning is configured - which means runs will accumulate
 indefinitely.
 
 ## Configure the pruner
@@ -45,10 +45,10 @@ The pruner configuration fields are:
 
 The `schedule` field uses standard cron syntax:
 
-- `*/1 * * * *` -- Every minute (tutorial/testing)
-- `0 * * * *` -- Every hour
-- `0 0 * * *` -- Daily at midnight
-- `0 0 * * 0` -- Weekly on Sunday
+- `*/1 * * * *` - Every minute (tutorial/testing)
+- `0 * * * *` - Every hour
+- `0 0 * * *` - Daily at midnight
+- `0 0 * * 0` - Weekly on Sunday
 
 ## Verify the configuration was applied
 
@@ -74,11 +74,11 @@ configuration in TektonConfig, the Operator updates the CronJob accordingly.
 
 The pruner supports additional configuration for more fine-grained control:
 
-- **keep-since** -- Instead of keeping a fixed count, keep runs newer than a
+- **keep-since** - Instead of keeping a fixed count, keep runs newer than a
   specified number of minutes (e.g., `1440` keeps runs from the last 24 hours).
   Note: `keep` and `keep-since` are mutually exclusive.
-- **prune-per-resource** -- Prune per pipeline/task name instead of globally
-- **disabled** -- Set to `true` to temporarily disable pruning
+- **prune-per-resource** - Prune per pipeline/task name instead of globally
+- **disabled** - Set to `true` to temporarily disable pruning
 
 Verify the `keep` value is set:
 

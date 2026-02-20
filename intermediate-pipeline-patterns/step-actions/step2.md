@@ -127,11 +127,11 @@ You should see plain text output like `[TEST_RESULT] all-tests-passed`.
 
 ## Key observations
 
-1. **One StepAction, two Tasks** -- the `format-output` StepAction is defined
+1. **One StepAction, two Tasks** - the `format-output` StepAction is defined
    once but used by both `json-reporter` and `text-reporter`.
-2. **Different behavior from different params** -- each Task passes different
+2. **Different behavior from different params** - each Task passes different
    values to the same StepAction, producing different output formats.
-3. **Labels for organization** -- both Tasks have the label
+3. **Labels for organization** - both Tasks have the label
    `tutorial: step-actions`, which makes it easy to query them as a group.
 
 Verify that both Tasks exist:

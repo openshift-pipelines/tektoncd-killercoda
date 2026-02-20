@@ -6,7 +6,7 @@ In this step, you will create a parameterized Task, a Pipeline, and then use
 
 ## Create an echo-greeting Task
 
-This Task accepts two parameters -- `greeting` and `name` -- and prints a
+This Task accepts two parameters - `greeting` and `name` - and prints a
 customized message:
 
 ```bash
@@ -79,7 +79,7 @@ tkn pipeline list
 ```
 
 Notice how `tkn` gives you a clean, human-readable table with the resource name,
-creation time, and other useful information -- much more focused than a raw
+creation time, and other useful information - much more focused than a raw
 `kubectl get` output.
 
 ## Describe resources with tkn

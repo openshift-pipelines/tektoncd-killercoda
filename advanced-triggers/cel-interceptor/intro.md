@@ -1,4 +1,4 @@
-# CEL Interceptor -- Event Filtering and Transformation
+# CEL Interceptor - Event Filtering and Transformation
 
 In the [Getting Started with Triggers](../../getting-started/triggers/) tutorial,
 you learned how EventListeners receive events and create PipelineRuns. But in
@@ -11,10 +11,10 @@ this kind of data filtering and transformation.
 
 ## What CEL Interceptors can do
 
-- **Filter events** -- only trigger on push events, not pull requests
-- **Extract fields** -- pull the branch name from `refs/heads/main`
-- **Transform data** -- compute new values like a short commit SHA
-- **Guard conditions** -- only trigger for specific branches, users, or actions
+- **Filter events** - only trigger on push events, not pull requests
+- **Extract fields** - pull the branch name from `refs/heads/main`
+- **Transform data** - compute new values like a short commit SHA
+- **Guard conditions** - only trigger for specific branches, users, or actions
 
 ## What you will learn
 

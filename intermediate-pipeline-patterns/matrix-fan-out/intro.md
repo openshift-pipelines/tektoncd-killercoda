@@ -1,7 +1,7 @@
-# Matrix -- Fan-Out for Multi-Platform Builds
+# Matrix - Fan-Out for Multi-Platform Builds
 
 In CI/CD, you often need to run the same test or build across multiple
-configurations -- different operating systems, language versions, or
+configurations - different operating systems, language versions, or
 architectures. Tekton's **Matrix** feature (defined in TEP-0090) lets you fan out
 a single PipelineTask into multiple parallel TaskRuns by specifying parameter
 combinations.

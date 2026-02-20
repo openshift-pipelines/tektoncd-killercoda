@@ -8,11 +8,11 @@ single custom resource called **TektonConfig**.
 
 The Operator approach has several advantages:
 
-- **One resource controls everything** -- TektonConfig is the single source of
+- **One resource controls everything** - TektonConfig is the single source of
   truth for your Tekton installation
-- **Version management** -- The Operator handles component lifecycle and upgrades
-- **Profiles** -- Choose which components to install (all, lite, basic)
-- **Configuration** -- Feature flags and settings are managed declaratively
+- **Version management** - The Operator handles component lifecycle and upgrades
+- **Profiles** - Choose which components to install (all, lite, basic)
+- **Configuration** - Feature flags and settings are managed declaratively
 
 In this tutorial, you will learn:
 

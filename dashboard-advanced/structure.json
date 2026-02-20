@@ -1,5 +1,16 @@
 {
   "title": "Dashboard Advanced",
   "description": "Production Dashboard configuration, RBAC, extensions, and integrations",
-  "items": []
+  "items": [
+    {
+      "title": "Dashboard RBAC: Access Control",
+      "description": "Configure role-based access control for the Tekton Dashboard with admin and viewer roles!",
+      "path": "dashboard-rbac"
+    },
+    {
+      "title": "Dashboard with Results: Persistent Logs",
+      "description": "Configure the Tekton Dashboard to display logs from Results even after pods are deleted!",
+      "path": "dashboard-results-logs"
+    }
+  ]
 }

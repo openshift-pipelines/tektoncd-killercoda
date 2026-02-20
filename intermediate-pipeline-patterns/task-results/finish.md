@@ -13,12 +13,12 @@ Tasks in a Pipeline.
 
 ## Key points to remember
 
-- Results are limited to **4096 bytes** -- use Workspaces for larger data
+- Results are limited to **4096 bytes** - use Workspaces for larger data
 - Always use `echo -n` to avoid trailing newlines
 - Result references create implicit ordering (the consuming Task waits for the
   producing Task)
 
 ## What's next
 
-- [When Expressions](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/when-expressions) -- Use Results to conditionally skip or run Tasks
-- [Tekton Results documentation](https://tekton.dev/docs/pipelines/tasks/#emitting-results) -- Full reference for Task Results
+- [When Expressions](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/when-expressions) - Use Results to conditionally skip or run Tasks
+- [Tekton Results documentation](https://tekton.dev/docs/pipelines/tasks/#emitting-results) - Full reference for Task Results

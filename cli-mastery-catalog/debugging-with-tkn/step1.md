@@ -104,7 +104,7 @@ tkn pipeline start buggy-pipeline --showlog
 ```
 
 The logs will show `lint` succeeding, then errors from the other Tasks. Do not
-worry about the failures -- that is the point! We will debug them in the next
+worry about the failures - that is the point! We will debug them in the next
 step.
 
 ## Quick overview with tkn pipelinerun describe
@@ -116,9 +116,9 @@ tkn pipelinerun describe --last
 ```
 
 In the output, look at the **Status** column for each Task. You should see:
-- `lint` -- Succeeded
-- `build` -- Failed
-- `deploy` -- Failed
+- `lint` - Succeeded
+- `build` - Failed
+- `deploy` - Failed
 
 Note the **Reason** for each failure. This is your first clue about what went
 wrong.

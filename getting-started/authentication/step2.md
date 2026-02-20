@@ -12,7 +12,7 @@ Tekton supports two approaches for Docker registry authentication:
 
 ## Option 1: basic-auth with Docker annotation
 
-This approach is symmetric with Git auth — use a `basic-auth` Secret but with
+This approach is symmetric with Git auth - use a `basic-auth` Secret but with
 a `tekton.dev/docker-*` annotation instead of `tekton.dev/git-*`:
 
 ```bash

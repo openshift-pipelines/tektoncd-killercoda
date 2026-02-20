@@ -33,11 +33,11 @@ Use filters to **decide whether to trigger**. Use overlays to **enrich the data*
 
 ## What is next
 
-- [GitHub Webhooks with Triggers](https://tekton.dev/docs/how-to-guides/connecting-github/) --
+- [GitHub Webhooks with Triggers](https://tekton.dev/docs/how-to-guides/connecting-github/) -
   Connect real GitHub webhooks to your EventListeners
-- [Tekton Triggers documentation](https://tekton.dev/docs/triggers/) -- Full
+- [Tekton Triggers documentation](https://tekton.dev/docs/triggers/) - Full
   reference for all interceptor types
-- [CEL specification](https://github.com/google/cel-spec) -- Complete CEL
+- [CEL specification](https://github.com/google/cel-spec) - Complete CEL
   language reference
-- [Interceptor Chaining](https://tekton.dev/docs/triggers/interceptors/) --
+- [Interceptor Chaining](https://tekton.dev/docs/triggers/interceptors/) -
   Chain multiple interceptors (CEL, webhook, GitHub) together

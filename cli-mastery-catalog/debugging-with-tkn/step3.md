@@ -57,9 +57,9 @@ tkn pipeline start buggy-pipeline --last --showlog
 ```
 
 This time, all three Tasks should succeed:
-- `lint` -- passes as before
-- `build` -- now compiles successfully
-- `deploy` -- now uses a valid image and deploys
+- `lint` - passes as before
+- `build` - now compiles successfully
+- `deploy` - now uses a valid image and deploys
 
 ## Verify the fix
 
@@ -142,10 +142,10 @@ The status should show as **Cancelled** (or **PipelineRunCancelled**).
 
 You have now practiced the complete debugging workflow:
 
-1. **Run** -- start a Pipeline
-2. **Diagnose** -- use `tkn pipelinerun describe`, `tkn taskrun logs`, and
+1. **Run** - start a Pipeline
+2. **Diagnose** - use `tkn pipelinerun describe`, `tkn taskrun logs`, and
    `kubectl describe pod` to find the issue
-3. **Fix** -- update the Task or Pipeline definition
-4. **Rerun** -- use `tkn pipeline start --last` to quickly rerun
-5. **Verify** -- confirm the fix worked
-6. **Cancel** -- stop a running Pipeline if needed
+3. **Fix** - update the Task or Pipeline definition
+4. **Rerun** - use `tkn pipeline start --last` to quickly rerun
+5. **Verify** - confirm the fix worked
+6. **Cancel** - stop a running Pipeline if needed

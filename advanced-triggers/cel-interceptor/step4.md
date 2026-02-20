@@ -238,7 +238,7 @@ curl -s -X POST http://localhost:8080 \
   }'
 ```
 
-Check PipelineRun count -- the feature branch push should have been filtered:
+Check PipelineRun count - the feature branch push should have been filtered:
 
 ```bash
 sleep 5

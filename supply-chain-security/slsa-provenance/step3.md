@@ -34,7 +34,7 @@ with no manual intervention required.
 ## L2: Signed provenance
 
 L2 requires that the provenance is **cryptographically signed** by the build
-platform. This prevents tampering -- an attacker cannot modify the provenance
+platform. This prevents tampering - an attacker cannot modify the provenance
 without invalidating the signature.
 
 ### Extract the signature
@@ -72,7 +72,7 @@ If you see `Verified OK`, this confirms:
 
 1. The provenance was signed with the private key that matches `cosign.pub`
 2. The provenance payload has not been tampered with since signing
-3. **SLSA L2 is satisfied** -- the provenance is authenticated
+3. **SLSA L2 is satisfied** - the provenance is authenticated
 
 The `--insecure-ignore-tlog` flag is used because we are in a local
 environment without access to the Rekor transparency log. In production, you
@@ -146,10 +146,10 @@ echo "========================================"
 
 To summarize what Tekton Chains provides automatically:
 
-- **L1** -- Provenance is generated for every TaskRun without any manual steps
-- **L2** -- Provenance is signed with a cryptographic key managed by the
+- **L1** - Provenance is generated for every TaskRun without any manual steps
+- **L2** - Provenance is signed with a cryptographic key managed by the
   cluster administrator
-- **Partial L3** -- Tekton's container-per-Step architecture provides some
+- **Partial L3** - Tekton's container-per-Step architecture provides some
   isolation guarantees
 
 For production deployments, you would additionally:

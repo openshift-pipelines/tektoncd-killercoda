@@ -58,8 +58,8 @@ EOF
 ```
 
 The key parts for Chains are the **results**:
-- `IMAGE_URL` -- tells Chains which image was built
-- `IMAGE_DIGEST` -- tells Chains the exact content hash of the image
+- `IMAGE_URL` - tells Chains which image was built
+- `IMAGE_DIGEST` - tells Chains the exact content hash of the image
 
 Chains uses these result names (by convention) to find and sign images.
 

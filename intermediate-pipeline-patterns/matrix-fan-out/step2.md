@@ -13,7 +13,7 @@ tkn pipelinerun describe --last
 ```
 
 The output shows the PipelineRun status and lists all child TaskRuns. Notice that
-the `test` PipelineTask produced multiple TaskRuns -- one for each matrix
+the `test` PipelineTask produced multiple TaskRuns - one for each matrix
 combination.
 
 ## List the fan-out TaskRuns
@@ -38,7 +38,7 @@ kubectl get taskrun -l tekton.dev/pipelineTask=test \
 ```
 
 This shows each TaskRun name alongside the parameter values it received. You can
-see how Tekton distributed the Cartesian product -- every combination of
+see how Tekton distributed the Cartesian product - every combination of
 (linux, mac, windows) x (1.20, 1.21) is represented.
 
 ## Check individual logs

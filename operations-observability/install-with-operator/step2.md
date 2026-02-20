@@ -43,7 +43,7 @@ Dashboard.
 
 ## Switch to the lite profile
 
-The `lite` profile installs only Tekton Pipelines -- the minimum needed to run
+The `lite` profile installs only Tekton Pipelines - the minimum needed to run
 Tasks and Pipelines:
 
 ```bash
@@ -83,6 +83,6 @@ to match the TektonConfig specification. When you change the profile:
 3. It applies the necessary Kubernetes resources
 4. It reports the status back on the TektonConfig resource
 
-This is the declarative model -- you declare what you want, and the Operator
+This is the declarative model - you declare what you want, and the Operator
 makes it happen. You never need to manually apply or delete individual component
 YAMLs.

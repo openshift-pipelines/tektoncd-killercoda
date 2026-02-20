@@ -3,8 +3,8 @@
 Finally Tasks can access information about the Pipeline's execution using
 **context variables**. The most useful are:
 
-- **`$(context.pipelineRun.name)`** -- the name of the current PipelineRun
-- **`$(tasks.status)`** -- the aggregate status of all non-finally Tasks:
+- **`$(context.pipelineRun.name)`** - the name of the current PipelineRun
+- **`$(tasks.status)`** - the aggregate status of all non-finally Tasks:
   `Succeeded`, `Failed`, `Completed` (all succeeded but some were skipped), or
   `None` (one or more Tasks still pending, running, cancelled, or timed out)
 

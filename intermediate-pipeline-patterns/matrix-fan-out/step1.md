@@ -86,7 +86,7 @@ Start the Pipeline and wait for all 6 TaskRuns to complete:
 tkn pipeline start matrix-demo --showlog
 ```
 
-Watch the output -- you should see logs from 6 different TaskRuns, each with a
+Watch the output - you should see logs from 6 different TaskRuns, each with a
 unique platform/version combination. Tekton runs them in parallel, so they may
 interleave.
 

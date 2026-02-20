@@ -32,12 +32,12 @@ EOF
 
 There are three important things to notice here:
 
-1. **`apiVersion: tekton.dev/v1beta1`** -- StepActions use the `v1beta1` API
+1. **`apiVersion: tekton.dev/v1beta1`** - StepActions use the `v1beta1` API
    version, not `v1`. This is the correct API group for StepActions.
 2. **`spec.params`** declares the parameters the StepAction accepts, just like
    a Task declares params.
 3. **`spec.image` and `spec.script`** define the container image and script to
-   run -- the same fields you would normally put inside a step in a Task.
+   run - the same fields you would normally put inside a step in a Task.
 
 ## Create a Task that references the StepAction
 
@@ -70,7 +70,7 @@ Notice the key difference from a normal Task step:
    StepAction and use its image, script, and other configuration.
 2. **`params`** are passed to the StepAction, mapping the Task's `greeting`
    parameter to the StepAction's `message` parameter.
-3. The step does **not** specify `image` or `script` directly -- those come
+3. The step does **not** specify `image` or `script` directly - those come
    from the referenced StepAction.
 
 ## Run the Task

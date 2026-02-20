@@ -24,7 +24,7 @@ notifications in Tekton Pipelines.
 
 ## Key rules for Finally Tasks
 
-1. Finally Tasks **cannot depend on each other** -- no `runAfter` between them
+1. Finally Tasks **cannot depend on each other** - no `runAfter` between them
 2. Finally Tasks **can reference Results** from regular Tasks (but only from
    Tasks that actually ran and succeeded)
 3. Finally Tasks **can have their own When Expressions** to conditionally execute
@@ -32,5 +32,5 @@ notifications in Tekton Pipelines.
 
 ## What's next
 
-- [Matrix](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/matrix) -- Fan-out Tasks with parameterized matrix combinations
-- [Finally Tasks documentation](https://tekton.dev/docs/pipelines/pipelines/#adding-finally-to-the-pipeline) -- Full reference
+- [Matrix](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/matrix) - Fan-out Tasks with parameterized matrix combinations
+- [Finally Tasks documentation](https://tekton.dev/docs/pipelines/pipelines/#adding-finally-to-the-pipeline) - Full reference

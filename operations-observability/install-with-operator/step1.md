@@ -32,12 +32,12 @@ kubectl get tektonconfig config -o yaml
 
 This is a large resource. The key sections are:
 
-- **spec.profile** -- Which components to install (`all`, `lite`, or `basic`)
-- **spec.targetNamespace** -- Where Tekton components are installed (default:
+- **spec.profile** - Which components to install (`all`, `lite`, or `basic`)
+- **spec.targetNamespace** - Where Tekton components are installed (default:
   `tekton-pipelines`)
-- **spec.pipeline** -- Configuration for Tekton Pipelines
-- **spec.trigger** -- Configuration for Tekton Triggers
-- **spec.dashboard** -- Configuration for Tekton Dashboard
+- **spec.pipeline** - Configuration for Tekton Pipelines
+- **spec.trigger** - Configuration for Tekton Triggers
+- **spec.dashboard** - Configuration for Tekton Dashboard
 
 ## Check which profile is active
 

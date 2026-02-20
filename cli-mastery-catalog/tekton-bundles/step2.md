@@ -31,10 +31,10 @@ EOF
 ```
 
 Notice the key differences from a normal `taskRef`:
-- **resolver: bundles** -- tells Tekton to fetch the Task from an OCI bundle
-- **bundle** -- the full registry URL and tag of the bundle
-- **name** -- the name of the Task inside the bundle
-- **kind** -- the type of resource to resolve (task or pipeline)
+- **resolver: bundles** - tells Tekton to fetch the Task from an OCI bundle
+- **bundle** - the full registry URL and tag of the bundle
+- **name** - the name of the Task inside the bundle
+- **kind** - the type of resource to resolve (task or pipeline)
 
 ## Run the Pipeline
 
@@ -127,5 +127,5 @@ kubectl wait --for=condition=Succeeded pipelinerun -l tekton.dev/pipeline=bundle
 tkn pipelinerun logs --last -f
 ```
 
-The Task was never installed on the cluster -- it was fetched from the
+The Task was never installed on the cluster - it was fetched from the
 registry at runtime. This is the power of Tekton Bundles.

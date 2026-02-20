@@ -57,7 +57,7 @@ spec:
 EOF
 ```
 
-The key line is `value: "$(tasks.generate-id.results.build-id)"` -- this tells
+The key line is `value: "$(tasks.generate-id.results.build-id)"` - this tells
 Tekton to take the `build-id` Result from the `generate-id` Task and pass it as
 the `build-id` parameter to the `use-id` Task.
 

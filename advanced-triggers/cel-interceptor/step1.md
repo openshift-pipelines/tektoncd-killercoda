@@ -128,7 +128,7 @@ EOF
 
 ## Create the EventListener with a CEL filter
 
-Here is the key part -- the **CEL interceptor** with a `filter` expression. This
+Here is the key part - the **CEL interceptor** with a `filter` expression. This
 EventListener only accepts events where `body.action == "push"`:
 
 ```bash

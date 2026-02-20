@@ -127,7 +127,7 @@ confirming that all resolver types worked correctly within the Pipeline.
 Use this decision guide when picking a resolver:
 
 1. **Is the Task in the Tekton community catalog?** Use the **Hub Resolver**.
-   It is the simplest option -- just specify the task name and version.
+   It is the simplest option - just specify the task name and version.
 
 2. **Is the Task in a Git repository (private or public)?** Use the **Git
    Resolver**. This gives you full control over the source revision and works

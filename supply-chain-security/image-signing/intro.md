@@ -9,9 +9,9 @@ security workflow that production CI/CD pipelines need.
 When you deploy a container image, how do you know it came from your CI/CD
 system and was not tampered with? Image signing provides:
 
-- **Authenticity** -- proof that your build system produced the image
-- **Integrity** -- proof that the image was not modified after building
-- **Provenance** -- metadata about what source code and build process created it
+- **Authenticity** - proof that your build system produced the image
+- **Integrity** - proof that the image was not modified after building
+- **Provenance** - metadata about what source code and build process created it
 
 ## What you will learn
 

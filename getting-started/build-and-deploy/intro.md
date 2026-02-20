@@ -6,8 +6,8 @@ In this tutorial, you'll build a realistic CI/CD pipeline that:
 2. **Builds** a container image from the source
 3. **Deploys** the application to Kubernetes
 
-This combines the concepts from the previous tutorials — Tasks, Pipelines,
-Workspaces, and Parameters — into a practical workflow.
+This combines the concepts from the previous tutorials - Tasks, Pipelines,
+Workspaces, and Parameters - into a practical workflow.
 
 You will use:
 

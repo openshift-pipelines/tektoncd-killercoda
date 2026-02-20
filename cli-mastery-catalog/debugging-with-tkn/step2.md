@@ -82,9 +82,9 @@ kubectl get pipelinerun -l tekton.dev/pipeline=buggy-pipeline \
 ```
 
 This JSON shows:
-- `status: "False"` -- the PipelineRun failed
-- `reason` -- why it failed
-- `message` -- a human-readable description
+- `status: "False"` - the PipelineRun failed
+- `reason` - why it failed
+- `message` - a human-readable description
 
 ## The debugging flow
 

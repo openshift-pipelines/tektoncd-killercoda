@@ -1,7 +1,7 @@
 # Production patterns: auto-sync and health checks
 
 In production, you do not want to manually trigger ArgoCD syncs after every CI
-pipeline run. ArgoCD supports **automated sync** -- it will automatically detect
+pipeline run. ArgoCD supports **automated sync** - it will automatically detect
 changes in the Git repository and apply them to the cluster.
 
 ## Enable auto-sync
@@ -37,9 +37,9 @@ EOF
 
 The key additions are under `syncPolicy.automated`:
 
-- **prune: true** -- ArgoCD will delete resources that are no longer in the Git
+- **prune: true** - ArgoCD will delete resources that are no longer in the Git
   repo
-- **selfHeal: true** -- If someone manually changes a resource in the cluster,
+- **selfHeal: true** - If someone manually changes a resource in the cluster,
   ArgoCD will revert it to match Git
 
 Verify the sync policy was updated:
@@ -104,15 +104,15 @@ kubectl get pods -l app=demo-app
 
 When running this pattern in production, consider:
 
-- **Separate repositories** -- Keep application source code and GitOps manifests
+- **Separate repositories** - Keep application source code and GitOps manifests
   in separate repos. Tekton works on the source repo, and pushes manifest
   changes to the GitOps repo.
-- **Image registry** -- Use a real container registry (e.g., Docker Hub, Harbor,
+- **Image registry** - Use a real container registry (e.g., Docker Hub, Harbor,
   Quay) instead of simulated builds. Tekton Tasks like `kaniko` or `buildah`
   can build and push real images.
-- **Branch strategy** -- Use branches in the GitOps repo for staging vs.
+- **Branch strategy** - Use branches in the GitOps repo for staging vs.
   production. ArgoCD can watch different branches for different environments.
-- **Notifications** -- Configure ArgoCD notifications to alert on sync failures,
+- **Notifications** - Configure ArgoCD notifications to alert on sync failures,
   and Tekton Pipelines to send results to Slack or other systems.
-- **RBAC** -- Restrict who can push to the GitOps repo and who can modify
+- **RBAC** - Restrict who can push to the GitOps repo and who can modify
   ArgoCD Applications.

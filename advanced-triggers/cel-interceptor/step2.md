@@ -60,7 +60,7 @@ You should see "Action: push" and "Repository: my-app" in the output.
 
 ## Send a pull_request event (should be filtered out)
 
-Now send an event with `action: "pull_request"` -- this does NOT match the filter:
+Now send an event with `action: "pull_request"` - this does NOT match the filter:
 
 ```bash
 curl -s -X POST http://localhost:8080 \
@@ -87,7 +87,7 @@ sleep 5
 kubectl get pipelinerun -l triggers.tekton.dev/eventlistener=cel-demo --no-headers | wc -l
 ```
 
-You should still see only **1** PipelineRun -- the one from the push event. The
+You should still see only **1** PipelineRun - the one from the push event. The
 pull_request event was silently rejected by the CEL filter.
 
 This is the power of CEL interceptors: your Pipelines only run when the right

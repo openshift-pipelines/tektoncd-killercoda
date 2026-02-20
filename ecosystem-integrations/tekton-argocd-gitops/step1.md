@@ -126,7 +126,7 @@ kubectl get application -n argocd
 
 You should see `demo-app` listed. At this point, ArgoCD knows about the
 repository but has not yet synced (deployed) the application. The application
-status will show `OutOfSync` -- this is expected because we have not triggered a
+status will show `OutOfSync` - this is expected because we have not triggered a
 sync yet.
 
 ## Understanding the GitOps flow
@@ -136,6 +136,6 @@ truth**. Rather than running `kubectl apply` directly, all changes go through
 Git. ArgoCD then reconciles the cluster state to match the repository. This
 provides:
 
-- **Audit trail** -- every change is a Git commit
-- **Rollback** -- revert a Git commit to roll back a deployment
-- **Consistency** -- the cluster always matches what is in Git
+- **Audit trail** - every change is a Git commit
+- **Rollback** - revert a Git commit to roll back a deployment
+- **Consistency** - the cluster always matches what is in Git

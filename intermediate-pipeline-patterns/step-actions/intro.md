@@ -1,8 +1,8 @@
-# StepActions -- Reusable Step Definitions
+# StepActions - Reusable Step Definitions
 
 In Tekton, a **StepAction** is a reusable definition of a single step that can
 be referenced from any Task. Think of it as the step-level equivalent of what
-Tasks are to Pipelines -- just as you can define a Task once and reference it
+Tasks are to Pipelines - just as you can define a Task once and reference it
 from many Pipelines using `taskRef`, you can define a StepAction once and
 reference it from many Tasks using `ref`.
 

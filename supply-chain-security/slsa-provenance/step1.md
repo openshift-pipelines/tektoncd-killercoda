@@ -36,9 +36,9 @@ kubectl patch configmap chains-config -n tekton-chains -p='{"data":{
 ```
 
 The key settings:
-- `artifacts.taskrun.format: slsa/v1` -- produce SLSA v1 provenance (in-toto
+- `artifacts.taskrun.format: slsa/v1` - produce SLSA v1 provenance (in-toto
   attestation format)
-- `artifacts.taskrun.storage: tekton` -- store the signature and payload as
+- `artifacts.taskrun.storage: tekton` - store the signature and payload as
   annotations on the TaskRun object
 
 ## Restart the Chains controller

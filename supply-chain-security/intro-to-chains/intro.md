@@ -7,7 +7,7 @@ signs them, and stores the signatures and attestations.
 ## Why supply chain security matters
 
 Software supply chain attacks are on the rise. Attackers target the build
-process itself -- injecting malicious code during CI/CD. To defend against
+process itself - injecting malicious code during CI/CD. To defend against
 this, you need **provenance**: cryptographic proof of what was built, by whom,
 and how.
 

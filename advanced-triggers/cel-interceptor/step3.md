@@ -54,8 +54,8 @@ EOF
 ```
 
 The overlays compute two new fields:
-- **`branch_name`** -- extracts `main` from `refs/heads/main` using `split('/')`
-- **`short_sha`** -- truncates the commit SHA to 7 characters using `truncate(7)`
+- **`branch_name`** - extracts `main` from `refs/heads/main` using `split('/')`
+- **`short_sha`** - truncates the commit SHA to 7 characters using `truncate(7)`
 
 These fields are added to `extensions` in the event payload and can be referenced
 in TriggerBindings.

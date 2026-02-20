@@ -49,7 +49,7 @@ this run uses those values without asking for input.
 These flags are especially useful in scripts and CI environments where you need
 non-interactive execution. Compare these approaches:
 
-1. **Explicit parameters** -- full control over every value:
+1. **Explicit parameters** - full control over every value:
    ```bash
    tkn pipeline start greeting-pipeline \
      -p greeting="Hi" \
@@ -57,12 +57,12 @@ non-interactive execution. Compare these approaches:
      --showlog
    ```
 
-2. **Default parameters** -- quick runs with predefined values:
+2. **Default parameters** - quick runs with predefined values:
    ```bash
    tkn pipeline start greeting-pipeline --use-param-defaults --showlog
    ```
 
-3. **Re-run last** -- retry or repeat the previous execution:
+3. **Re-run last** - retry or repeat the previous execution:
    ```bash
    tkn pipeline start greeting-pipeline --last --showlog
    ```
@@ -76,5 +76,5 @@ tkn pipelinerun describe --last
 ```
 
 You should see a successful run with the parameters from whichever approach you
-used last. All three methods are equivalent in terms of what they produce -- a
+used last. All three methods are equivalent in terms of what they produce - a
 PipelineRun with resolved parameter values.

@@ -133,10 +133,10 @@ tkn pipeline start stepaction-pipeline --showlog
 
 Watch the output as each Task runs in sequence:
 
-1. **generate** -- produces a timestamped payload using an inline step
-2. **process** -- formats the payload using the `format-output` StepAction, then
+1. **generate** - produces a timestamped payload using an inline step
+2. **process** - formats the payload using the `format-output` StepAction, then
    saves a processed result
-3. **report** -- logs the final result using the `log-message` StepAction
+3. **report** - logs the final result using the `log-message` StepAction
 
 ## Inspect the PipelineRun
 
@@ -156,10 +156,10 @@ tkn pipelinerun logs --last
 
 This Pipeline demonstrates how Tekton's reuse model works at two levels:
 
-1. **Pipeline to Task** (`taskRef`) -- the Pipeline references `generate-data`,
+1. **Pipeline to Task** (`taskRef`) - the Pipeline references `generate-data`,
    `process-data`, and `report-result` as reusable Tasks. Any Pipeline can
    reference these same Tasks.
-2. **Task to StepAction** (`ref`) -- inside `process-data` and `report-result`,
+2. **Task to StepAction** (`ref`) - inside `process-data` and `report-result`,
    individual steps reference the shared `format-output` and `log-message`
    StepActions. Any Task can reference these same StepActions.
 

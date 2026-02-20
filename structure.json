@@ -33,6 +33,11 @@
       "path": "cli-mastery-catalog"
     },
     {
+      "title": "Dashboard Advanced",
+      "description": "Advanced Dashboard features: RBAC, Results integration, and persistent logs",
+      "path": "dashboard-advanced"
+    },
+    {
       "title": "Ecosystem Integrations",
       "description": "Real-world integration patterns: ArgoCD, Vault, Buildpacks, and more",
       "path": "ecosystem-integrations"

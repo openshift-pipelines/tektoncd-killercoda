@@ -1,4 +1,4 @@
-# Tekton Bundles -- Package and Share Tasks as OCI Artifacts
+# Tekton Bundles - Package and Share Tasks as OCI Artifacts
 
 In a typical Tekton setup, Tasks and Pipelines are applied directly to your
 cluster with `kubectl apply`. This works for small teams, but as your
@@ -6,7 +6,7 @@ organization grows, you need a way to **version, share, and distribute**
 Tekton resources across clusters and teams.
 
 **Tekton Bundles** solve this by packaging Tasks and Pipelines as **OCI
-artifacts** -- the same format used by container images. You can push
+artifacts** - the same format used by container images. You can push
 bundles to any OCI-compliant registry (Docker Hub, GitHub Container
 Registry, Quay.io, or a private registry) and reference them directly in
 PipelineRuns using the **Bundle resolver**.

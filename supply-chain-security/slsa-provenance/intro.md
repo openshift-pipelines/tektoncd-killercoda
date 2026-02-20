@@ -2,7 +2,7 @@
 
 [SLSA](https://slsa.dev/) (Supply-chain Levels for Software Artifacts) is a
 security framework for ensuring the integrity of software artifacts throughout
-the supply chain. A key part of SLSA is **provenance** -- a record of how an
+the supply chain. A key part of SLSA is **provenance** - a record of how an
 artifact was built, including what inputs were used and what build process was
 followed.
 

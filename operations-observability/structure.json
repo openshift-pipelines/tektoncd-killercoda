@@ -21,6 +21,11 @@
       "title": "Tekton + Prometheus + Grafana",
       "description": "Learn how to monitor Tekton Pipelines with Prometheus and Grafana!",
       "path": "prometheus-grafana"
+    },
+    {
+      "title": "Results Log Storage with MinIO",
+      "description": "Configure Tekton Results to store pipeline logs in S3-compatible MinIO storage!",
+      "path": "results-log-storage-minio"
     }
   ]
 }

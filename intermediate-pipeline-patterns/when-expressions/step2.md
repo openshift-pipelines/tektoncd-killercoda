@@ -99,5 +99,5 @@ This time, check-branch and build run, but deploy is **skipped** because
 tkn pipelinerun list
 ```
 
-You should see two PipelineRuns for the `results-when-demo` Pipeline -- one
+You should see two PipelineRuns for the `results-when-demo` Pipeline - one
 where deploy ran and one where it was skipped.

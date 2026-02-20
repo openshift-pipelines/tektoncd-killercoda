@@ -1,0 +1,40 @@
+{
+  "title": "End-to-End Secure Pipeline: Clone, Build, Sign, Verify",
+  "description": "Build a complete supply chain security pipeline with Tekton Chains, cosign signing, and SLSA provenance!",
+  "difficulty": "Advanced",
+  "time": "35 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Set up the secure pipeline infrastructure",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Build a Pipeline that clones, builds, signs, and attests",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Run the secure pipeline end-to-end",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Verify supply chain integrity as a consumer",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

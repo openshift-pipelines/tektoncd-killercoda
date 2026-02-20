@@ -32,11 +32,11 @@ EOF
 
 There are three important things to notice here:
 
-1. **`spec.results`** declares a Result named `build-id` -- this tells Tekton
+1. **`spec.results`** declares a Result named `build-id` - this tells Tekton
    the Task will produce this piece of data.
 2. **`$(results.build-id.path)`** is the file path where the Result value must
    be written. Tekton reads this file after the step completes.
-3. **`echo -n`** writes the value without a trailing newline -- this is a best
+3. **`echo -n`** writes the value without a trailing newline - this is a best
    practice that avoids unexpected whitespace when the Result is consumed
    downstream.
 

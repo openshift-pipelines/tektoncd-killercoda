@@ -57,7 +57,7 @@ spec:
 EOF
 ```
 
-Now create the most important Task -- the one that updates the GitOps
+Now create the most important Task - the one that updates the GitOps
 repository with the new image tag. This Task clones the repo using the `git://`
 protocol so it can access the git server from inside the pod:
 
@@ -148,9 +148,9 @@ tkn pipeline list
 You should see the `gitops-ci` pipeline. This pipeline follows the standard
 CI/CD pattern:
 
-1. **run-tests** -- Validate the application code
-2. **build-image** -- Build the container image and produce an image tag
-3. **update-manifests** -- Push the new image tag to the GitOps repository
+1. **run-tests** - Validate the application code
+2. **build-image** - Build the container image and produce an image tag
+3. **update-manifests** - Push the new image tag to the GitOps repository
 
 The `update-manifests` Task receives the image tag from `build-image` via
 Tekton's result passing mechanism, then commits and pushes the change to the

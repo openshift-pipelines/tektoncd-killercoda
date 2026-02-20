@@ -1,4 +1,4 @@
-# tkn CLI Deep Dive -- Mastering Tekton from the Command Line
+# tkn CLI Deep Dive - Mastering Tekton from the Command Line
 
 The `tkn` CLI is the official command-line tool for interacting with Tekton
 resources. While `kubectl` can manage any Kubernetes resource, `tkn` provides

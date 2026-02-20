@@ -62,9 +62,9 @@ EOF
 
 Now create a Pipeline that ties everything together:
 
-- `flaky-test` -- retries up to 3 times on failure
-- `deploy` -- has a 60-second timeout, only runs after tests pass
-- `report-status` -- a **finally** Task that always runs and reports the outcome
+- `flaky-test` - retries up to 3 times on failure
+- `deploy` - has a 60-second timeout, only runs after tests pass
+- `report-status` - a **finally** Task that always runs and reports the outcome
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -139,7 +139,7 @@ tkn pipeline start robust-pipeline --showlog
 
 In some runs, the test may pass on the first try. In others, it may need
 retries. In rare cases, all 4 attempts (1 original + 3 retries) may fail,
-causing the Pipeline to fail -- but `report-status` will still run and report
+causing the Pipeline to fail - but `report-status` will still run and report
 the failure.
 
 ## Production patterns

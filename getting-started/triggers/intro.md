@@ -2,16 +2,16 @@
 
 So far you've learned how to create Tasks, Pipelines, and run them manually.
 In a real CI/CD system, you want Pipelines to run automatically in response
-to events — like a `git push` to a repository.
+to events - like a `git push` to a repository.
 
 [Tekton Triggers](https://tekton.dev/docs/triggers/) makes this possible by
 listening for events and creating PipelineRuns automatically.
 
 The key components are:
 
-- **TriggerTemplate** — defines what resources to create (e.g., a PipelineRun)
-- **TriggerBinding** — extracts values from the incoming event payload
-- **EventListener** — receives events and connects Bindings to Templates
+- **TriggerTemplate** - defines what resources to create (e.g., a PipelineRun)
+- **TriggerBinding** - extracts values from the incoming event payload
+- **EventListener** - receives events and connects Bindings to Templates
 
 In this tutorial, you will learn:
 

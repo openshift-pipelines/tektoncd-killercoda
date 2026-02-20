@@ -22,11 +22,11 @@ Chains!
 
 ## What is next
 
-- [SLSA Provenance Deep Dive](https://slsa.dev/) -- Understand SLSA levels and
+- [SLSA Provenance Deep Dive](https://slsa.dev/) - Understand SLSA levels and
   provenance requirements
-- [Tekton Chains documentation](https://tekton.dev/docs/chains/) -- Full
+- [Tekton Chains documentation](https://tekton.dev/docs/chains/) - Full
   reference for Chains configuration and signing backends
-- [Sigstore Keyless Signing](https://docs.sigstore.dev/cosign/keyless/) -- Sign
+- [Sigstore Keyless Signing](https://docs.sigstore.dev/cosign/keyless/) - Sign
   without managing keys using OIDC identity
-- [Kyverno Image Verification](https://kyverno.io/docs/writing-policies/verify-images/) --
+- [Kyverno Image Verification](https://kyverno.io/docs/writing-policies/verify-images/) -
   Enforce image signatures at deploy time with policy

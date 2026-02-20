@@ -6,6 +6,16 @@
       "title": "CEL Interceptor: Event Filtering and Transformation",
       "description": "Learn how to filter and transform events using CEL Interceptors!",
       "path": "cel-interceptor"
+    },
+    {
+      "title": "GitHub Webhook Integration",
+      "description": "Learn how to receive GitHub webhooks, validate HMAC signatures, and filter events by branch!",
+      "path": "github-webhooks"
+    },
+    {
+      "title": "Interceptor Chaining: Filter, Transform, and Route Events",
+      "description": "Learn how to chain multiple interceptors for production event processing in Tekton Triggers!",
+      "path": "interceptor-chaining"
     }
   ]
 }

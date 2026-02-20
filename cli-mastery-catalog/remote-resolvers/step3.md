@@ -80,9 +80,9 @@ EOF
 
 The Cluster Resolver parameters are straightforward:
 
-1. **`kind: task`** -- The kind of resource to resolve (task or pipeline).
-2. **`name: shared-task`** -- The name of the Task in the target namespace.
-3. **`namespace: shared-tasks`** -- The namespace where the Task is defined.
+1. **`kind: task`** - The kind of resource to resolve (task or pipeline).
+2. **`name: shared-task`** - The name of the Task in the target namespace.
+3. **`namespace: shared-tasks`** - The namespace where the Task is defined.
 
 ## Watch the TaskRun
 

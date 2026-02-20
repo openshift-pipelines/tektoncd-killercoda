@@ -42,7 +42,7 @@ kubectl get taskrun --no-headers | wc -l
 tkn taskrun list
 ```
 
-You should see only 3 (or fewer) TaskRuns remaining -- the most recent ones.
+You should see only 3 (or fewer) TaskRuns remaining - the most recent ones.
 The older runs have been automatically cleaned up.
 
 ## Generate more runs to test ongoing pruning
@@ -83,7 +83,7 @@ When configuring pruning for production, consider these guidelines:
 **Best practices:**
 
 - Always configure pruning when using the Tekton Operator in production
-- Use Tekton Results to archive run data before it is pruned -- this gives you
+- Use Tekton Results to archive run data before it is pruned - this gives you
   long-term history without the etcd storage cost
 - Monitor etcd storage usage and adjust the `keep` value if needed
 - Consider using `keep-since` instead of `keep` if your pipeline frequency

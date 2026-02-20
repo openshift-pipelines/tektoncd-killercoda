@@ -43,14 +43,14 @@ print('predicateType:', data.get('predicateType', 'N/A'))
 "
 ```
 
-- **`_type`**: `https://in-toto.io/Statement/v0.1` -- identifies this as an
+- **`_type`**: `https://in-toto.io/Statement/v0.1` - identifies this as an
   in-toto statement
-- **`predicateType`**: `https://slsa.dev/provenance/v0.2` -- identifies the
+- **`predicateType`**: `https://slsa.dev/provenance/v0.2` - identifies the
   predicate as SLSA provenance
 
 ## Section 2: The subject
 
-The `subject` field describes **what was built** -- the artifact(s) this
+The `subject` field describes **what was built** - the artifact(s) this
 provenance applies to:
 
 ```bash
@@ -65,7 +65,7 @@ print(json.dumps(data.get('subject', []), indent=2))
 For TaskRun provenance, the subject is typically the TaskRun itself or any
 images/artifacts it produced.
 
-## Section 3: The predicate -- build metadata
+## Section 3: The predicate - build metadata
 
 The `predicate` section contains the actual SLSA provenance data. Let's examine
 its top-level fields:
@@ -130,7 +130,7 @@ print(json.dumps(bc, indent=2)[:2000])
 ```
 
 This includes the container images used for each Step, the entrypoint, and
-arguments. This is critical for reproducibility -- anyone can see exactly what
+arguments. This is critical for reproducibility - anyone can see exactly what
 commands were run.
 
 ## Section 6: Materials (build inputs)

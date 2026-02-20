@@ -31,8 +31,8 @@ cosign verify-attestation --key cosign.pub \
 
 You should see a JSON document in the SLSA provenance format containing:
 
-- **`_type`**: `https://in-toto.io/Statement/v0.1` -- the in-toto attestation format
-- **`predicateType`**: `https://slsa.dev/provenance/v0.2` -- SLSA provenance
+- **`_type`**: `https://in-toto.io/Statement/v0.1` - the in-toto attestation format
+- **`predicateType`**: `https://slsa.dev/provenance/v0.2` - SLSA provenance
 - **`subject`**: the image URL and digest that was built
 - **`predicate.buildType`**: `tekton.dev/v1beta1/TaskRun`
 - **`predicate.invocation`**: parameters and configuration used to build
@@ -41,10 +41,10 @@ You should see a JSON document in the SLSA provenance format containing:
 
 In a production environment, this attestation proves:
 
-1. **What was built** -- the exact image digest
-2. **How it was built** -- the Tekton Task that ran
-3. **What parameters were used** -- the image URL, any build args
-4. **When it was built** -- timestamps from the TaskRun
+1. **What was built** - the exact image digest
+2. **How it was built** - the Tekton Task that ran
+3. **What parameters were used** - the image URL, any build args
+4. **When it was built** - timestamps from the TaskRun
 
 Policy engines like [Kyverno](https://kyverno.io/) or [OPA
 Gatekeeper](https://open-policy-agent.github.io/gatekeeper/) can verify these

@@ -2,7 +2,7 @@
 
 The basic Matrix computes a full Cartesian product of all parameters. But
 sometimes you need to add specific extra combinations that are not part of the
-regular product -- for example, enabling a debug flag only for a particular
+regular product - for example, enabling a debug flag only for a particular
 platform/version pair. The `matrix.include` field lets you do this.
 
 ## Create an enhanced Task
@@ -136,5 +136,5 @@ tkn pipelinerun describe --last
 ```
 
 The combination of `matrix.params` and `matrix.include` gives you precise control
-over your test matrix -- use the Cartesian product for broad coverage and include
+over your test matrix - use the Cartesian product for broad coverage and include
 for targeted additions or overrides.

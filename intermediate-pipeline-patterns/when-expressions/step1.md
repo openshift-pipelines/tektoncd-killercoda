@@ -2,7 +2,7 @@
 
 A When Expression is specified in the `when` field of a Pipeline Task. It
 evaluates an `input` against a list of `values` using an `operator` (`in` or
-`notin`). If the condition is not met, the Task is **skipped** -- it does not
+`notin`). If the condition is not met, the Task is **skipped** - it does not
 run, but the Pipeline continues.
 
 ## Create helper Tasks
@@ -87,7 +87,7 @@ The `when` block on the `deploy` Task means: "Only run this Task if the
 tkn pipeline start conditional-demo -p deploy="false" --showlog
 ```
 
-Notice that the `deploy` Task is **skipped** -- only the `build` Task runs. The
+Notice that the `deploy` Task is **skipped** - only the `build` Task runs. The
 Pipeline still completes successfully because a skipped Task is not a failure.
 
 ## Run with deployment enabled

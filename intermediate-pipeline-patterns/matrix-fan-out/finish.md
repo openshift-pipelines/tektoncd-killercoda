@@ -7,7 +7,7 @@ multiple parameter combinations for efficient multi-platform testing.
 
 - **Declaring a Matrix** with `matrix.params` to create a Cartesian product of
   parameter values
-- **Fan-out behavior** -- Tekton automatically creates one TaskRun per combination
+- **Fan-out behavior** - Tekton automatically creates one TaskRun per combination
 - **Inspecting fan-out TaskRuns** using labels, `kubectl`, and `tkn` commands
 - **Using matrix.include** to add specific extra combinations or override values
   in existing combinations
@@ -19,7 +19,7 @@ multiple parameter combinations for efficient multi-platform testing.
 - Use **matrix.include** to add rows or modify existing combinations
 - Fan-out TaskRuns are labeled with `tekton.dev/pipelineTask` for easy querying
 - Matrix is a **beta feature** in Tekton Pipelines v1.9.0 and later
-- Be mindful of cluster resources -- large matrices produce many parallel TaskRuns
+- Be mindful of cluster resources - large matrices produce many parallel TaskRuns
 
 ## Real-world use cases
 
@@ -30,6 +30,6 @@ multiple parameter combinations for efficient multi-platform testing.
 
 ## What's next
 
-- [When Expressions](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/when-expressions) -- Conditionally skip or run Tasks
-- [Finally Tasks](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/finally-tasks) -- Guaranteed cleanup regardless of Pipeline outcome
-- [Matrix documentation](https://tekton.dev/docs/pipelines/matrix/) -- Full reference for Matrix configuration
+- [When Expressions](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/when-expressions) - Conditionally skip or run Tasks
+- [Finally Tasks](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/finally-tasks) - Guaranteed cleanup regardless of Pipeline outcome
+- [Matrix documentation](https://tekton.dev/docs/pipelines/matrix/) - Full reference for Matrix configuration

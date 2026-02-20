@@ -6,6 +6,11 @@
       "title": "Tekton + ArgoCD: GitOps CI/CD",
       "description": "Learn how to build a GitOps CI/CD pipeline with Tekton and ArgoCD!",
       "path": "tekton-argocd-gitops"
+    },
+    {
+      "title": "Tekton + Vault: Pipeline Secrets Management",
+      "description": "Integrate HashiCorp Vault with Tekton Pipelines for secure secrets injection!",
+      "path": "tekton-vault-secrets"
     }
   ]
 }

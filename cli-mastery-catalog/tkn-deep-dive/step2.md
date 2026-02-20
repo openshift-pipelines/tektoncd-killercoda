@@ -52,7 +52,7 @@ Now follow the logs of the most recent run:
 tkn pipelinerun logs --last -f
 ```
 
-The `-f` (follow) flag works like `tail -f` -- it streams new log lines as they
+The `-f` (follow) flag works like `tail -f` - it streams new log lines as they
 appear and exits when the run completes.
 
 ## List and manage runs

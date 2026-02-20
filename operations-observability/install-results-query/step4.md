@@ -60,13 +60,13 @@ kubectl get results.results.tekton.dev -n default --no-headers | wc -l
 
 With Tekton Results installed:
 
-1. **No code changes needed** -- the watcher automatically captures every
+1. **No code changes needed** - the watcher automatically captures every
    completed run
-2. **Data survives pruning** -- even if you delete PipelineRuns from the
+2. **Data survives pruning** - even if you delete PipelineRuns from the
    cluster, the data remains in PostgreSQL
-3. **Two access methods** -- use the REST API for programmatic access, or
+3. **Two access methods** - use the REST API for programmatic access, or
    `kubectl` for ad-hoc browsing
-4. **Filter and query** -- the API supports CEL-based filtering for
+4. **Filter and query** - the API supports CEL-based filtering for
    sophisticated queries
 
 This makes Tekton Results essential for any production Tekton deployment

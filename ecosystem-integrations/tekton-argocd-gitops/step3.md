@@ -41,7 +41,7 @@ git pull origin master
 grep "image:" manifests/deployment.yaml
 ```
 
-You should see `image: nginx:1.25` -- the tag was updated by Tekton.
+You should see `image: nginx:1.25` - the tag was updated by Tekton.
 
 ## Trigger ArgoCD sync
 

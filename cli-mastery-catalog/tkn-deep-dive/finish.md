@@ -30,6 +30,6 @@ Tekton resources efficiently from the command line.
 
 ## What's next
 
-- [Remote Resolvers](https://killercoda.com/tekton/course/cli-mastery-catalog/remote-resolvers) -- Fetch Tasks from remote sources without pre-installing them
-- [Debugging Failed Pipelines with tkn](https://killercoda.com/tekton/course/cli-mastery-catalog/debugging-with-tkn) -- Diagnose and fix failed PipelineRuns
-- [tkn CLI reference](https://tekton.dev/docs/cli/) -- Full documentation for all tkn commands
+- [Remote Resolvers](https://killercoda.com/tekton/course/cli-mastery-catalog/remote-resolvers) - Fetch Tasks from remote sources without pre-installing them
+- [Debugging Failed Pipelines with tkn](https://killercoda.com/tekton/course/cli-mastery-catalog/debugging-with-tkn) - Diagnose and fix failed PipelineRuns
+- [tkn CLI reference](https://tekton.dev/docs/cli/) - Full documentation for all tkn commands

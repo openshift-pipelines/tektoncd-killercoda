@@ -69,7 +69,7 @@ kubectl get configmap feature-flags -n tekton-pipelines -o yaml | grep enable-ap
 ```
 
 The value should match what you set in TektonConfig. The Operator keeps these
-in sync -- if someone manually edits the ConfigMap, the Operator will revert it
+in sync - if someone manually edits the ConfigMap, the Operator will revert it
 to match the TektonConfig specification.
 
 ## View all configurable fields

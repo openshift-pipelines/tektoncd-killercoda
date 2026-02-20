@@ -88,7 +88,7 @@ tkn pipeline start combined-when-demo \
 ```
 
 Even though approval is `"true"`, the environment is `"staging"`, not
-`"production"` -- so the deploy Task is skipped.
+`"production"` - so the deploy Task is skipped.
 
 ## Test: production with approval (runs)
 
@@ -102,7 +102,7 @@ Both conditions are met, so the deploy Task runs.
 ## Important: Skipped Tasks are not failures
 
 Notice that in all cases where a Task was skipped, the overall Pipeline still
-**Succeeded**. A skipped Task (due to When Expression) is not a failure -- it
+**Succeeded**. A skipped Task (due to When Expression) is not a failure - it
 simply did not execute. This is different from a Task that runs and fails.
 
 Verify the latest PipelineRun succeeded:
@@ -111,5 +111,5 @@ Verify the latest PipelineRun succeeded:
 tkn pipelinerun describe --last
 ```
 
-Look at the **Status** section -- skipped Tasks are listed separately from
+Look at the **Status** section - skipped Tasks are listed separately from
 failed Tasks.

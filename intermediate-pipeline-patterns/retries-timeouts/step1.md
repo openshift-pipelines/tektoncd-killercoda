@@ -1,6 +1,6 @@
 # Configure Task-level retries
 
-In CI/CD, some tasks are inherently flaky -- a test might fail due to a
+In CI/CD, some tasks are inherently flaky - a test might fail due to a
 transient network issue, or a deployment might fail because a pod took too long
 to start. Tekton lets you add **retries** to a PipelineTask so it will
 automatically re-run when it fails.
@@ -52,7 +52,7 @@ spec:
 EOF
 ```
 
-The key line is `retries: 3` -- this tells Tekton: "If this Task fails, retry
+The key line is `retries: 3` - this tells Tekton: "If this Task fails, retry
 it up to 3 more times before marking the Pipeline as failed."
 
 ## Run the Pipeline
@@ -88,10 +88,10 @@ kubectl get pipelinerun --sort-by=.metadata.creationTimestamp \
 
 Key things to understand about retries:
 
-- **Retries create new TaskRun pods** -- each retry is a fresh execution
-- **All Steps re-run** -- there is no partial retry; the entire Task re-runs
-- **Retries only happen on failure** -- if a Task succeeds, no retry occurs
-- **The Pipeline succeeds if any retry succeeds** -- even if the first 3
+- **Retries create new TaskRun pods** - each retry is a fresh execution
+- **All Steps re-run** - there is no partial retry; the entire Task re-runs
+- **Retries only happen on failure** - if a Task succeeds, no retry occurs
+- **The Pipeline succeeds if any retry succeeds** - even if the first 3
   attempts fail, if the 4th succeeds, the Pipeline continues normally
 
 Run the Pipeline a second time to observe potentially different retry behavior:

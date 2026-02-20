@@ -2,9 +2,9 @@
 
 In modern Kubernetes-native CI/CD, there is a clean separation of concerns:
 
-- **Tekton** handles Continuous Integration (CI) -- building, testing, and
+- **Tekton** handles Continuous Integration (CI) - building, testing, and
   producing artifacts.
-- **ArgoCD** handles Continuous Deployment (CD) -- deploying applications to
+- **ArgoCD** handles Continuous Deployment (CD) - deploying applications to
   Kubernetes using the GitOps pattern.
 
 This is the industry-standard approach. Tekton runs pipelines that update

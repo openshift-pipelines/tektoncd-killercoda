@@ -3,8 +3,8 @@
 While retries handle intermittent failures, **timeouts** protect your Pipeline
 from Tasks that hang indefinitely. You can set timeouts at multiple levels:
 
-- **PipelineTask timeout** -- limits how long a single Task can run
-- **PipelineRun timeouts** -- limits the overall Pipeline execution time
+- **PipelineTask timeout** - limits how long a single Task can run
+- **PipelineRun timeouts** - limits the overall Pipeline execution time
 
 ## Create a slow Task
 
@@ -87,15 +87,15 @@ Check the result:
 tkn pipelinerun describe --last
 ```
 
-Look for the **Status** of `slow-step` -- it should show as `Failed` with a
+Look for the **Status** of `slow-step` - it should show as `Failed` with a
 reason related to the timeout.
 
 ## Use PipelineRun-level timeouts
 
 You can also set timeouts on the PipelineRun itself. This controls:
-- `spec.timeouts.pipeline` -- total time for the entire Pipeline
-- `spec.timeouts.tasks` -- total time allowed for all non-finally Tasks
-- `spec.timeouts.finally` -- total time allowed for finally Tasks
+- `spec.timeouts.pipeline` - total time for the entire Pipeline
+- `spec.timeouts.tasks` - total time allowed for all non-finally Tasks
+- `spec.timeouts.finally` - total time allowed for finally Tasks
 
 Create and run a PipelineRun with Pipeline-level timeouts:
 

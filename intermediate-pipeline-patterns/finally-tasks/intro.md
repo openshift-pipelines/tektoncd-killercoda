@@ -1,11 +1,11 @@
-# Finally Tasks -- Guaranteed Cleanup and Notifications
+# Finally Tasks - Guaranteed Cleanup and Notifications
 
 In programming, a `try/finally` block ensures that cleanup code runs regardless
 of whether the main code succeeded or failed. Tekton Pipelines have the same
 concept: **Finally Tasks**.
 
 The `finally` section of a Pipeline defines Tasks that **always run** after all
-regular Tasks have completed -- whether they succeeded, failed, or were skipped.
+regular Tasks have completed - whether they succeeded, failed, or were skipped.
 This makes Finally Tasks ideal for:
 
 - **Cleaning up resources** (deleting temporary namespaces, removing test data)

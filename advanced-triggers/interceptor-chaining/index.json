@@ -1,0 +1,35 @@
+{
+  "title": "Interceptor Chaining: Filter, Transform, and Route Events",
+  "description": "Learn how to chain multiple interceptors for production event processing in Tekton Triggers!",
+  "difficulty": "Advanced",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Understand interceptor ordering",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Chain GitHub and CEL interceptors",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Production pattern: validate, filter, transform, enrich",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

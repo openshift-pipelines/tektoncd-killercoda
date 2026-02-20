@@ -11,7 +11,7 @@ In this tutorial, you learned:
 - How to connect **Tekton (CI) to ArgoCD (CD)** for end-to-end automation
 - How to enable **auto-sync and health checks** for production workflows
 
-This pattern -- Tekton for CI, ArgoCD for CD -- is widely used in production
+This pattern - Tekton for CI, ArgoCD for CD - is widely used in production
 Kubernetes environments. It provides a clean separation of concerns, an audit
 trail through Git, and reliable automated deployments.
 

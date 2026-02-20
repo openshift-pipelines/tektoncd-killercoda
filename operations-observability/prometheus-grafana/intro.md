@@ -1,6 +1,6 @@
 # Tekton + Prometheus + Grafana: Observability Dashboard
 
-Running CI/CD pipelines in production requires **observability** -- you need
+Running CI/CD pipelines in production requires **observability** - you need
 to know how many pipelines are running, how long they take, and whether they
 are succeeding or failing. Tekton Pipelines has built-in support for
 Prometheus metrics, making it straightforward to build monitoring dashboards.

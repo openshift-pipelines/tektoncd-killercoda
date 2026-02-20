@@ -3,7 +3,7 @@
 The **Hub Resolver** fetches Task and Pipeline definitions from
 [Artifact Hub](https://artifacthub.io/), the community catalog for Tekton
 resources. Instead of downloading a Task YAML and applying it to your cluster,
-you simply reference it by name, version, and catalog -- the resolver does the
+you simply reference it by name, version, and catalog - the resolver does the
 rest at runtime.
 
 ## Create a TaskRun with the Hub Resolver
@@ -77,7 +77,7 @@ tkn taskrun describe hub-resolver-demo
 ```
 
 In the output, you can see that Tekton resolved the Task from Artifact Hub at
-runtime. The `git-clone` task was never installed as a local resource -- it was
+runtime. The `git-clone` task was never installed as a local resource - it was
 fetched, resolved, and executed entirely through the Hub Resolver.
 
 ## Verify the Task was not installed locally
@@ -88,5 +88,5 @@ Confirm that no `git-clone` Task exists in the default namespace:
 kubectl get task git-clone 2>&1 || echo "As expected: git-clone Task is not installed locally"
 ```
 
-This is the key benefit of resolvers -- your cluster stays clean while you
+This is the key benefit of resolvers - your cluster stays clean while you
 leverage the entire community catalog.

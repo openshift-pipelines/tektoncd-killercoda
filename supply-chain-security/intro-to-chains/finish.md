@@ -21,11 +21,11 @@ You have learned how to use Tekton Chains for automatic TaskRun signing!
 
 ## What is next
 
-- [Build, Sign, and Verify Container Images](../image-signing/) -- Learn how
+- [Build, Sign, and Verify Container Images](../image-signing/) - Learn how
   Chains signs OCI container images, not just TaskRuns
-- [SLSA Provenance Deep Dive](https://slsa.dev/) -- Understand SLSA levels
+- [SLSA Provenance Deep Dive](https://slsa.dev/) - Understand SLSA levels
   and provenance requirements
-- [Tekton Chains documentation](https://tekton.dev/docs/chains/) -- Full
+- [Tekton Chains documentation](https://tekton.dev/docs/chains/) - Full
   reference for Chains configuration
-- [Sigstore documentation](https://docs.sigstore.dev/) -- The broader
+- [Sigstore documentation](https://docs.sigstore.dev/) - The broader
   ecosystem for software supply chain security

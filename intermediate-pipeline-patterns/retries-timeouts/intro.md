@@ -4,9 +4,9 @@ Real-world CI/CD pipelines must deal with failure. Network calls time out,
 flaky tests fail intermittently, and external services go down. Tekton provides
 built-in mechanisms to handle these situations gracefully:
 
-- **Retries** -- automatically re-run a Task when it fails
-- **Timeouts** -- set time limits at the Task and Pipeline level
-- **Finally Tasks** -- run cleanup or notification Tasks regardless of Pipeline outcome
+- **Retries** - automatically re-run a Task when it fails
+- **Timeouts** - set time limits at the Task and Pipeline level
+- **Finally Tasks** - run cleanup or notification Tasks regardless of Pipeline outcome
 
 In this tutorial, you will learn:
 

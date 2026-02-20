@@ -43,13 +43,13 @@ EOF
 
 There are three key resolver parameters to understand:
 
-1. **`url`** (in the resolver params) -- The Git repository URL. This can be any
+1. **`url`** (in the resolver params) - The Git repository URL. This can be any
    public or private Git repository. For private repos, you would configure
    authentication via a Kubernetes Secret.
-2. **`revision`** -- The Git branch, tag, or commit SHA to use. Using a tag or
+2. **`revision`** - The Git branch, tag, or commit SHA to use. Using a tag or
    SHA ensures reproducible builds; using a branch name like `main` always
    fetches the latest version.
-3. **`pathInRepo`** -- The file path within the repository that contains the
+3. **`pathInRepo`** - The file path within the repository that contains the
    Task or Pipeline YAML definition.
 
 The TaskRun also passes runtime parameters (`url` and `options`) to the resolved

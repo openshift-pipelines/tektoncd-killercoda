@@ -1,6 +1,6 @@
 # Verify the signature and inspect the payload
 
-The real value of signing is **verification** -- anyone with the public key can
+The real value of signing is **verification** - anyone with the public key can
 confirm that a TaskRun was signed by your CI/CD system and has not been
 tampered with.
 
@@ -41,8 +41,8 @@ cat /tmp/payload.json
 
 You should see a JSON document in the **SLSA provenance** format containing:
 
-- **`_type`**: `https://in-toto.io/Statement/v0.1` -- the in-toto attestation format
-- **`predicateType`**: `https://slsa.dev/provenance/v0.2` -- SLSA provenance
+- **`_type`**: `https://in-toto.io/Statement/v0.1` - the in-toto attestation format
+- **`predicateType`**: `https://slsa.dev/provenance/v0.2` - SLSA provenance
 - **`subject`**: what was built (the TaskRun)
 - **`predicate.buildType`**: `tekton.dev/v1beta1/TaskRun`
 - **`predicate.invocation`**: parameters and configuration used

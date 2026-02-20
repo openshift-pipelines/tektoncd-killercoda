@@ -52,11 +52,11 @@ tektoncd-killercoda/
 ```
 
 Each tutorial directory contains:
-- `index.json` — Scenario configuration (title, steps, backend image)
-- `intro.md` — Introduction page
-- `step[N].md` — Tutorial steps
-- `finish.md` — Completion page
-- `scripts/` — Install (background) and verification scripts
+- `index.json` - Scenario configuration (title, steps, backend image)
+- `intro.md` - Introduction page
+- `step[N].md` - Tutorial steps
+- `finish.md` - Completion page
+- `scripts/` - Install (background) and verification scripts
 
 ### Testing Locally
 
@@ -92,4 +92,4 @@ with additional tutorials covering Workspaces, Triggers, and CI/CD workflows.
 
 ## License
 
-This project is licensed under the Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.

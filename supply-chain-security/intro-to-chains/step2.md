@@ -49,7 +49,7 @@ signs. Let's check:
 kubectl get taskrun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.annotations.chains\.tekton\.dev/signed}'
 ```
 
-You should see `true` -- this means Chains successfully signed the TaskRun.
+You should see `true` - this means Chains successfully signed the TaskRun.
 
 ## Inspect all Chains annotations
 
@@ -73,4 +73,4 @@ status and the signature itself.
 5. Chains stored the signature as an **annotation** on the TaskRun
 6. Chains marked the TaskRun with `chains.tekton.dev/signed=true`
 
-All of this happened automatically -- no manual intervention required.
+All of this happened automatically - no manual intervention required.

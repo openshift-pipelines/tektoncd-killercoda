@@ -29,11 +29,11 @@ Click on the "Traffic / Ports" tab at the top of the terminal, then select
 port **8080** to open the Tekton Dashboard in your browser.
 
 You should see the Dashboard homepage showing an overview of your Tekton
-resources. At this point, there won't be any Tasks, Pipelines, or runs — we'll
+resources. At this point, there won't be any Tasks, Pipelines, or runs - we'll
 create those in the next steps.
 
 Take a moment to explore the left sidebar navigation:
-- **TaskRuns** — View and manage TaskRuns
-- **PipelineRuns** — View and manage PipelineRuns
-- **Tasks** — View installed Tasks
-- **Pipelines** — View installed Pipelines
+- **TaskRuns** - View and manage TaskRuns
+- **PipelineRuns** - View and manage PipelineRuns
+- **Tasks** - View installed Tasks
+- **Pipelines** - View installed Pipelines

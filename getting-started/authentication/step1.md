@@ -34,7 +34,7 @@ stringData:
 EOF
 ```
 
-The `git-0` suffix is an index — you can add multiple Git credentials on a
+The `git-0` suffix is an index - you can add multiple Git credentials on a
 single Secret:
 
 - `tekton.dev/git-0: https://github.com`

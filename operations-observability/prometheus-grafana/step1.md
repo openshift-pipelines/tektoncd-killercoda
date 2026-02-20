@@ -2,7 +2,7 @@
 
 The Tekton Pipelines controller exposes Prometheus metrics at port 9090 on
 the `/metrics` endpoint. These metrics are available without any additional
-configuration -- they are built into Tekton.
+configuration - they are built into Tekton.
 
 ## View the metrics endpoint
 
@@ -84,7 +84,7 @@ Wait for all runs to finish:
 sleep 15
 ```
 
-Now check the metrics again -- you should see non-zero counts:
+Now check the metrics again - you should see non-zero counts:
 
 ```bash
 curl -s http://localhost:9097/metrics | grep "tekton_pipelines_controller_taskrun_count"

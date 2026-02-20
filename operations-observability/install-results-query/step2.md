@@ -5,7 +5,7 @@ that the Results watcher captured the execution data.
 
 ## Create a simple Pipeline
 
-Create a Pipeline with two Tasks -- one that generates a greeting and one
+Create a Pipeline with two Tasks - one that generates a greeting and one
 that echoes a timestamp:
 
 ```bash

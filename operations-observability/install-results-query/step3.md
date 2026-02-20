@@ -30,14 +30,14 @@ curl -sk https://localhost:8080/apis/results.tekton.dev/v1alpha2/parents/default
 
 The response contains a `results` array. Each entry has:
 
-- **name** -- a unique identifier in the format `namespace/result-uid`
-- **uid** -- the result UUID
-- **createTime** and **updateTime** -- timestamps
-- **annotations** and **summary** -- metadata about the run
+- **name** - a unique identifier in the format `namespace/result-uid`
+- **uid** - the result UUID
+- **createTime** and **updateTime** - timestamps
+- **annotations** and **summary** - metadata about the run
 
 ## List Records within a Result
 
-Each Result contains **Records** -- the actual PipelineRun and TaskRun data.
+Each Result contains **Records** - the actual PipelineRun and TaskRun data.
 Let's list the records. First, grab the name of the first result:
 
 ```bash

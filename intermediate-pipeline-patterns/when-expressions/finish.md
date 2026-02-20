@@ -21,5 +21,5 @@ Tekton Pipelines.
 
 ## What's next
 
-- [Finally Tasks](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/finally-tasks) -- Add guaranteed cleanup and notification Tasks
-- [When Expressions documentation](https://tekton.dev/docs/pipelines/pipelines/#guard-task-execution-using-when-expressions) -- Full reference
+- [Finally Tasks](https://killercoda.com/tekton/course/intermediate-pipeline-patterns/finally-tasks) - Add guaranteed cleanup and notification Tasks
+- [When Expressions documentation](https://tekton.dev/docs/pipelines/pipelines/#guard-task-execution-using-when-expressions) - Full reference
