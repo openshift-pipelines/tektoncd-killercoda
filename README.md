@@ -7,10 +7,21 @@ Interactive tutorials for learning [Tekton](https://tekton.dev), hosted on
 
 ### Getting Started
 
-| Tutorial | Description | Duration |
-|----------|-------------|----------|
-| [Basic Pipeline](https://killercoda.com/tekton/course/getting-started/basic-pipeline) | Create Tasks, build a Pipeline, and run it | 30 min |
-| [Dashboard](https://killercoda.com/tekton/course/getting-started/dashboard) | Install and use the Tekton Dashboard UI | 30 min |
+| Tutorial | Description | Difficulty | Duration |
+|----------|-------------|------------|----------|
+| [Basic Pipeline](https://killercoda.com/tekton/course/getting-started/basic-pipeline) | Create Tasks, build a Pipeline, and run it | Beginner | 30 min |
+| [Dashboard](https://killercoda.com/tekton/course/getting-started/dashboard) | Install and use the Tekton Dashboard UI | Beginner | 30 min |
+| [Workspaces](https://killercoda.com/tekton/course/getting-started/workspaces) | Share data between Tasks using Workspaces | Beginner | 25 min |
+| [Triggers](https://killercoda.com/tekton/course/getting-started/triggers) | Automatically trigger Pipelines with events | Intermediate | 30 min |
+| [Build and Deploy](https://killercoda.com/tekton/course/getting-started/build-and-deploy) | Build a real CI/CD pipeline that clones, builds, and deploys | Intermediate | 35 min |
+
+### Recommended Learning Path
+
+1. **Basic Pipeline** - Learn the fundamentals: Tasks, Pipelines, PipelineRuns
+2. **Dashboard** - Visualize and manage your pipelines through a web UI
+3. **Workspaces** - Share data between Tasks (essential for real CI/CD)
+4. **Triggers** - Automate pipeline execution with events
+5. **Build and Deploy** - Put it all together in a realistic CI/CD workflow
 
 ## Contributing
 
@@ -28,31 +39,22 @@ tektoncd-killercoda/
 ├── structure.json                    # Top-level course organization
 ├── getting-started/
 │   ├── structure.json                # Course section organization
-│   ├── basic-pipeline/              # Basic Pipeline tutorial
-│   │   ├── index.json               # Scenario configuration
-│   │   ├── intro.md                 # Introduction page
-│   │   ├── step[1-3].md             # Tutorial steps
-│   │   ├── finish.md                # Completion page
-│   │   └── scripts/                 # Install and verification scripts
-│   └── dashboard/                   # Dashboard tutorial
-│       ├── index.json
-│       ├── intro.md
-│       ├── step[1-3].md
-│       ├── finish.md
-│       └── scripts/
+│   ├── basic-pipeline/              # Tasks and Pipelines basics
+│   ├── dashboard/                   # Tekton Dashboard UI
+│   ├── workspaces/                  # Sharing data between Tasks
+│   ├── triggers/                    # Event-driven pipeline automation
+│   └── build-and-deploy/           # Realistic CI/CD workflow
 └── .github/
     └── workflows/
         └── validate.yaml            # CI validation
 ```
 
-### Scenario Configuration
-
-Each tutorial has an `index.json` that defines:
-- **title** and **description**: Displayed on Killercoda
-- **difficulty** and **time**: Help learners choose appropriate tutorials
-- **details.intro.background**: Script that runs when the scenario starts (e.g., installing Tekton)
-- **details.steps**: Sequential tutorial steps with optional verification scripts
-- **backend.imageid**: The Killercoda environment (`kubernetes-kubeadm-1node`)
+Each tutorial directory contains:
+- `index.json` — Scenario configuration (title, steps, backend image)
+- `intro.md` — Introduction page
+- `step[N].md` — Tutorial steps
+- `finish.md` — Completion page
+- `scripts/` — Install (background) and verification scripts
 
 ### Testing Locally
 
@@ -83,7 +85,8 @@ platform and hosted in the [tektoncd/website](https://github.com/tektoncd/websit
 repository. They were removed in May 2022
 ([tektoncd/website#376](https://github.com/tektoncd/website/pull/376)) when
 O'Reilly shut down the Katacoda platform. This repository restores and
-modernizes those tutorials for the [Killercoda](https://killercoda.com) platform.
+modernizes those tutorials for the [Killercoda](https://killercoda.com) platform,
+with additional tutorials covering Workspaces, Triggers, and CI/CD workflows.
 
 ## License
 

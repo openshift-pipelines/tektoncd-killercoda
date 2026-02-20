@@ -1,6 +1,6 @@
 {
   "title": "Getting Started",
-  "description": "Learn the basics of Tekton Pipelines and Dashboard",
+  "description": "Learn the basics of Tekton Pipelines, Dashboard, Workspaces, Triggers, and CI/CD",
   "items": [
     {
       "title": "Tekton Basic Pipeline",
@@ -11,6 +11,21 @@
       "title": "Tekton Dashboard",
       "description": "Learn how to use the Tekton Dashboard to monitor and manage your pipelines!",
       "path": "dashboard"
+    },
+    {
+      "title": "Tekton Workspaces",
+      "description": "Learn how to share data between Tasks using Workspaces!",
+      "path": "workspaces"
+    },
+    {
+      "title": "Tekton Triggers",
+      "description": "Learn how to automatically trigger Pipelines with events!",
+      "path": "triggers"
+    },
+    {
+      "title": "Build and Deploy an Application",
+      "description": "Learn how to build a real CI/CD pipeline that clones, builds, and deploys an app!",
+      "path": "build-and-deploy"
     }
   ]
 }
