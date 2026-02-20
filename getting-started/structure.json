@@ -23,6 +23,11 @@
       "path": "triggers"
     },
     {
+      "title": "Tekton Authentication",
+      "description": "Learn how to use Secrets and ServiceAccounts for private repos and registries!",
+      "path": "authentication"
+    },
+    {
       "title": "Build and Deploy an Application",
       "description": "Learn how to build a real CI/CD pipeline that clones, builds, and deploys an app!",
       "path": "build-and-deploy"

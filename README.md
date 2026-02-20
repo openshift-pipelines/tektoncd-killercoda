@@ -13,6 +13,7 @@ Interactive tutorials for learning [Tekton](https://tekton.dev), hosted on
 | [Dashboard](https://killercoda.com/tekton/course/getting-started/dashboard) | Install and use the Tekton Dashboard UI | Beginner | 30 min |
 | [Workspaces](https://killercoda.com/tekton/course/getting-started/workspaces) | Share data between Tasks using Workspaces | Beginner | 25 min |
 | [Triggers](https://killercoda.com/tekton/course/getting-started/triggers) | Automatically trigger Pipelines with events | Intermediate | 30 min |
+| [Authentication](https://killercoda.com/tekton/course/getting-started/authentication) | Use Secrets and ServiceAccounts for private repos and registries | Intermediate | 25 min |
 | [Build and Deploy](https://killercoda.com/tekton/course/getting-started/build-and-deploy) | Build a real CI/CD pipeline that clones, builds, and deploys | Intermediate | 35 min |
 
 ### Recommended Learning Path
@@ -21,7 +22,8 @@ Interactive tutorials for learning [Tekton](https://tekton.dev), hosted on
 2. **Dashboard** - Visualize and manage your pipelines through a web UI
 3. **Workspaces** - Share data between Tasks (essential for real CI/CD)
 4. **Triggers** - Automate pipeline execution with events
-5. **Build and Deploy** - Put it all together in a realistic CI/CD workflow
+5. **Authentication** - Securely access private repos and registries
+6. **Build and Deploy** - Put it all together in a realistic CI/CD workflow
 
 ## Contributing
 

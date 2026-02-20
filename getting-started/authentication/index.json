@@ -1,0 +1,35 @@
+{
+  "title": "Tekton Authentication",
+  "description": "Learn how to use Secrets and ServiceAccounts for private repos and registries!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Authenticate with a private Git repository",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Authenticate with a container registry",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Use authenticated ServiceAccounts in Pipelines",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
