@@ -3,35 +3,66 @@
 When your pipeline builds container images, it needs credentials to push them
 to a container registry (Docker Hub, quay.io, GitHub Container Registry, etc.).
 
-## Create a registry authentication Secret
+Tekton supports two approaches for Docker registry authentication:
 
-For container registries, Tekton uses the `kubernetes.io/dockerconfigjson`
-Secret type (created with `kubectl create secret docker-registry`):
+| Secret Type | Use Case |
+|-------------|----------|
+| `kubernetes.io/basic-auth` with `tekton.dev/docker-*` annotation | Username + password, Tekton generates `~/.docker/config.json` |
+| `kubernetes.io/dockerconfigjson` | Use an existing Docker config directly |
+
+## Option 1: basic-auth with Docker annotation
+
+This approach is symmetric with Git auth — use a `basic-auth` Secret but with
+a `tekton.dev/docker-*` annotation instead of `tekton.dev/git-*`:
 
 ```bash
-kubectl create secret docker-registry registry-credentials \
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: registry-credentials
+  annotations:
+    tekton.dev/docker-0: https://index.docker.io/v1/
+type: kubernetes.io/basic-auth
+stringData:
+  username: my-docker-user
+  password: my-docker-password
+EOF
+```
+
+For other registries, change the annotation value:
+- **quay.io**: `tekton.dev/docker-0: https://quay.io`
+- **GitHub Container Registry**: `tekton.dev/docker-0: https://ghcr.io`
+- **Google Container Registry**: `tekton.dev/docker-0: https://gcr.io`
+
+## Option 2: dockerconfigjson Secret
+
+If you already have a Docker config file, you can use it directly:
+
+```bash
+kubectl create secret docker-registry registry-credentials-v2 \
   --docker-server=https://index.docker.io/v1/ \
   --docker-username=my-docker-user \
   --docker-password=my-docker-password
 ```
 
-For other registries, change the `--docker-server`:
-- **quay.io**: `--docker-server=https://quay.io`
-- **GitHub Container Registry**: `--docker-server=https://ghcr.io`
-- **Google Container Registry**: `--docker-server=https://gcr.io`
+This creates a `kubernetes.io/dockerconfigjson` type Secret.
 
-## Create a ServiceAccount with both Secrets
+## Create a ServiceAccount with both Git and registry Secrets
 
 In a real pipeline, you often need both Git and registry credentials. Create a
 ServiceAccount that has both:
 
 ```bash
-kubectl create serviceaccount build-bot
-```
-
-```bash
-kubectl patch serviceaccount build-bot \
-  -p '{"secrets": [{"name": "git-credentials"}, {"name": "registry-credentials"}]}'
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-bot
+secrets:
+  - name: git-credentials
+  - name: registry-credentials
+EOF
 ```
 
 ## Verify the setup
@@ -44,15 +75,23 @@ You should see both `git-credentials` and `registry-credentials` listed.
 
 ## How registry auth works
 
-When a Task uses tools like Buildah or Kaniko to push images:
+When a Task runs with this ServiceAccount, Tekton creates a
+`~/.docker/config.json` file:
 
-1. Tekton reads the `docker-registry` type Secrets from the ServiceAccount
-2. It creates a `~/.docker/config.json` file with the registry credentials
-3. Build tools automatically read this config when pushing images
+```json
+{
+  "auths": {
+    "https://index.docker.io/v1/": {
+      "auth": "<base64(username:password)>"
+    }
+  }
+}
+```
 
-## Test with a simple Task
+Build tools like Buildah, Kaniko, and `docker push` automatically read this
+config when pushing images.
 
-Let's verify the credentials are injected correctly:
+## Test that credentials are injected
 
 ```bash
 cat <<EOF | kubectl create -f -
@@ -69,21 +108,21 @@ spec:
         script: |
           #!/usr/bin/env bash
           echo "=== Checking Git credentials ==="
-          if [ -f /tekton/creds/.gitconfig ]; then
-            echo "Git credentials found!"
-            cat /tekton/creds/.gitconfig
+          if [ -f ~/.gitconfig ]; then
+            echo "~/.gitconfig found:"
+            cat ~/.gitconfig
           else
-            echo "No Git credentials file (may be in legacy location)"
+            echo "No ~/.gitconfig (credentials may still be initializing)"
           fi
           echo ""
           echo "=== Checking Docker credentials ==="
-          if [ -f /tekton/creds/.docker/config.json ]; then
-            echo "Docker credentials found!"
+          if [ -f ~/.docker/config.json ]; then
+            echo "~/.docker/config.json found!"
           else
-            echo "No Docker credentials file (may be in legacy location)"
+            echo "No ~/.docker/config.json (credentials may still be initializing)"
           fi
           echo ""
-          echo "Authentication setup verified!"
+          echo "Authentication injection verified!"
 EOF
 ```
 

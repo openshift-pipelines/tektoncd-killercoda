@@ -4,33 +4,41 @@ When your source code is in a private repository, Tekton needs credentials to
 clone it. Tekton uses Kubernetes Secrets with a special annotation to match
 credentials to Git hosts.
 
-## Create a Git authentication Secret
+## Supported Secret types for Git
 
-Tekton supports the `kubernetes.io/basic-auth` Secret type for Git
-authentication. In production, you'd use a Personal Access Token (PAT) as the
-password:
+Tekton supports two Secret types for Git authentication:
 
-```bash
-kubectl create secret generic git-credentials \
-  --type=kubernetes.io/basic-auth \
-  --from-literal=username=tekton-bot \
-  --from-literal=password=my-secret-token
-```
+| Secret Type | Use Case |
+|-------------|----------|
+| `kubernetes.io/basic-auth` | Username + password/token (HTTPS) |
+| `kubernetes.io/ssh-auth` | SSH private key |
 
-## Annotate the Secret for Tekton
+## Create a basic-auth Secret for Git
 
-Tekton needs to know which Git host this Secret is for. The annotation
-`tekton.dev/git-0` tells Tekton to use this Secret when accessing
-`https://github.com`:
+In production, you'd use a Personal Access Token (PAT) as the password.
+The `tekton.dev/git-0` annotation tells Tekton which host this Secret applies
+to:
 
 ```bash
-kubectl annotate secret git-credentials \
-  "tekton.dev/git-0=https://github.com"
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: git-credentials
+  annotations:
+    tekton.dev/git-0: https://github.com
+type: kubernetes.io/basic-auth
+stringData:
+  username: tekton-bot
+  password: my-secret-token
+EOF
 ```
 
-The `git-0` suffix is an index — you can have multiple Git credentials:
-- `tekton.dev/git-0=https://github.com`
-- `tekton.dev/git-1=https://gitlab.com`
+The `git-0` suffix is an index — you can add multiple Git credentials on a
+single Secret:
+
+- `tekton.dev/git-0: https://github.com`
+- `tekton.dev/git-1: https://gitlab.com`
 
 ## Create a ServiceAccount with the Secret
 
@@ -38,12 +46,14 @@ A ServiceAccount bundles Secrets together and is referenced by TaskRuns and
 PipelineRuns:
 
 ```bash
-kubectl create serviceaccount git-bot
-```
-
-```bash
-kubectl patch serviceaccount git-bot \
-  -p '{"secrets": [{"name": "git-credentials"}]}'
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: git-bot
+secrets:
+  - name: git-credentials
+EOF
 ```
 
 ## Verify the setup
@@ -62,6 +72,19 @@ When a TaskRun or PipelineRun uses this ServiceAccount:
 
 1. Tekton reads the Secrets attached to the ServiceAccount
 2. It checks the `tekton.dev/git-*` annotations to find matching hosts
-3. It injects the credentials as a `.gitconfig` and `.git-credentials` file
-   into the Task's Steps
+3. It creates a `~/.gitconfig` file and `~/.git-credentials` file in the
+   Step's container
 4. Git commands (like `git clone`) automatically use these credentials
+
+The generated files look like:
+
+```
+# ~/.gitconfig
+[credential]
+    helper = store
+[credential "https://github.com"]
+    username = "tekton-bot"
+
+# ~/.git-credentials
+https://tekton-bot:my-secret-token@github.com
+```
