@@ -1,0 +1,40 @@
+{
+  "title": "CEL Interceptor -- Event Filtering and Transformation",
+  "description": "Learn how to filter and transform webhook events using CEL expressions in Tekton Triggers!",
+  "difficulty": "Intermediate",
+  "time": "30 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Create a basic EventListener with CEL filter",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Test event filtering",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Transform payloads with CEL overlays",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Combine filters and overlays for production patterns",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
