@@ -10,15 +10,14 @@ while ! kubectl get nodes &>/dev/null; do
 done
 
 # Install Tekton Pipelines (latest stable release)
-kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+kubectl apply --filename https://infra.tekton.dev/tekton-releases/pipeline/latest/release.yaml
 
 # Wait for Tekton Pipelines pods to be ready
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-pipelines \
   -n tekton-pipelines --timeout=120s
 
 # Install the Tekton Dashboard in read-write mode (allows creating resources from UI)
-curl -sL https://raw.githubusercontent.com/tektoncd/dashboard/main/scripts/release-installer \
-  | bash -s -- install latest --read-write
+kubectl apply --filename https://infra.tekton.dev/tekton-releases/dashboard/latest/release-full.yaml
 
 # Wait for Dashboard pod to be ready
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-dashboard \

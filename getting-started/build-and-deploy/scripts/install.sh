@@ -10,7 +10,7 @@ while ! kubectl get nodes &>/dev/null; do
 done
 
 # Install Tekton Pipelines (latest stable release)
-kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+kubectl apply --filename https://infra.tekton.dev/tekton-releases/pipeline/latest/release.yaml
 
 # Wait for Tekton Pipelines pods to be ready
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-pipelines \
