@@ -1,0 +1,40 @@
+{
+  "title": "Build, Sign, and Verify Container Images with Chains",
+  "description": "Learn how Tekton Chains automatically signs OCI container images for production supply chain security!",
+  "difficulty": "Intermediate",
+  "time": "30 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Set up image signing keys",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Build and push a container image",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Verify Chains signed the image",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      },
+      {
+        "title": "Inspect the attestation",
+        "text": "step4.md",
+        "verify": "scripts/verify-step4.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
