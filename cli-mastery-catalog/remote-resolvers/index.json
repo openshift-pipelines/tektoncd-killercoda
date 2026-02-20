@@ -1,5 +1,5 @@
 {
-  "title": "Remote Resolvers -- Fetch Tasks Without Installing Them",
+  "title": "Remote Resolvers: Fetch Tasks Without Installing Them",
   "description": "Learn how to use Hub, Git, Cluster, and Bundle resolvers to fetch Tasks at runtime!",
   "difficulty": "Intermediate",
   "time": "25 minutes",

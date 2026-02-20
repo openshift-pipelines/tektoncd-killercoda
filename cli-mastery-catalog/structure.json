@@ -8,7 +8,7 @@
       "path": "tkn-deep-dive"
     },
     {
-      "title": "Tekton Bundles -- Package Tasks as OCI Artifacts",
+      "title": "Tekton Bundles:Package Tasks as OCI Artifacts",
       "description": "Learn how to package and distribute Tasks as OCI artifacts with Tekton Bundles!",
       "path": "tekton-bundles"
     },
@@ -18,7 +18,7 @@
       "path": "debugging-with-tkn"
     },
     {
-      "title": "Remote Resolvers -- Fetch Tasks Without Installing",
+      "title": "Remote Resolvers:Fetch Tasks Without Installing",
       "description": "Learn how to fetch Tasks from remote sources without pre-installing them!",
       "path": "remote-resolvers"
     }

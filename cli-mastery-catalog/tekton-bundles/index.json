@@ -1,5 +1,5 @@
 {
-  "title": "Tekton Bundles -- Package and Share Tasks as OCI Artifacts",
+  "title": "Tekton Bundles: Package and Share Tasks as OCI Artifacts",
   "description": "Learn how to package Tekton Tasks into OCI bundles and reference them in PipelineRuns!",
   "difficulty": "Intermediate",
   "time": "25 minutes",

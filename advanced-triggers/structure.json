@@ -3,7 +3,7 @@
   "description": "Build production event-driven pipelines with interceptors and webhooks",
   "items": [
     {
-      "title": "CEL Interceptor -- Event Filtering and Transformation",
+      "title": "CEL Interceptor: Event Filtering and Transformation",
       "description": "Learn how to filter and transform events using CEL Interceptors!",
       "path": "cel-interceptor"
     }

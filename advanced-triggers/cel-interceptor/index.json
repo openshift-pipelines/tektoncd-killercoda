@@ -1,5 +1,5 @@
 {
-  "title": "CEL Interceptor -- Event Filtering and Transformation",
+  "title": "CEL Interceptor: Event Filtering and Transformation",
   "description": "Learn how to filter and transform webhook events using CEL expressions in Tekton Triggers!",
   "difficulty": "Intermediate",
   "time": "30 minutes",

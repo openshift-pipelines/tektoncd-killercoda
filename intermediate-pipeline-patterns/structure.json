@@ -13,17 +13,17 @@
       "path": "when-expressions"
     },
     {
-      "title": "Finally Tasks -- Guaranteed Cleanup",
+      "title": "Finally Tasks:Guaranteed Cleanup",
       "description": "Learn how to use Finally Tasks for guaranteed cleanup and notifications!",
       "path": "finally-tasks"
     },
     {
-      "title": "Matrix -- Fan-Out for Multi-Platform Builds",
+      "title": "Matrix:Fan-Out for Multi-Platform Builds",
       "description": "Learn how to fan out Tasks across multiple parameters using Matrix!",
       "path": "matrix-fan-out"
     },
     {
-      "title": "StepActions -- Reusable Step Definitions",
+      "title": "StepActions:Reusable Step Definitions",
       "description": "Learn how to create reusable step definitions with StepActions!",
       "path": "step-actions"
     },
