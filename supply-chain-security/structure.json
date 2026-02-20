@@ -1,0 +1,41 @@
+{
+  "title": "Supply Chain Security",
+  "description": "Secure your CI/CD pipeline with Tekton Chains, signing, and attestation",
+  "items": [
+    {
+      "title": "Introduction to Tekton Chains",
+      "description": "Learn how Tekton Chains automatically signs and attests your builds!",
+      "path": "intro-to-chains"
+    },
+    {
+      "title": "Build, Sign, and Verify Container Images",
+      "description": "Learn how to sign container images and verify signatures with cosign!",
+      "path": "image-signing"
+    },
+    {
+      "title": "SLSA Provenance Deep Dive",
+      "description": "Learn how to generate and inspect SLSA provenance attestations!",
+      "path": "slsa-provenance"
+    },
+    {
+      "title": "Transparency Logs with Rekor",
+      "description": "Learn how to use Rekor transparency logs for build verification!",
+      "path": "transparency-logs"
+    },
+    {
+      "title": "End-to-End Secure Pipeline",
+      "description": "Build a complete secure pipeline with signing, attestation, and verification!",
+      "path": "end-to-end-secure-pipeline"
+    },
+    {
+      "title": "Signing with HashiCorp Vault KMS",
+      "description": "Learn how to use HashiCorp Vault as a KMS backend for Tekton Chains!",
+      "path": "vault-kms-signing"
+    },
+    {
+      "title": "Policy Enforcement with Kyverno",
+      "description": "Learn how to enforce supply chain policies using Kyverno!",
+      "path": "policy-enforcement-kyverno"
+    }
+  ]
+}

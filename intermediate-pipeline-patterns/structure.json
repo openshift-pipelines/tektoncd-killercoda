@@ -1,0 +1,46 @@
+{
+  "title": "Intermediate Pipeline Patterns",
+  "description": "Master advanced Tekton Pipeline features for production CI/CD",
+  "items": [
+    {
+      "title": "Task Results and Data Passing",
+      "description": "Learn how to pass data between Tasks using Results!",
+      "path": "task-results"
+    },
+    {
+      "title": "When Expressions and Conditional Logic",
+      "description": "Learn how to conditionally execute Tasks using When Expressions!",
+      "path": "when-expressions"
+    },
+    {
+      "title": "Finally Tasks -- Guaranteed Cleanup",
+      "description": "Learn how to use Finally Tasks for guaranteed cleanup and notifications!",
+      "path": "finally-tasks"
+    },
+    {
+      "title": "Matrix -- Fan-Out for Multi-Platform Builds",
+      "description": "Learn how to fan out Tasks across multiple parameters using Matrix!",
+      "path": "matrix-fan-out"
+    },
+    {
+      "title": "StepActions -- Reusable Step Definitions",
+      "description": "Learn how to create reusable step definitions with StepActions!",
+      "path": "step-actions"
+    },
+    {
+      "title": "Retries, Timeouts, and Error Handling",
+      "description": "Learn how to handle failures with retries, timeouts, and error strategies!",
+      "path": "retries-timeouts"
+    },
+    {
+      "title": "Object and Array Params/Results",
+      "description": "Learn how to use object and array types for complex data passing!",
+      "path": "object-array-params"
+    },
+    {
+      "title": "Pipelines in Pipelines",
+      "description": "Learn how to compose Pipelines by referencing other Pipelines as Tasks!",
+      "path": "pipelines-in-pipelines"
+    }
+  ]
+}

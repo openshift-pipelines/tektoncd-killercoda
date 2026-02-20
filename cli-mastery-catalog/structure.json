@@ -1,0 +1,36 @@
+{
+  "title": "CLI Mastery and Catalog",
+  "description": "Master the tkn CLI, Tekton Bundles, and catalog discovery",
+  "items": [
+    {
+      "title": "tkn CLI Deep Dive",
+      "description": "Learn advanced tkn CLI commands for managing Tekton resources!",
+      "path": "tkn-deep-dive"
+    },
+    {
+      "title": "Tekton Bundles -- Package Tasks as OCI Artifacts",
+      "description": "Learn how to package and distribute Tasks as OCI artifacts with Tekton Bundles!",
+      "path": "tekton-bundles"
+    },
+    {
+      "title": "Debugging Failed Pipelines with tkn",
+      "description": "Learn how to diagnose and debug failed PipelineRuns using the tkn CLI!",
+      "path": "debugging-with-tkn"
+    },
+    {
+      "title": "Remote Resolvers -- Fetch Tasks Without Installing",
+      "description": "Learn how to fetch Tasks from remote sources without pre-installing them!",
+      "path": "remote-resolvers"
+    },
+    {
+      "title": "Explore the Tekton Catalog",
+      "description": "Learn how to discover and use community Tasks from the Tekton Catalog!",
+      "path": "explore-catalog"
+    },
+    {
+      "title": "Pipelines as Code with tkn-pac",
+      "description": "Learn how to manage Pipelines as Code using tkn-pac!",
+      "path": "pipelines-as-code"
+    }
+  ]
+}

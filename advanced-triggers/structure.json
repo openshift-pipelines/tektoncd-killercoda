@@ -1,0 +1,31 @@
+{
+  "title": "Advanced Triggers and Event Processing",
+  "description": "Build production event-driven pipelines with interceptors and webhooks",
+  "items": [
+    {
+      "title": "CEL Interceptor -- Event Filtering and Transformation",
+      "description": "Learn how to filter and transform events using CEL Interceptors!",
+      "path": "cel-interceptor"
+    },
+    {
+      "title": "GitHub Webhook Integration",
+      "description": "Learn how to trigger Pipelines from GitHub webhook events!",
+      "path": "github-webhooks"
+    },
+    {
+      "title": "Interceptor Chaining",
+      "description": "Learn how to chain multiple interceptors for complex event processing!",
+      "path": "interceptor-chaining"
+    },
+    {
+      "title": "Custom Interceptors",
+      "description": "Learn how to build your own custom interceptors for event processing!",
+      "path": "custom-interceptors"
+    },
+    {
+      "title": "TriggerGroups and ClusterTriggerBindings",
+      "description": "Learn how to organize triggers with TriggerGroups and cluster-scoped bindings!",
+      "path": "triggergroups-clusterbindings"
+    }
+  ]
+}
