@@ -23,8 +23,8 @@
       "path": "remote-resolvers"
     },
     {
-      "title": "Explore the Tekton Catalog",
-      "description": "Learn how to discover and use community Tasks from the Tekton Catalog!",
+      "title": "Explore Community Tasks on Artifact Hub",
+      "description": "Learn how to discover and install community Tasks from Artifact Hub!",
       "path": "explore-catalog"
     },
     {
