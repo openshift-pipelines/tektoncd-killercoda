@@ -8,11 +8,6 @@
       "path": "install-with-operator"
     },
     {
-      "title": "Configure Feature Flags via TektonConfig",
-      "description": "Learn how to configure Tekton features using TektonConfig custom resource!",
-      "path": "feature-flags-tektonconfig"
-    },
-    {
       "title": "Automatic Pruning of Pipeline/TaskRuns",
       "description": "Learn how to automatically clean up old PipelineRuns and TaskRuns!",
       "path": "automatic-pruning"
@@ -23,24 +18,9 @@
       "path": "install-results-query"
     },
     {
-      "title": "Store Pipeline Logs with Results + MinIO",
-      "description": "Learn how to store pipeline logs persistently using Results and MinIO!",
-      "path": "results-log-storage-minio"
-    },
-    {
-      "title": "Configure Results Retention Policies",
-      "description": "Learn how to configure retention policies for Tekton Results data!",
-      "path": "results-retention-policies"
-    },
-    {
       "title": "Tekton + Prometheus + Grafana",
       "description": "Learn how to monitor Tekton Pipelines with Prometheus and Grafana!",
       "path": "prometheus-grafana"
-    },
-    {
-      "title": "Tekton + OpenTelemetry + Jaeger",
-      "description": "Learn how to trace pipeline execution with OpenTelemetry and Jaeger!",
-      "path": "opentelemetry-jaeger"
     }
   ]
 }

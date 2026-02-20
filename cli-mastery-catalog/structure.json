@@ -21,16 +21,6 @@
       "title": "Remote Resolvers -- Fetch Tasks Without Installing",
       "description": "Learn how to fetch Tasks from remote sources without pre-installing them!",
       "path": "remote-resolvers"
-    },
-    {
-      "title": "Explore Community Tasks on Artifact Hub",
-      "description": "Learn how to discover and install community Tasks from Artifact Hub!",
-      "path": "explore-catalog"
-    },
-    {
-      "title": "Pipelines as Code with tkn-pac",
-      "description": "Learn how to manage Pipelines as Code using tkn-pac!",
-      "path": "pipelines-as-code"
     }
   ]
 }

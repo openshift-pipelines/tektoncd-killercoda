@@ -31,11 +31,6 @@
       "title": "Retries, Timeouts, and Error Handling",
       "description": "Learn how to handle failures with retries, timeouts, and error strategies!",
       "path": "retries-timeouts"
-    },
-    {
-      "title": "Object and Array Params/Results",
-      "description": "Learn how to use object and array types for complex data passing!",
-      "path": "object-array-params"
     }
   ]
 }

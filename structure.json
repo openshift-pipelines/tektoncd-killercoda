@@ -28,11 +28,6 @@
       "path": "operations-observability"
     },
     {
-      "title": "Dashboard Advanced",
-      "description": "Production Dashboard configuration, RBAC, extensions, and integrations",
-      "path": "dashboard-advanced"
-    },
-    {
       "title": "CLI Mastery and Catalog",
       "description": "Master the tkn CLI, Tekton Bundles, and catalog discovery",
       "path": "cli-mastery-catalog"

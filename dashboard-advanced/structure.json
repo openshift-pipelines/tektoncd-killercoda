@@ -1,31 +1,5 @@
 {
   "title": "Dashboard Advanced",
   "description": "Production Dashboard configuration, RBAC, extensions, and integrations",
-  "items": [
-    {
-      "title": "Dashboard RBAC -- Read-Only vs Read-Write",
-      "description": "Learn how to configure Dashboard access control with read-only and read-write roles!",
-      "path": "dashboard-rbac"
-    },
-    {
-      "title": "Dashboard Extensions -- Custom Resource Views",
-      "description": "Learn how to extend the Dashboard with custom resource type views!",
-      "path": "dashboard-extensions"
-    },
-    {
-      "title": "Dashboard + Results: Persistent Log Viewing",
-      "description": "Learn how to view persistent pipeline logs through the Dashboard!",
-      "path": "dashboard-results-logs"
-    },
-    {
-      "title": "Import Tekton Resources from Git",
-      "description": "Learn how to import Tasks and Pipelines from Git repositories via the Dashboard!",
-      "path": "import-from-git"
-    },
-    {
-      "title": "Dashboard + Triggers: Monitoring Event-Driven Pipelines",
-      "description": "Learn how to monitor event-driven pipelines through the Dashboard!",
-      "path": "dashboard-triggers-monitoring"
-    }
-  ]
+  "items": []
 }

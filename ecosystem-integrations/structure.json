@@ -6,31 +6,6 @@
       "title": "Tekton + ArgoCD: GitOps CI/CD",
       "description": "Learn how to build a GitOps CI/CD pipeline with Tekton and ArgoCD!",
       "path": "tekton-argocd-gitops"
-    },
-    {
-      "title": "Tekton + Vault: Secrets Management",
-      "description": "Learn how to manage pipeline secrets using HashiCorp Vault!",
-      "path": "tekton-vault-secrets"
-    },
-    {
-      "title": "Tekton + Cloud Native Buildpacks",
-      "description": "Learn how to build container images without Dockerfiles using Buildpacks!",
-      "path": "tekton-buildpacks"
-    },
-    {
-      "title": "Jenkins to Tekton Migration",
-      "description": "Learn how to migrate your CI/CD pipelines from Jenkins to Tekton!",
-      "path": "jenkins-to-tekton-migration"
-    },
-    {
-      "title": "Multi-Tenant Setup: RBAC and Namespace Isolation",
-      "description": "Learn how to set up Tekton for multiple teams with RBAC and namespace isolation!",
-      "path": "multi-tenant-setup"
-    },
-    {
-      "title": "Debugging with Breakpoints",
-      "description": "Learn how to debug pipeline steps interactively using breakpoints!",
-      "path": "debug-breakpoints"
     }
   ]
 }
