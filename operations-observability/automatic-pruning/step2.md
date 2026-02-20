@@ -18,7 +18,8 @@ indefinitely.
 ## Configure the pruner
 
 Set up the pruner to keep only the 3 most recent runs of each type, running
-every 5 minutes. Apply this configuration:
+every minute (for this tutorial; production environments use longer intervals).
+Apply this configuration:
 
 ```bash
 kubectl patch tektonconfig config --type merge -p '{
@@ -26,7 +27,7 @@ kubectl patch tektonconfig config --type merge -p '{
     "pruner": {
       "resources": ["taskrun", "pipelinerun"],
       "keep": 3,
-      "schedule": "*/5 * * * *"
+      "schedule": "*/1 * * * *"
     }
   }
 }'
@@ -40,11 +41,11 @@ The pruner configuration fields are:
 |-------|-------------|---------|
 | `resources` | Which resource types to prune | `["taskrun", "pipelinerun"]` |
 | `keep` | Number of most recent runs to retain | `3` |
-| `schedule` | Cron expression for when pruning runs | `*/5 * * * *` |
+| `schedule` | Cron expression for when pruning runs | `*/1 * * * *` |
 
 The `schedule` field uses standard cron syntax:
 
-- `*/5 * * * *` -- Every 5 minutes
+- `*/1 * * * *` -- Every minute (tutorial/testing)
 - `0 * * * *` -- Every hour
 - `0 0 * * *` -- Daily at midnight
 - `0 0 * * 0` -- Weekly on Sunday
@@ -73,17 +74,18 @@ configuration in TektonConfig, the Operator updates the CronJob accordingly.
 
 The pruner supports additional configuration for more fine-grained control:
 
-- **keep-since** -- Instead of keeping a fixed number, keep runs newer than a
-  duration (e.g., `1440` for 24 hours in minutes)
-- **per-resource** pruning -- You can specify different retention for TaskRuns
-  and PipelineRuns
+- **keep-since** -- Instead of keeping a fixed count, keep runs newer than a
+  specified number of minutes (e.g., `1440` keeps runs from the last 24 hours).
+  Note: `keep` and `keep-since` are mutually exclusive.
+- **prune-per-resource** -- Prune per pipeline/task name instead of globally
+- **disabled** -- Set to `true` to temporarily disable pruning
 
-For example, to keep runs from the last 24 hours instead of a fixed count:
+Verify the `keep` value is set:
 
 ```bash
 kubectl get tektonconfig config -o jsonpath='{.spec.pruner.keep}'
 echo ""
 ```
 
-This confirms the `keep` value is set. In the next step, you will wait for the
-pruner to run and verify that old runs are cleaned up.
+In the next step, you will wait for the pruner to run and verify that old runs
+are cleaned up.

@@ -88,7 +88,7 @@ Common configuration options include:
 | `enable-api-fields` | Enable alpha/beta API features |
 | `default-timeout-minutes` | Default timeout for TaskRuns |
 | `default-service-account` | Default service account for runs |
-| `disable-affinity-assistant` | Disable affinity assistant for workspaces |
+| `coschedule` | Co-scheduling strategy for workspaces (workspaces, pipelineruns, disabled) |
 
 All of these can be set declaratively through TektonConfig, and the Operator
 ensures they are applied consistently.

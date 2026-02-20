@@ -4,10 +4,20 @@ In GitOps, a Git repository holds the desired state of your application. ArgoCD
 watches this repository and automatically deploys any changes to your Kubernetes
 cluster. This means deployments are auditable, repeatable, and versioned.
 
-## Clone the local bare repository
+## Get the Git server URL
 
-A bare Git repository was created during setup at `/opt/gitops-repo.git`. Clone
-it to a working directory:
+A bare Git repository and a git daemon were set up during installation. The git
+daemon makes the repository accessible over the network so that pods (ArgoCD,
+Tekton) can reach it. Get the URL:
+
+```bash
+NODE_IP=$(cat /tmp/node-ip)
+echo "Git repo URL for pods: git://${NODE_IP}/gitops-repo.git"
+```
+
+## Clone the repository
+
+Clone the bare Git repository to a working directory:
 
 ```bash
 git clone /opt/gitops-repo.git /root/gitops-repo
@@ -81,10 +91,12 @@ git push origin master
 
 ## Create the ArgoCD Application
 
-Now tell ArgoCD to watch this Git repository and deploy its contents. Create an
-ArgoCD `Application` resource that points to the local bare repository:
+Now tell ArgoCD to watch this Git repository and deploy its contents. The
+Application uses the `git://` protocol URL so the ArgoCD repo-server pod can
+access the repository over the network:
 
 ```bash
+NODE_IP=$(cat /tmp/node-ip)
 cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -94,7 +106,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: /opt/gitops-repo.git
+    repoURL: git://${NODE_IP}/gitops-repo.git
     targetRevision: HEAD
     path: manifests
   destination:

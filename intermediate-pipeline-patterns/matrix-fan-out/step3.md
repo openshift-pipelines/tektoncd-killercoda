@@ -122,10 +122,11 @@ Watch the output carefully. You should see:
 
 ## Verify the results
 
-Check how many TaskRuns were created:
+Check how many TaskRuns were created for this Pipeline specifically (filtering by
+pipeline name to exclude TaskRuns from previous steps):
 
 ```bash
-kubectl get taskrun -l tekton.dev/pipelineTask=test --no-headers | wc -l
+kubectl get taskrun -l tekton.dev/pipeline=matrix-include-demo --no-headers | wc -l
 ```
 
 Describe the PipelineRun to see the complete picture:

@@ -47,23 +47,18 @@ You should see `image: nginx:1.25` -- the tag was updated by Tekton.
 
 Now that Tekton has updated the GitOps repository, tell ArgoCD to sync the
 application. In a real production setup, this could be automated (which you will
-configure in the next step). For now, trigger a manual sync:
-
-```bash
-argocd app sync demo-app --core
-```
-
-If the sync command has issues with authentication in the core install, you can
-alternatively use kubectl to trigger a sync by refreshing the Application:
+configure in the next step). For now, trigger a manual sync using kubectl to
+patch the Application resource:
 
 ```bash
 kubectl patch application demo-app -n argocd --type merge \
   -p '{"operation":{"initiatedBy":{"username":"admin"},"sync":{"revision":"HEAD","syncStrategy":{"apply":{"force":false}}}}}'
 ```
 
-Wait a moment, then check the application status:
+Wait for ArgoCD to process the sync, then check the application status:
 
 ```bash
+sleep 30
 kubectl get application demo-app -n argocd -o jsonpath='{.status.sync.status}'
 echo ""
 ```

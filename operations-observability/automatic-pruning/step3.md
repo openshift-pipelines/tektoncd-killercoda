@@ -1,7 +1,7 @@
 # Verify pruning works
 
-The pruner is now configured to run every 5 minutes and keep only the 3 most
-recent TaskRuns. Let us verify it works.
+The pruner is now configured to run every minute and keep only the 3 most recent
+TaskRuns. Let us verify it works.
 
 ## Check current TaskRun count
 
@@ -15,20 +15,18 @@ tkn taskrun list
 
 ## Wait for the pruner to run
 
-The pruner CronJob runs every 5 minutes. You can wait for it or check if a Job
-has been created:
+The pruner CronJob runs every minute. Wait for it to execute:
 
 ```bash
-echo "Waiting for pruner to execute (this may take up to 5 minutes)..."
-echo "Checking for pruner jobs..."
-for i in $(seq 1 60); do
+echo "Waiting for pruner to execute (should take about 1-2 minutes)..."
+for i in $(seq 1 30); do
   CURRENT_COUNT=$(kubectl get taskrun --no-headers 2>/dev/null | wc -l)
   if [ "$CURRENT_COUNT" -le 3 ]; then
     echo "Pruning complete! TaskRun count is now: $CURRENT_COUNT"
     break
   fi
-  if [ $((i % 10)) -eq 0 ]; then
-    echo "  Still waiting... current count: $CURRENT_COUNT (attempt $i/60)"
+  if [ $((i % 6)) -eq 0 ]; then
+    echo "  Still waiting... current count: $CURRENT_COUNT (attempt $i/30)"
   fi
   sleep 5
 done

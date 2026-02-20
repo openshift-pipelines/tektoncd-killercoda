@@ -10,6 +10,7 @@ Update the ArgoCD Application to enable automatic synchronization with self-heal
 and pruning:
 
 ```bash
+NODE_IP=$(cat /tmp/node-ip)
 cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -19,7 +20,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: /opt/gitops-repo.git
+    repoURL: git://${NODE_IP}/gitops-repo.git
     targetRevision: HEAD
     path: manifests
   destination:
@@ -74,7 +75,7 @@ kubectl patch application demo-app -n argocd --type merge \
 Wait for ArgoCD to detect and sync the change:
 
 ```bash
-sleep 10
+sleep 30
 kubectl get deployment demo-app -o jsonpath='{.spec.template.spec.containers[0].image}'
 echo ""
 ```

@@ -16,9 +16,9 @@ kubectl apply --filename https://infra.tekton.dev/tekton-releases/pipeline/previ
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-pipelines \
   -n tekton-pipelines --timeout=120s
 
-# Install ArgoCD (core, lightweight)
+# Install ArgoCD core (pinned to v2.13.3 to match CLI version)
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.3/manifests/core-install.yaml
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=argocd-application-controller \
   -n argocd --timeout=180s
 
@@ -35,5 +35,13 @@ chmod +x /usr/local/bin/argocd
 
 # Set up local bare Git repo for GitOps demo
 git init --bare /opt/gitops-repo.git
+
+# Start git daemon so pods (ArgoCD, Tekton) can access the repo over the network
+nohup git daemon --reuseaddr --base-path=/opt --export-all \
+  --enable=receive-pack --listen=0.0.0.0 /opt &>/dev/null &
+
+# Save the node IP for use in tutorial steps
+NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
+echo "$NODE_IP" > /tmp/node-ip
 
 echo "Tekton Pipelines, ArgoCD, and tools are ready!"

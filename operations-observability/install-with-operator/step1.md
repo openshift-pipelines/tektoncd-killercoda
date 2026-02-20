@@ -46,7 +46,8 @@ kubectl get tektonconfig config -o jsonpath='{.spec.profile}'
 echo ""
 ```
 
-The default profile is `all`, which installs Pipelines, Triggers, and Dashboard.
+The default profile is `all`, which installs all Tekton components: Pipelines,
+Triggers, Dashboard, Results, and Chains.
 
 ## Understand the profiles
 
@@ -54,9 +55,9 @@ The Tekton Operator supports three profiles:
 
 | Profile | Components |
 |---------|-----------|
-| **all** | Pipelines + Triggers + Dashboard |
-| **lite** | Pipelines + Triggers (no Dashboard) |
-| **basic** | Pipelines only |
+| **all** | Pipelines + Triggers + Dashboard + Results + Chains |
+| **basic** | Pipelines + Triggers + Results + Chains (no Dashboard) |
+| **lite** | Pipelines only |
 
 ## See installed components
 
@@ -66,8 +67,8 @@ Check what the Operator has installed:
 kubectl get pods -n tekton-pipelines
 ```
 
-With the `all` profile, you will see pods for Pipelines, Triggers, and
-Dashboard. The Operator manages the lifecycle of all these components
+With the `all` profile, you will see pods for Pipelines, Triggers, Dashboard,
+Results, and Chains. The Operator manages the lifecycle of all these components
 automatically.
 
 ## Check the TektonConfig status

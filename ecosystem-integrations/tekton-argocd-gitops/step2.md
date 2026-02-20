@@ -58,9 +58,11 @@ EOF
 ```
 
 Now create the most important Task -- the one that updates the GitOps
-repository with the new image tag:
+repository with the new image tag. This Task clones the repo using the `git://`
+protocol so it can access the git server from inside the pod:
 
 ```bash
+NODE_IP=$(cat /tmp/node-ip)
 cat <<EOF | kubectl apply -f -
 apiVersion: tekton.dev/v1
 kind: Task
@@ -71,13 +73,16 @@ spec:
     - name: image-tag
       type: string
       description: The new image tag to deploy
+    - name: git-repo-url
+      type: string
+      description: The git repository URL
   steps:
     - name: update-and-push
-      image: alpine/git:latest
+      image: alpine/git:2.43.0
       script: |
         #!/bin/sh
         set -e
-        git clone /opt/gitops-repo.git /workspace/repo
+        git clone \$(params.git-repo-url) /workspace/repo
         cd /workspace/repo
         git config user.email "tekton@example.com"
         git config user.name "Tekton CI"
@@ -101,12 +106,17 @@ Wire the Tasks together into a Pipeline. The pipeline runs tests, builds the
 image, and then updates the GitOps repository:
 
 ```bash
+NODE_IP=$(cat /tmp/node-ip)
 cat <<EOF | kubectl apply -f -
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: gitops-ci
 spec:
+  params:
+    - name: git-repo-url
+      type: string
+      default: "git://${NODE_IP}/gitops-repo.git"
   tasks:
     - name: run-tests
       taskRef:
@@ -122,6 +132,8 @@ spec:
       params:
         - name: image-tag
           value: \$(tasks.build-image.results.image-tag)
+        - name: git-repo-url
+          value: \$(params.git-repo-url)
       taskRef:
         name: update-manifests
 EOF

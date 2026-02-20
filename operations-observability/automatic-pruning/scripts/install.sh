@@ -16,9 +16,16 @@ kubectl apply -f https://infra.tekton.dev/tekton-releases/operator/previous/v0.7
 kubectl wait --for=condition=ready pod -l app=tekton-operator \
   -n tekton-operator --timeout=180s
 
-# Wait for Operator to install Pipelines
-kubectl wait --for=condition=ready pod -l app.kubernetes.io/part-of=tekton-pipelines \
-  -n tekton-pipelines --timeout=180s
+# Wait for TektonConfig to be Ready (covers all installed components)
+echo "Waiting for TektonConfig to be Ready..."
+for i in $(seq 1 120); do
+  STATUS=$(kubectl get tektonconfig config -o jsonpath='{.status.conditions[?(@.type=="Ready")].status}' 2>/dev/null)
+  if [ "$STATUS" = "True" ]; then
+    echo "TektonConfig is Ready."
+    break
+  fi
+  sleep 3
+done
 
 # Install the Tekton CLI (tkn) - pinned version
 TKN_VERSION="0.43.0"
@@ -50,6 +57,16 @@ spec:
     name: sample-task
 EOF
   sleep 1
+done
+
+# Wait for all TaskRuns to complete
+echo "Waiting for TaskRuns to complete..."
+for i in $(seq 1 60); do
+  RUNNING=$(kubectl get taskrun --no-headers 2>/dev/null | grep -c "Running\|Pending" || true)
+  if [ "$RUNNING" -eq 0 ]; then
+    break
+  fi
+  sleep 2
 done
 
 echo "Tekton Operator with sample runs ready!"

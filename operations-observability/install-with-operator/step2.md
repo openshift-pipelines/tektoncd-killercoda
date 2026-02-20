@@ -4,15 +4,16 @@ One of the Operator's most powerful features is the ability to change your Tekto
 installation by simply editing the TektonConfig resource. The Operator watches
 for changes and reconciles the cluster state accordingly.
 
-## Switch to the lite profile
+## Switch to the basic profile
 
-The `lite` profile installs Pipelines and Triggers but not the Dashboard. This
-is useful for CI/CD-focused clusters where a web UI is not needed.
+The `basic` profile installs Pipelines, Triggers, Results, and Chains but not
+the Dashboard. This is useful for CI/CD-focused clusters where a web UI is not
+needed.
 
 Change the profile:
 
 ```bash
-kubectl patch tektonconfig config --type merge -p '{"spec":{"profile":"lite"}}'
+kubectl patch tektonconfig config --type merge -p '{"spec":{"profile":"basic"}}'
 ```
 
 Watch the Operator reconcile. It will remove the Dashboard components:
@@ -22,10 +23,10 @@ kubectl get tektonconfig config -o jsonpath='{.spec.profile}'
 echo ""
 ```
 
-You should see `lite`. Wait a moment for the Operator to reconcile:
+You should see `basic`. Wait for the Operator to reconcile:
 
 ```bash
-sleep 15
+sleep 30
 ```
 
 ## Verify the profile change
@@ -37,21 +38,22 @@ gone or terminating:
 kubectl get pods -n tekton-pipelines
 ```
 
-With the `lite` profile, you should see only Pipelines and Triggers pods.
+With the `basic` profile, you should see Pipelines and Triggers pods but no
+Dashboard.
 
-## Switch to the basic profile
+## Switch to the lite profile
 
-The `basic` profile installs only Tekton Pipelines -- the minimum needed to run
+The `lite` profile installs only Tekton Pipelines -- the minimum needed to run
 Tasks and Pipelines:
 
 ```bash
-kubectl patch tektonconfig config --type merge -p '{"spec":{"profile":"basic"}}'
+kubectl patch tektonconfig config --type merge -p '{"spec":{"profile":"lite"}}'
 ```
 
 Wait for reconciliation:
 
 ```bash
-sleep 15
+sleep 30
 kubectl get tektonconfig config -o jsonpath='{.spec.profile}'
 echo ""
 ```
@@ -67,7 +69,7 @@ kubectl patch tektonconfig config --type merge -p '{"spec":{"profile":"all"}}'
 Wait for all components to come back:
 
 ```bash
-sleep 20
+sleep 45
 kubectl get pods -n tekton-pipelines
 ```
 
