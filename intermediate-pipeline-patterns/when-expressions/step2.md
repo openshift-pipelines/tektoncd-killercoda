@@ -23,7 +23,7 @@ spec:
       description: "true" if the branch is main, "false" otherwise
   steps:
     - name: check
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         if [ "\$(params.branch)" = "main" ]; then

@@ -22,7 +22,7 @@ spec:
       description: The build ID to use
   steps:
     - name: display
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "Using build ID: \$(params.build-id)"

@@ -27,7 +27,7 @@ spec:
       default: "Hello from the first Task!"
   steps:
     - name: write
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "\$(params.message)" > \$(workspaces.shared-data.path)/message.txt

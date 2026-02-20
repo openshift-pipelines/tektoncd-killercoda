@@ -24,7 +24,7 @@ spec:
       description: The Git repository URL
   steps:
     - name: log
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "========================================="

@@ -26,7 +26,7 @@ metadata:
 spec:
   steps:
     - name: goodbye
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "Goodbye World!"
@@ -44,7 +44,7 @@ metadata:
 spec:
   steps:
     - name: goodbye
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "Goodbye World!"

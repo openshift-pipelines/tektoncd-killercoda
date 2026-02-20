@@ -21,7 +21,7 @@ spec:
       description: The approval status
   steps:
     - name: check
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo -n "\$(params.approved)" > \$(results.status.path)

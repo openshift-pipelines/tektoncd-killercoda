@@ -21,7 +21,7 @@ spec:
     - name: message
       type: string
       description: The message to log
-  image: alpine
+  image: alpine:3.19
   script: |
     #!/usr/bin/env sh
     echo "========================================="

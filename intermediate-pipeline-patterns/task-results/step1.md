@@ -21,7 +21,7 @@ spec:
       description: A randomly generated build identifier
   steps:
     - name: generate
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         BUILD_ID="build-\$(date +%s)-\$(shuf -i 1000-9999 -n 1)"

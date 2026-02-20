@@ -27,7 +27,7 @@ spec:
       type: string
   steps:
     - name: report
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

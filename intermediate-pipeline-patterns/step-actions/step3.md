@@ -23,7 +23,7 @@ spec:
       description: The generated data payload
   steps:
     - name: generate
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         TIMESTAMP=\$(date +%Y-%m-%dT%H:%M:%S)
@@ -61,7 +61,7 @@ spec:
         - name: prefix
           value: "PROCESSED"
     - name: save-result
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo -n "processed-\$(params.input-data)" > \$(results.processed.path)

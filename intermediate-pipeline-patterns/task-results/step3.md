@@ -24,7 +24,7 @@ spec:
       description: SHA256 hash of the input
   steps:
     - name: hash
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         HASH=\$(echo -n "\$(params.input)" | sha256sum | cut -d' ' -f1)
@@ -44,7 +44,7 @@ spec:
       description: First 8 characters of the hash
   steps:
     - name: shorten
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         SHORT=\$(echo -n "\$(params.full-hash)" | cut -c1-8)
@@ -61,7 +61,7 @@ spec:
       type: string
   steps:
     - name: report
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

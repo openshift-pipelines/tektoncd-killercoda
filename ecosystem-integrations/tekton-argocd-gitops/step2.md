@@ -22,7 +22,7 @@ metadata:
 spec:
   steps:
     - name: test
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/bin/sh
         echo "Running unit tests..."
@@ -46,7 +46,7 @@ spec:
       description: The new image tag
   steps:
     - name: build
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/bin/sh
         NEW_TAG="1.25"

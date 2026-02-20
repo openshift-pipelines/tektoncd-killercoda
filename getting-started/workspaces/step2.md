@@ -17,7 +17,7 @@ spec:
       description: A workspace to read the message from
   steps:
     - name: read
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "Reading message from workspace:"

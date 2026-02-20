@@ -39,7 +39,7 @@ spec:
         claimName: source-pvc
   containers:
     - name: copy
-      image: ubuntu
+      image: ubuntu:22.04
       command: ["sh", "-c", "cp /input/* /workspace/ && ls -la /workspace/ && sleep 5"]
       volumeMounts:
         - name: source

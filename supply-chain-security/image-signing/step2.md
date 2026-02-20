@@ -27,7 +27,7 @@ spec:
       description: The digest of the built image
   steps:
     - name: create-dockerfile
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         cat > /workspace/Dockerfile <<DOCKERFILE
@@ -49,7 +49,7 @@ spec:
         - name: DOCKER_CONFIG
           value: /workspace/.docker
     - name: write-url
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo -n "$(params.IMAGE)" > $(results.IMAGE_URL.path)

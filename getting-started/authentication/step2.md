@@ -104,7 +104,7 @@ spec:
   taskSpec:
     steps:
       - name: check-credentials
-        image: ubuntu
+        image: ubuntu:22.04
         script: |
           #!/usr/bin/env bash
           echo "=== Checking Git credentials ==="

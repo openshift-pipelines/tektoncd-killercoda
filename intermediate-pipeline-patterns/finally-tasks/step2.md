@@ -17,7 +17,7 @@ metadata:
 spec:
   steps:
     - name: fail
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "This task will fail..."
@@ -30,7 +30,7 @@ metadata:
 spec:
   steps:
     - name: notify
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

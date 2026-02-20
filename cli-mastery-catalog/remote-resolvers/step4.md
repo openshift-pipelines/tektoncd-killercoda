@@ -37,7 +37,7 @@ spec:
       description: Summary of the mixed-resolver pipeline
   steps:
     - name: summarize
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

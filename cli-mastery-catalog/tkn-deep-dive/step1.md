@@ -27,7 +27,7 @@ spec:
       description: The name to greet
   steps:
     - name: greet
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "\$(params.greeting), \$(params.name)!"

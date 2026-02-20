@@ -42,7 +42,7 @@ metadata:
 spec:
   steps:
     - name: echo
-      image: alpine
+      image: alpine:3.19
       script: echo "Sample run"
 EOF
 

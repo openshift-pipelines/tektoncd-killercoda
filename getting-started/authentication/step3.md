@@ -123,7 +123,7 @@ spec:
     - name: source
   steps:
     - name: show
-      image: ubuntu
+      image: ubuntu:22.04
       script: |
         #!/usr/bin/env bash
         echo "=== Files in the cloned repository ==="

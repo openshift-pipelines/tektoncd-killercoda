@@ -32,7 +32,7 @@ spec:
       default: "Hello from the shared namespace!"
   steps:
     - name: greet
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================"

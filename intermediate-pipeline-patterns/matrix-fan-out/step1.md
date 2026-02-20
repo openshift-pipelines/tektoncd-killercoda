@@ -24,7 +24,7 @@ spec:
       description: The target version
   steps:
     - name: test
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

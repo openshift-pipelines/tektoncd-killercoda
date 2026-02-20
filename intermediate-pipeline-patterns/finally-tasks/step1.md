@@ -18,7 +18,7 @@ metadata:
 spec:
   steps:
     - name: fetch
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "Fetching source code..."
@@ -32,7 +32,7 @@ metadata:
 spec:
   steps:
     - name: test
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "Running test suite..."
@@ -46,7 +46,7 @@ metadata:
 spec:
   steps:
     - name: cleanup
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "========================================="

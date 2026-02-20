@@ -29,7 +29,7 @@ spec:
       type: string
       description: A prefix label for the output
       default: "OUTPUT"
-  image: alpine
+  image: alpine:3.19
   script: |
     #!/usr/bin/env sh
     if [ "\$(params.format)" = "json" ]; then

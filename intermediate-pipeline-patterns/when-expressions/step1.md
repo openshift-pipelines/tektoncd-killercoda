@@ -18,7 +18,7 @@ metadata:
 spec:
   steps:
     - name: build
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "Building the application..."
@@ -36,7 +36,7 @@ spec:
       default: "production"
   steps:
     - name: deploy
-      image: alpine
+      image: alpine:3.19
       script: |
         #!/usr/bin/env sh
         echo "Deploying to \$(params.target)..."
