@@ -5,10 +5,21 @@ signed the image in the registry. Let's verify this.
 
 ## Wait for Chains to sign
 
-Chains signs images asynchronously after the TaskRun completes. Give it a moment:
+Chains signs images asynchronously after the TaskRun completes. Poll until
+the signing annotation appears:
 
 ```bash
-sleep 15
+# Wait for Tekton Chains to sign the image (up to 120s)
+for i in $(seq 1 24); do
+  SIGNED=$(kubectl get taskrun --sort-by=.metadata.creationTimestamp \
+    -o jsonpath='{.items[-1].metadata.annotations.chains\.tekton\.dev/signed}' 2>/dev/null || echo "")
+  if [[ "$SIGNED" == "true" ]]; then
+    echo "Image signed by Chains (attempt $i/24)"
+    break
+  fi
+  echo "Waiting for Chains to sign... (signed=$SIGNED, attempt $i/24)"
+  sleep 5
+done
 ```
 
 ## Check the signing annotation
