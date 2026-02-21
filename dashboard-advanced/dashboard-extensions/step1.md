@@ -10,6 +10,7 @@ kubectl get pods -l app.kubernetes.io/part-of=tekton-dashboard -n tekton-pipelin
 
 ## Access the Dashboard
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward svc/tekton-dashboard -n tekton-pipelines 9097:9097 &>/dev/null &
 echo "Dashboard available at: http://localhost:9097"

@@ -16,6 +16,7 @@ and delete capabilities in the UI.
 
 Start a port-forward to access the Dashboard:
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward -n tekton-pipelines svc/tekton-dashboard 9097:9097 &
 sleep 2

@@ -4,6 +4,7 @@ The Dashboard automatically detects Tekton Triggers and displays its resources.
 
 ## Access the Dashboard
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward svc/tekton-dashboard -n tekton-pipelines 9097:9097 &>/dev/null &
 echo "Dashboard available at: http://localhost:9097"

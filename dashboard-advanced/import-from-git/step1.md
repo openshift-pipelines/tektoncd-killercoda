@@ -4,6 +4,7 @@ Let's open the Dashboard and find the Import page.
 
 ## Port-forward the Dashboard
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward svc/tekton-dashboard -n tekton-pipelines 9097:9097 &>/dev/null &
 echo "Dashboard available at: http://localhost:9097"
