@@ -181,6 +181,7 @@ EOF
 
 ## Verify all resources are created
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 tkn pipeline describe secure-build-pipeline

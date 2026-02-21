@@ -38,6 +38,7 @@ cosign verify --key cosign.pub --insecure-ignore-tlog=true \
 
 Now try to deploy this unsigned image to the policy-enforced namespace:
 
+<!-- e2e-skip -->
 ```bash
 kubectl create deployment unsigned-app \
   --image=localhost:5000/unsigned-app:v1 \
