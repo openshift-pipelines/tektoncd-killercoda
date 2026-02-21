@@ -28,13 +28,13 @@ helm install vault hashicorp/vault \
   --set injector.enabled=true \
   -n vault --create-namespace
 
-# Wait for Vault pod to be ready
+# Wait for Vault pod to be ready (Helm install can take >3 min)
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=vault \
-  -n vault --timeout=180s
+  -n vault --timeout=300s
 
-# Wait for the injector to be ready
+# Wait for the injector to be ready (Helm install can take >3 min)
 kubectl wait --for=condition=ready pod -l component=webhook -l app.kubernetes.io/name=vault-agent-injector \
-  -n vault --timeout=180s
+  -n vault --timeout=300s
 
 # ── 4. Install tkn CLI (pinned v0.43.0) ─────────────────────────────────────
 TKN_VERSION="0.43.0"
