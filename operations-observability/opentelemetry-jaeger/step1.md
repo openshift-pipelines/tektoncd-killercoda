@@ -32,6 +32,7 @@ echo "Tracing enabled!"
 
 ## Make Jaeger UI accessible
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward svc/jaeger-query -n tekton-pipelines 16686:16686 &>/dev/null &
 echo "Jaeger UI available at: http://localhost:16686"

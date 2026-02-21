@@ -67,6 +67,7 @@ EOF
 
 Wait for the PipelineRun to complete:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
@@ -77,6 +78,7 @@ kubectl wait --for=condition=Succeeded pipelinerun -l tekton.dev/pipeline=greeti
 
 Check the logs to confirm it ran successfully:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
