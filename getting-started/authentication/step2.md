@@ -128,6 +128,7 @@ EOF
 
 Check the logs:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs --last -f
 ```

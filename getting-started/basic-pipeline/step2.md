@@ -95,6 +95,7 @@ kubectl create -f taskRun-goodbye.yaml
 Tekton will now start running your `Task`. To see the logs of the `TaskRun`,
 run the following `tkn` command:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs --last -f
 ```

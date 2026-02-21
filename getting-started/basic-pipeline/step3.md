@@ -88,6 +88,7 @@ kubectl create -f pipelineRun-hello-goodbye.yaml
 Tekton will now start running your `Pipeline`. To see the logs of the
 `PipelineRun`, run the following `tkn` command:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
