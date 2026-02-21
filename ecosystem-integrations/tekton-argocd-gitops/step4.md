@@ -75,7 +75,16 @@ kubectl patch application demo-app -n argocd --type merge \
 Wait for ArgoCD to detect and sync the change:
 
 ```bash
-sleep 30
+# Wait for ArgoCD auto-sync to deploy the change (up to 120s)
+for i in $(seq 1 24); do
+  CURRENT_IMAGE=$(kubectl get deployment demo-app -o jsonpath='{.spec.template.spec.containers[0].image}' 2>/dev/null || echo "")
+  if [[ "$CURRENT_IMAGE" == "nginx:1.26" ]]; then
+    echo "ArgoCD auto-sync complete (image=$CURRENT_IMAGE)"
+    break
+  fi
+  echo "Waiting for ArgoCD auto-sync... (image=$CURRENT_IMAGE, attempt $i/24)"
+  sleep 5
+done
 kubectl get deployment demo-app -o jsonpath='{.spec.template.spec.containers[0].image}'
 echo ""
 ```

@@ -59,7 +59,17 @@ kubectl patch application demo-app -n argocd --type merge \
 Wait for ArgoCD to process the sync, then check the application status:
 
 ```bash
-sleep 30
+# Wait for ArgoCD sync to complete (up to 120s)
+for i in $(seq 1 24); do
+  HEALTH=$(kubectl get application demo-app -n argocd -o jsonpath='{.status.health.status}' 2>/dev/null || echo "Unknown")
+  SYNC=$(kubectl get application demo-app -n argocd -o jsonpath='{.status.sync.status}' 2>/dev/null || echo "Unknown")
+  if [[ "$HEALTH" == "Healthy" && "$SYNC" == "Synced" ]]; then
+    echo "ArgoCD sync complete (health=$HEALTH, sync=$SYNC)"
+    break
+  fi
+  echo "Waiting for ArgoCD sync... (health=$HEALTH, sync=$SYNC, attempt $i/24)"
+  sleep 5
+done
 kubectl get application demo-app -n argocd -o jsonpath='{.status.sync.status}'
 echo ""
 ```
