@@ -50,6 +50,22 @@ Wait for Gitea to be ready:
 kubectl wait --for=condition=ready pod -l app=gitea --timeout=120s
 ```
 
+Wait for the Gitea API to become responsive (the pod may be ready before the
+web server finishes starting):
+
+```bash
+# Wait for Gitea API to be ready (up to 60s)
+GITEA_IP=$(kubectl get svc gitea -o jsonpath='{.spec.clusterIP}')
+for i in $(seq 1 12); do
+  if kubectl exec deployment/gitea -- curl -sf http://localhost:3000/api/v1/version >/dev/null 2>&1; then
+    echo "Gitea API ready"
+    break
+  fi
+  echo "Waiting for Gitea API... (attempt $i/12)"
+  sleep 5
+done
+```
+
 ## Create a Gitea user and private repository
 
 ```bash
