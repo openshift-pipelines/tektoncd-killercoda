@@ -5,6 +5,7 @@
 #
 # Outputs each ```bash block separated by a delimiter: --- BLOCK N ---
 # Skips ```yaml, ```json, bare ```, and any other fenced code blocks.
+# Skips ```bash blocks preceded by an <!-- e2e-skip --> HTML comment.
 
 set -euo pipefail
 
@@ -22,9 +23,21 @@ awk '
 BEGIN {
   state = "outside"
   block_num = 0
+  skip_next = 0
+}
+/^[[:space:]]*<!--[[:space:]]*e2e-skip[[:space:]]*-->[[:space:]]*$/ {
+  if (state == "outside") {
+    skip_next = 1
+    next
+  }
 }
 /^```bash[[:space:]]*$/ {
   if (state == "outside") {
+    if (skip_next) {
+      state = "inside_skip"
+      skip_next = 0
+      next
+    }
     state = "inside_bash"
     block_num++
     print "--- BLOCK " block_num " ---"
@@ -34,6 +47,7 @@ BEGIN {
 /^```[a-zA-Z]/ {
   if (state == "outside") {
     state = "inside_other"
+    skip_next = 0
     next
   }
 }
@@ -42,19 +56,24 @@ BEGIN {
     state = "outside"
     next
   }
-  if (state == "inside_other") {
+  if (state == "inside_other" || state == "inside_skip") {
     state = "outside"
     next
   }
   if (state == "outside") {
     # Bare ``` fence (no language) -- treat as display-only
     state = "inside_other"
+    skip_next = 0
     next
   }
 }
 {
   if (state == "inside_bash") {
     print
+  }
+  # Reset skip_next on non-blank, non-comment lines in outside state
+  if (state == "outside" && !/^[[:space:]]*$/ && !/^[[:space:]]*<!--/) {
+    skip_next = 0
   }
 }
 ' "$1"
