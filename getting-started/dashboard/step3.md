@@ -47,6 +47,7 @@ can:
 
 You can also monitor from the terminal:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

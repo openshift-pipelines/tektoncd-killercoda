@@ -47,6 +47,7 @@ left sidebar. You should now see the `hello` and `goodbye` Tasks listed.
 
 You can also verify from the terminal:
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```

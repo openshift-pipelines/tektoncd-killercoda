@@ -19,6 +19,7 @@ they are not yet ready, wait a moment and try again.
 The Tekton Dashboard is running as a Service inside the cluster. To access it,
 set up a port forward:
 
+<!-- e2e-skip -->
 ```bash
 kubectl port-forward -n tekton-pipelines --address=0.0.0.0 service/tekton-dashboard 8080:9097 > /dev/null 2>&1 &
 ```

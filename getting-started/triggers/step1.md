@@ -69,6 +69,7 @@ EOF
 
 ## Verify the Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline list
 ```

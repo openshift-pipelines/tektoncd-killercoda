@@ -38,6 +38,7 @@ You should see a response indicating that the EventListener accepted the event.
 
 The EventListener should have created a new PipelineRun. Check for it:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
@@ -46,6 +47,7 @@ You should see a PipelineRun with a name starting with `ci-pipeline-run-`.
 
 ## View the logs
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
@@ -88,6 +90,7 @@ curl -X POST http://localhost:8080 \
 
 Check the logs again:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

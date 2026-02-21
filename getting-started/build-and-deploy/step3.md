@@ -110,6 +110,7 @@ EOF
 
 ## Monitor the Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

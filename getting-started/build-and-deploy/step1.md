@@ -12,6 +12,7 @@ kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/gi
 
 ## Verify the Task was installed
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```
@@ -47,6 +48,7 @@ EOF
 
 ## Check the logs
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs --last -f
 ```

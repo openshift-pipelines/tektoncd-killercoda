@@ -30,6 +30,7 @@ used in a Pipeline, they can be wired to the same underlying volume.
 
 ## Verify both Tasks exist
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```

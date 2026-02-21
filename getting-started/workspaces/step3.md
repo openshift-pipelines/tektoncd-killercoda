@@ -76,6 +76,7 @@ EOF
 
 ## Check the logs
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

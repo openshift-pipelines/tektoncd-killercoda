@@ -135,6 +135,7 @@ EOF
 
 ## Verify all Tasks
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```
