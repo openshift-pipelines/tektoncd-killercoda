@@ -1,0 +1,35 @@
+{
+  "title": "Tekton + OpenTelemetry + Jaeger: Distributed Tracing",
+  "description": "Learn how to trace Pipeline runs with OpenTelemetry and Jaeger!",
+  "difficulty": "Intermediate",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/install.sh"
+    },
+    "steps": [
+      {
+        "title": "Enable OpenTelemetry in Tekton",
+        "text": "step1.md",
+        "verify": "scripts/verify-step1.sh"
+      },
+      {
+        "title": "Generate traces from Pipeline runs",
+        "text": "step2.md",
+        "verify": "scripts/verify-step2.sh"
+      },
+      {
+        "title": "Analyze Pipeline performance with traces",
+        "text": "step3.md",
+        "verify": "scripts/verify-step3.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

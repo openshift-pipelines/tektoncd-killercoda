@@ -26,6 +26,11 @@
       "title": "Explore the Tekton Catalog on Artifact Hub",
       "description": "Learn how to discover, install, and use community Tasks from the Tekton Catalog!",
       "path": "explore-catalog"
+    },
+    {
+      "title": "Pipelines as Code with tkn-pac",
+      "description": "Learn how to define Pipelines alongside your source code with Pipelines as Code!",
+      "path": "pipelines-as-code"
     }
   ]
 }

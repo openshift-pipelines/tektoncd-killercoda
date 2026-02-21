@@ -11,6 +11,21 @@
       "title": "Dashboard with Results: Persistent Logs",
       "description": "Configure the Tekton Dashboard to display logs from Results even after pods are deleted!",
       "path": "dashboard-results-logs"
+    },
+    {
+      "title": "Dashboard Extensions: Custom Resource Views",
+      "description": "Learn how to extend the Dashboard to display custom resources!",
+      "path": "dashboard-extensions"
+    },
+    {
+      "title": "Import Tekton Resources from Git",
+      "description": "Learn how to import Tasks and Pipelines from Git repositories via the Dashboard!",
+      "path": "import-from-git"
+    },
+    {
+      "title": "Dashboard + Triggers: Monitoring Event-Driven Pipelines",
+      "description": "Learn how to monitor webhook-triggered PipelineRuns in the Dashboard!",
+      "path": "dashboard-triggers-monitoring"
     }
   ]
 }

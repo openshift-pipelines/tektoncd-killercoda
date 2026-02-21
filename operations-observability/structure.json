@@ -36,6 +36,11 @@
       "title": "Configure Results Retention Policies",
       "description": "Learn how to manage Results data lifecycle and automated cleanup!",
       "path": "results-retention-policies"
+    },
+    {
+      "title": "Tekton + OpenTelemetry + Jaeger: Distributed Tracing",
+      "description": "Learn how to trace Pipeline runs with OpenTelemetry and Jaeger!",
+      "path": "opentelemetry-jaeger"
     }
   ]
 }

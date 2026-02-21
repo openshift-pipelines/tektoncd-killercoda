@@ -16,6 +16,21 @@
       "title": "Debugging with Breakpoints",
       "description": "Learn how to interactively debug failed Tasks using the alpha breakpoint API!",
       "path": "debug-breakpoints"
+    },
+    {
+      "title": "Tekton + Cloud Native Buildpacks",
+      "description": "Learn how to build container images without Dockerfiles using Buildpacks!",
+      "path": "tekton-buildpacks"
+    },
+    {
+      "title": "Jenkins to Tekton Migration Guide",
+      "description": "Learn how to migrate Jenkinsfile pipelines to Tekton!",
+      "path": "jenkins-to-tekton-migration"
+    },
+    {
+      "title": "Tekton Multi-Tenant Setup",
+      "description": "Learn how to configure Tekton for multi-team namespace isolation!",
+      "path": "multi-tenant-setup"
     }
   ]
 }
