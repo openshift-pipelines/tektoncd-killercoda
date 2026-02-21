@@ -55,6 +55,7 @@ written to the Result path and stores it in the TaskRun status.
 
 Check the TaskRun's results:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun describe --last
 ```

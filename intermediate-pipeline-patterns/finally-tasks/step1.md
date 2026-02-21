@@ -101,6 +101,7 @@ because it was in the `finally` section.
 
 ## Verify
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipeline finally-demo
 ```

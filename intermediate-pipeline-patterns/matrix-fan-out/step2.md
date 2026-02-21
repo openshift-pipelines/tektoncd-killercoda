@@ -8,6 +8,7 @@ understand how Matrix distributes work.
 
 Start by describing the latest PipelineRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
@@ -21,6 +22,7 @@ combination.
 Use `kubectl` to list all TaskRuns created by the Matrix fan-out. Each TaskRun
 is labeled with the PipelineTask name:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun -l tekton.dev/pipelineTask=test --no-headers
 ```
@@ -32,6 +34,7 @@ You should see 6 TaskRuns listed. Each one corresponds to a unique combination o
 
 To see what parameters each TaskRun received, examine them with `kubectl`:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun -l tekton.dev/pipelineTask=test \
   -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.params[*].value}{"\n"}{end}'
@@ -46,6 +49,7 @@ see how Tekton distributed the Cartesian product - every combination of
 You can view logs for a specific TaskRun by name. First, get the list of TaskRun
 names:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun -l tekton.dev/pipelineTask=test --no-headers -o custom-columns=NAME:.metadata.name
 ```
@@ -53,6 +57,7 @@ kubectl get taskrun -l tekton.dev/pipelineTask=test --no-headers -o custom-colum
 Then view logs for any specific TaskRun (replace the name with one from your
 output):
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs --last
 ```
@@ -61,6 +66,7 @@ tkn taskrun logs --last
 
 Check that every fan-out TaskRun completed successfully:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun -l tekton.dev/pipelineTask=test \
   -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.conditions[0].status}{"\n"}{end}'

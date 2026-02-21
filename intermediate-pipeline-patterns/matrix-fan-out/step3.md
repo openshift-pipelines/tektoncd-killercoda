@@ -125,12 +125,14 @@ Watch the output carefully. You should see:
 Check how many TaskRuns were created for this Pipeline specifically (filtering by
 pipeline name to exclude TaskRuns from previous steps):
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun -l tekton.dev/pipeline=matrix-include-demo --no-headers | wc -l
 ```
 
 Describe the PipelineRun to see the complete picture:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```

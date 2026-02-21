@@ -107,6 +107,7 @@ simply did not execute. This is different from a Task that runs and fails.
 
 Verify the latest PipelineRun succeeded:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```

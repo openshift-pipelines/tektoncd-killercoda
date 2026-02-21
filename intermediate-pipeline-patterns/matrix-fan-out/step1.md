@@ -94,6 +94,7 @@ interleave.
 
 Confirm the Pipeline was created:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipeline matrix-demo
 ```

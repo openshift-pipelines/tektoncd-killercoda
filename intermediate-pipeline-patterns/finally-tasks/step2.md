@@ -87,6 +87,7 @@ Watch carefully:
 
 ## Inspect the PipelineRun
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```

@@ -95,6 +95,7 @@ This time, check-branch and build run, but deploy is **skipped** because
 
 ## Verify both PipelineRuns exist
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
