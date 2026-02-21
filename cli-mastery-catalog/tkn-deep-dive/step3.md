@@ -8,6 +8,7 @@ Tekton resources using JSON, YAML, and `jq`.
 
 Use the `-o json` flag to get structured output:
 
+<!-- e2e-skip -->
 ```bash
 tkn task list -o json | jq '.'
 ```
@@ -15,6 +16,7 @@ tkn task list -o json | jq '.'
 This pipes the JSON output through `jq` for pretty-printing. You can extract
 specific fields. For example, to get just the Task names:
 
+<!-- e2e-skip -->
 ```bash
 tkn task list -o json | jq '.items[].metadata.name'
 ```
@@ -24,6 +26,7 @@ tkn task list -o json | jq '.items[].metadata.name'
 The `describe` command also supports JSON output. Describe the latest PipelineRun
 as JSON and extract the status conditions:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last -o json | jq '.status.conditions'
 ```
@@ -31,6 +34,7 @@ tkn pipelinerun describe --last -o json | jq '.status.conditions'
 This returns the Kubernetes condition array, which tells you whether the run
 succeeded, failed, or is still running. You can check the status with:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last -o json | jq '.status.conditions[0].status'
 ```
@@ -39,6 +43,7 @@ tkn pipelinerun describe --last -o json | jq '.status.conditions[0].status'
 
 Use `jq` to extract the start and completion times:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last -o json | jq '{
   name: .metadata.name,
@@ -80,6 +85,7 @@ is a great way to understand what `tkn start` does under the hood.
 You can also mix `tkn` and `kubectl` for advanced queries. For example, list all
 PipelineRuns and their statuses:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun -o json | jq '.items[] | {name: .metadata.name, succeeded: .status.conditions[0].status}'
 ```

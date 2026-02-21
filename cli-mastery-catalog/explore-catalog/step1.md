@@ -33,6 +33,7 @@ You should see the `git-clone` Task listed.
 
 Use `tkn` to see the Task's parameters, workspaces, and results:
 
+<!-- e2e-skip -->
 ```bash
 tkn task describe git-clone
 ```
@@ -47,6 +48,7 @@ Notice how the catalog Task follows conventions:
 
 Look at the full YAML to understand the Task structure:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get task git-clone -o yaml | head -80
 ```

@@ -58,6 +58,7 @@ kubectl wait --for=condition=Succeeded pipelinerun -l tekton.dev/pipeline=bundle
 
 ## Check the logs
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

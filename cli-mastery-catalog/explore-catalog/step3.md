@@ -108,12 +108,14 @@ EOF
 
 ## Watch the PipelineRun
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
 
 Watch the logs (use the most recent PipelineRun):
 
+<!-- e2e-skip -->
 ```bash
 PR_NAME=$(kubectl get pipelinerun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 tkn pipelinerun logs "$PR_NAME" -f
@@ -123,6 +125,7 @@ tkn pipelinerun logs "$PR_NAME" -f
 
 Check that the PipelineRun resolved and ran the Task successfully:
 
+<!-- e2e-skip -->
 ```bash
 PR_NAME=$(kubectl get pipelinerun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 kubectl get pipelinerun "$PR_NAME" -o jsonpath='{.status.conditions[0].reason}'

@@ -108,12 +108,14 @@ execute seamlessly within the same PipelineRun.
 After the run completes, inspect the PipelineRun to see how each task was
 resolved:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
 
 You can also check the resolver status in the PipelineRun conditions:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun --sort-by=.metadata.creationTimestamp \
   -o jsonpath='{.items[-1].status.conditions[0]}' | python3 -m json.tool

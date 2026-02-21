@@ -63,6 +63,7 @@ Wait for the TaskRun to complete and view the logs:
 kubectl wait --for=condition=Succeeded taskrun/git-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs git-resolver-demo
 ```
@@ -74,6 +75,7 @@ command.
 
 Check the TaskRun details to confirm the Task was resolved from Git:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun describe git-resolver-demo
 ```

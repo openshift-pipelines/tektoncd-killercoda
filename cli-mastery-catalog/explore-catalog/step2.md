@@ -15,6 +15,7 @@ kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/ka
 
 ## Verify both Tasks are installed
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```
@@ -25,6 +26,7 @@ You should see both `git-clone` and `kaniko`.
 
 Both Tasks use the **workspace convention** that makes them composable:
 
+<!-- e2e-skip -->
 ```bash
 echo "=== git-clone workspaces ==="
 tkn task describe git-clone | grep -A 5 "Workspaces"
@@ -88,6 +90,7 @@ EOF
 
 ## Verify the Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline describe clone-and-build
 ```

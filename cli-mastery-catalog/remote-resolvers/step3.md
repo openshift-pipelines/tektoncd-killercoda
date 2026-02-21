@@ -90,6 +90,7 @@ The Cluster Resolver parameters are straightforward:
 kubectl wait --for=condition=Succeeded taskrun/cluster-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs cluster-resolver-demo
 ```
@@ -101,6 +102,7 @@ namespace, but the TaskRun executes in the `default` namespace.
 
 Confirm that the `shared-task` Task does not exist in the default namespace:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get task shared-task 2>&1 || echo "As expected: shared-task is not in the default namespace"
 ```

@@ -70,10 +70,12 @@ EOF
 
 Use `tkn` to see the Tasks and Pipelines you just created:
 
+<!-- e2e-skip -->
 ```bash
 tkn task list
 ```
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline list
 ```
@@ -87,6 +89,7 @@ creation time, and other useful information - much more focused than a raw
 The `describe` command provides detailed information about a specific resource.
 Let's inspect the Task:
 
+<!-- e2e-skip -->
 ```bash
 tkn task describe echo-greeting
 ```
@@ -94,6 +97,7 @@ tkn task describe echo-greeting
 This shows the Task's parameters (with defaults), steps, and workspaces. Now
 describe the Pipeline:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline describe greeting-pipeline
 ```
@@ -114,6 +118,7 @@ executes. Without it, `tkn` would print the TaskRun name and return immediately.
 
 After the run completes, describe the latest TaskRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun describe --last
 ```

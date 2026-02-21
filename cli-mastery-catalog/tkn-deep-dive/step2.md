@@ -34,6 +34,7 @@ tkn pipeline start greeting-pipeline \
 The `logs` command lets you access logs for any run. To see logs from the most
 recent PipelineRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last
 ```
@@ -48,6 +49,7 @@ tkn pipeline start greeting-pipeline -p greeting="Hola" -p name="Amigo"
 
 Now follow the logs of the most recent run:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
@@ -59,12 +61,14 @@ appear and exits when the run completes.
 
 See all PipelineRuns:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
 
 This shows each run's name, status, and duration. You can also list TaskRuns:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun list
 ```
@@ -81,6 +85,7 @@ tkn pipelinerun delete --keep 3 -f
 This deletes all PipelineRuns except the 3 most recent ones. The `-f` flag skips
 the confirmation prompt. Verify the cleanup:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```

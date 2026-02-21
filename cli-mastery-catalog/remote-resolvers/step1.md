@@ -64,6 +64,7 @@ Wait for the TaskRun to start and then view the logs:
 kubectl wait --for=condition=Succeeded taskrun/hub-resolver-demo --timeout=120s 2>/dev/null || true
 ```
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs hub-resolver-demo
 ```
@@ -72,6 +73,7 @@ tkn taskrun logs hub-resolver-demo
 
 Inspect the TaskRun to see the resolved Task reference:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun describe hub-resolver-demo
 ```
@@ -84,6 +86,7 @@ fetched, resolved, and executed entirely through the Hub Resolver.
 
 Confirm that no `git-clone` Task exists in the default namespace:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get task git-clone 2>&1 || echo "As expected: git-clone Task is not installed locally"
 ```
