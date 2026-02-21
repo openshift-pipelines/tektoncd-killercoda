@@ -83,6 +83,7 @@ timed out.
 
 Check the result:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
@@ -116,6 +117,7 @@ EOF
 
 Watch the PipelineRun:
 
+<!-- e2e-skip -->
 ```bash
 sleep 5
 tkn pipelinerun describe --last

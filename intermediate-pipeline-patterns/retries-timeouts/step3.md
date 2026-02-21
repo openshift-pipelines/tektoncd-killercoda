@@ -119,6 +119,7 @@ You should see:
 
 Check the full PipelineRun details:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```

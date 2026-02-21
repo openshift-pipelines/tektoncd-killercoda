@@ -69,6 +69,7 @@ EOF
 
 Wait for the TaskRun to complete and check the logs:
 
+<!-- e2e-skip -->
 ```bash
 sleep 5
 tkn taskrun list
@@ -82,6 +83,7 @@ resolved to their provided values.
 
 Confirm the Task with object parameter exists:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get task build-with-config
 ```

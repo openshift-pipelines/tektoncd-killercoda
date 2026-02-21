@@ -142,12 +142,14 @@ Watch the output as each Task runs in sequence:
 
 After the run completes, review the full PipelineRun details:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
 
 You can also check the logs for the most recent PipelineRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last
 ```

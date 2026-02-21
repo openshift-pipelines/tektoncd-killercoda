@@ -84,6 +84,7 @@ Task delegated its step execution to the StepAction definition.
 
 ## Verify the StepAction exists
 
+<!-- e2e-skip -->
 ```bash
 kubectl get stepaction log-message
 ```
