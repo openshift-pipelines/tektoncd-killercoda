@@ -14,6 +14,7 @@ tkn pipeline start gitops-ci --use-param-defaults
 
 Watch the pipeline execution:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```

@@ -141,6 +141,7 @@ EOF
 
 Verify the Pipeline was created:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline list
 ```

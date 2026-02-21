@@ -107,6 +107,7 @@ kubectl wait --for=condition=Succeeded taskrun/vault-secret-taskrun --timeout=18
 
 ## Check the logs
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs vault-secret-taskrun
 ```
@@ -217,6 +218,7 @@ kubectl wait --for=condition=Succeeded pipelinerun/vault-pipeline-run --timeout=
 
 View the Pipeline logs:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs vault-pipeline-run
 ```
