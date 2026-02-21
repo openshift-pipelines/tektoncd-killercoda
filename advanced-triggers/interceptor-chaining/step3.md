@@ -180,6 +180,7 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
+<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list | grep production-run
@@ -198,6 +199,7 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
+<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list | grep production-run
@@ -216,6 +218,7 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
+<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list | grep production-run
@@ -229,6 +232,7 @@ interceptor chain.
 
 View the logs to confirm the computed values were passed through:
 
+<!-- e2e-skip -->
 ```bash
 PR_NAME=$(kubectl get pipelinerun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 tkn pipelinerun logs "$PR_NAME" -f

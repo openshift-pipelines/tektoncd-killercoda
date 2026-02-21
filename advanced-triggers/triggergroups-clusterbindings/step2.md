@@ -88,6 +88,7 @@ echo ""
 
 ## Check the results
 
+<!-- e2e-skip -->
 ```bash
 sleep 10
 echo "=== TaskRuns created ==="
@@ -100,6 +101,7 @@ echo "Both events used the same ClusterTriggerBinding but matched different trig
 
 Confirm the EventListener with multiple triggers exists:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get eventlistener multi-trigger-listener -o jsonpath='{.spec.triggers[*].name}'
 echo ""

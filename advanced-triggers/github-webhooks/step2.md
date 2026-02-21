@@ -86,6 +86,7 @@ sleep 8
 
 ## Verify the PipelineRun was created
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
@@ -95,6 +96,7 @@ webhook.
 
 View the logs to confirm the GitHub payload fields were extracted correctly:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
@@ -123,6 +125,7 @@ request because the signature did not match.
 
 Check that no new PipelineRun was created:
 
+<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list

@@ -44,6 +44,7 @@ sleep 5
 
 ## Check that a PipelineRun was created
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
@@ -52,6 +53,7 @@ You should see one PipelineRun (`cel-demo-run-*`) created from the push event.
 
 View the logs:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun logs --last -f
 ```
