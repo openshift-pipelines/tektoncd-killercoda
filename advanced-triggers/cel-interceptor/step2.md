@@ -44,7 +44,6 @@ sleep 5
 
 ## Check that a PipelineRun was created
 
-<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```

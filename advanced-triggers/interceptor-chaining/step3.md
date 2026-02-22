@@ -180,10 +180,9 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
-tkn pipelinerun list | grep production-run
+tkn pipelinerun list | grep production-run || true
 ```
 
 ## Test: push to staging (staging, medium priority)
@@ -199,10 +198,9 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
-tkn pipelinerun list | grep production-run
+tkn pipelinerun list | grep production-run || true
 ```
 
 ## Test: push to a feature branch (development, low priority)
@@ -218,10 +216,9 @@ curl -X POST http://$(kubectl get service el-production-chain -o jsonpath='{.spe
   }'
 ```
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
-tkn pipelinerun list | grep production-run
+tkn pipelinerun list | grep production-run || true
 ```
 
 You should now see three PipelineRuns, one for each branch. Each one received

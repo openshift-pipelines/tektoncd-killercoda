@@ -78,7 +78,6 @@ This is exactly the problem that Results log storage solves.
 Before configuring Results, we need a bucket in MinIO to store the logs.
 Port-forward the MinIO service and create a bucket using the MinIO client:
 
-<!-- e2e-skip -->
 ```bash
 kubectl port-forward -n minio svc/minio 9000:9000 &
 sleep 3

@@ -177,10 +177,9 @@ curl -X POST http://$(kubectl get service el-github-chain -o jsonpath='{.spec.cl
   -d "$PAYLOAD"
 ```
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
-tkn pipelinerun list | grep github-chain
+tkn pipelinerun list | grep github-chain || true
 ```
 
 ## Test with an unsigned event (should be rejected)

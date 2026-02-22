@@ -86,7 +86,6 @@ sleep 8
 
 ## Verify the PipelineRun was created
 
-<!-- e2e-skip -->
 ```bash
 tkn pipelinerun list
 ```
@@ -125,7 +124,6 @@ request because the signature did not match.
 
 Check that no new PipelineRun was created:
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list

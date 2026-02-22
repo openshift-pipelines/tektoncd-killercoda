@@ -197,7 +197,6 @@ curl -X POST http://$(kubectl get service el-chain-demo -o jsonpath='{.spec.clus
 
 Check that a PipelineRun was created:
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list
@@ -214,7 +213,6 @@ curl -X POST http://$(kubectl get service el-chain-demo -o jsonpath='{.spec.clus
 No new PipelineRun should appear because the first CEL interceptor filtered it
 out:
 
-<!-- e2e-skip -->
 ```bash
 sleep 3
 tkn pipelinerun list
