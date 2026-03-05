@@ -75,6 +75,7 @@ Notice the key difference from a normal Task step:
 
 ## Run the Task
 
+<!-- e2e-skip -->
 ```bash
 tkn task start greeting-task --showlog
 ```

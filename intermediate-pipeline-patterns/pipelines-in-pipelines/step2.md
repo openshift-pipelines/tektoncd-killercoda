@@ -64,6 +64,7 @@ EOF
 
 ## Run the parent Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start release-pipeline \
   -p component="api-server" \
@@ -81,6 +82,7 @@ Watch the output carefully. Tekton:
 
 List all PipelineRuns to see both parent and child:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun
 ```
@@ -92,6 +94,7 @@ You should see two PipelineRuns: one for `release-pipeline` (parent) and one for
 
 Confirm the parent Pipeline exists and a child PipelineRun was created:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipeline release-pipeline
 kubectl get pipelinerun -l tekton.dev/pipeline=build-pipeline

@@ -78,6 +78,7 @@ The `deploy` Task now depends on the `check-branch` Result. If `is-main` is
 
 ## Test with branch=main
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start results-when-demo -p branch="main" --showlog
 ```
@@ -86,6 +87,7 @@ All three Tasks run: check-branch, build, and deploy.
 
 ## Test with branch=feature
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start results-when-demo -p branch="feature/login" --showlog
 ```

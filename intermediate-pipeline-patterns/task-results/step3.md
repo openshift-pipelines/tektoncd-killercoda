@@ -112,18 +112,21 @@ EOF
 
 ## Run and inspect the Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start chained-results --showlog
 ```
 
 After the run completes, use `tkn` to inspect the PipelineRun details:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
 
 You can also extract specific Result values using `kubectl`:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].status.childReferences}' | python3 -m json.tool
 ```

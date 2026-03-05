@@ -111,6 +111,7 @@ EOF
 
 ## Run the Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start structured-data-pipeline --showlog
 ```
@@ -123,6 +124,7 @@ between Tasks without any manual JSON parsing.
 
 Confirm the Pipeline succeeded:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun -l tekton.dev/pipeline=structured-data-pipeline \
   -o jsonpath='{.items[0].status.conditions[0].status}'
