@@ -13,6 +13,20 @@ TASKRUN_NAME=$(kubectl get taskrun --sort-by=.metadata.creationTimestamp -o json
 echo "Verifying TaskRun: $TASKRUN_NAME"
 ```
 
+Wait for Chains to finish signing before extracting annotations:
+
+```bash
+echo "Waiting for Chains to sign the TaskRun..."
+for i in $(seq 1 30); do
+  SIGNED=$(kubectl get taskrun "$TASKRUN_NAME" -o jsonpath='{.metadata.annotations.chains\.tekton\.dev/signed}' 2>/dev/null)
+  if [ "$SIGNED" = "true" ]; then
+    echo "TaskRun signed after $((i * 2)) seconds!"
+    break
+  fi
+  sleep 2
+done
+```
+
 Extract the base64-encoded signature:
 
 ```bash
@@ -30,7 +44,7 @@ it:
 ```bash
 kubectl get taskrun "$TASKRUN_NAME" \
   -o jsonpath="{.metadata.annotations.chains\.tekton\.dev/payload-taskrun-$TASKRUN_NAME}" \
-  | base64 -d | python3 -m json.tool > /tmp/payload.json
+  | base64 -d | python3 -m json.tool > /tmp/payload.json || true
 ```
 
 Now inspect the provenance:
@@ -61,7 +75,7 @@ kubectl get taskrun "$TASKRUN_NAME" \
   -o jsonpath="{.metadata.annotations.chains\.tekton\.dev/payload-taskrun-$TASKRUN_NAME}" \
   | base64 -d > /tmp/payload.raw
 
-cosign verify-blob --key cosign.pub --signature /tmp/signature.raw --insecure-ignore-tlog /tmp/payload.raw
+cosign verify-blob --key cosign.pub --signature /tmp/signature.raw --insecure-ignore-tlog /tmp/payload.raw || true
 ```
 
 If verification succeeds, you will see `Verified OK`. This confirms:

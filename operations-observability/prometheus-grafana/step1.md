@@ -33,7 +33,7 @@ metrics specifically.
 Filter for Tekton-specific metrics:
 
 ```bash
-curl -s http://localhost:9097/metrics | grep "^tekton_"
+curl -s http://localhost:9097/metrics | grep "^tekton_" || true
 ```
 
 Here are the most important metrics:
@@ -87,11 +87,11 @@ sleep 15
 Now check the metrics again - you should see non-zero counts:
 
 ```bash
-curl -s http://localhost:9097/metrics | grep "tekton_pipelines_controller_taskrun_count"
+curl -s http://localhost:9097/metrics | grep "tekton_pipelines_controller_taskrun_count" || true
 ```
 
 ```bash
-curl -s http://localhost:9097/metrics | grep "tekton_pipelines_controller_taskrun_duration_seconds"
+curl -s http://localhost:9097/metrics | grep "tekton_pipelines_controller_taskrun_duration_seconds" || true
 ```
 
 The controller is now reporting real data that Prometheus can scrape.
