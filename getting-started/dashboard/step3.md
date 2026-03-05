@@ -36,6 +36,15 @@ see the `hello-goodbye` Pipeline listed. Click on it to see its details.
 4. Leave the default namespace as `default`
 5. Click **Create** to start the PipelineRun
 
+## Alternative: Create a PipelineRun via CLI
+
+If you prefer the command line, or to ensure the PipelineRun exists for
+verification, you can start it with `tkn`:
+
+```bash
+tkn pipeline start hello-goodbye --showlog
+```
+
 ## Monitor the PipelineRun
 
 After creating the PipelineRun, the Dashboard will show you its progress. You
