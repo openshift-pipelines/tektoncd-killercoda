@@ -33,6 +33,7 @@ EOF
 
 ## Watch the Pipeline execute
 
+<!-- e2e-skip -->
 ```bash
 PR_NAME=$(kubectl get pipelinerun --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 tkn pipelinerun logs "$PR_NAME" -f
