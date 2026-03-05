@@ -9,10 +9,13 @@ the filter (push) and one that does not (pull_request).
 kubectl port-forward service/el-cel-demo 8080:8080 > /dev/null 2>&1 &
 ```
 
-Wait for the port forward to establish:
+Wait for the EventListener to accept connections:
 
 ```bash
-sleep 3
+for i in $(seq 1 30); do
+  curl -s -o /dev/null -w '%{http_code}' http://localhost:8080 2>/dev/null && break
+  sleep 2
+done
 ```
 
 ## Send a push event (should trigger)
