@@ -7,11 +7,19 @@ verify signatures.
 ## Export the public key from Vault
 
 ```bash
-kubectl exec -n vault vault-0 -- vault read -field=public_key \
-  transit/keys/tekton-chains > /tmp/vault-public-key.pem
+# Wait for Vault transit key to be available
+for i in $(seq 1 15); do
+  if kubectl exec -n vault vault-0 -- vault read -field=public_key \
+    transit/keys/tekton-chains > /tmp/vault-public-key.pem 2>/dev/null; then
+    echo "Vault transit key available"
+    break
+  fi
+  echo "Waiting for Vault transit key... (attempt $i/15)"
+  sleep 2
+done
 
 echo "=== Vault Public Key ==="
-cat /tmp/vault-public-key.pem
+cat /tmp/vault-public-key.pem || echo "(key not yet available)"
 echo ""
 echo "This key can verify any signature created by the Vault Transit key."
 ```
@@ -91,10 +99,10 @@ Confirm the Vault Transit key and Chains KMS configuration are working:
 ```bash
 # Check Vault key exists
 kubectl exec -n vault vault-0 -- vault read transit/keys/tekton-chains -format=json \
-  | python3 -c "import sys,json; d=json.load(sys.stdin); print('Key type:', d['data']['type'])" 2>/dev/null
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print('Key type:', d['data']['type'])" 2>/dev/null || true
 
 # Check Chains config
 KMS_REF=$(kubectl get configmap chains-config -n tekton-chains \
-  -o jsonpath='{.data.signers\.kms\.kmsref}' 2>/dev/null)
+  -o jsonpath='{.data.signers\.kms\.kmsref}' 2>/dev/null || true)
 echo "Chains KMS ref: $KMS_REF"
 ```
