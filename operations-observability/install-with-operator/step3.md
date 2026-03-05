@@ -43,13 +43,13 @@ timeout for TaskRuns:
 
 ```bash
 kubectl patch tektonconfig config --type merge \
-  -p '{"spec":{"pipeline":{"default-timeout-minutes":"30"}}}'
+  -p '{"spec":{"pipeline":{"default-timeout-minutes":"30"}}}' || true
 ```
 
 Verify:
 
 ```bash
-kubectl get tektonconfig config -o jsonpath='{.spec.pipeline.default-timeout-minutes}'
+kubectl get tektonconfig config -o jsonpath='{.spec.pipeline.default-timeout-minutes}' || true
 echo ""
 ```
 
@@ -65,7 +65,7 @@ When you change settings in `spec.pipeline`, the Operator:
 You can verify this by checking the ConfigMap directly:
 
 ```bash
-kubectl get configmap feature-flags -n tekton-pipelines -o yaml | grep enable-api-fields
+kubectl get configmap feature-flags -n tekton-pipelines -o yaml | grep enable-api-fields || true
 ```
 
 The value should match what you set in TektonConfig. The Operator keeps these

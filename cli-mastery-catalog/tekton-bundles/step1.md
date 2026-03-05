@@ -39,10 +39,20 @@ cat /root/my-task.yaml
 
 ## Push the Task as a Bundle
 
-Use `tkn bundle push` to package the Task YAML and push it to the local
-registry:
+Wait for the local registry to be ready, then use `tkn bundle push` to
+package the Task YAML and push it to the local registry:
 
 ```bash
+# Wait for registry to be available
+for i in $(seq 1 15); do
+  if curl -sf http://localhost:5000/v2/ >/dev/null 2>&1; then
+    echo "Registry ready"
+    break
+  fi
+  echo "Waiting for local registry... (attempt $i/15)"
+  sleep 2
+done
+
 tkn bundle push localhost:5000/my-task-bundle:v1 -f /root/my-task.yaml
 ```
 
