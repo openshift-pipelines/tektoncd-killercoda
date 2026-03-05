@@ -93,11 +93,21 @@ EOF
 
 ## Run the Task
 
+<!-- e2e-skip -->
 ```bash
 tkn task start build-artifact \
   -p git-repo="https://github.com/tektoncd/pipeline" \
   -p git-revision="v0.50.0" \
   --showlog
+```
+
+Start the task without following logs (for CI):
+
+```bash
+tkn task start build-artifact \
+  -p git-repo="https://github.com/tektoncd/pipeline" \
+  -p git-revision="v0.50.0"
+sleep 10
 ```
 
 ## Wait for Chains to sign
@@ -122,6 +132,7 @@ done
 
 Confirm the TaskRun has been signed:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get taskrun "$TASKRUN_NAME" \
   -o jsonpath='{.metadata.annotations.chains\.tekton\.dev/signed}'
