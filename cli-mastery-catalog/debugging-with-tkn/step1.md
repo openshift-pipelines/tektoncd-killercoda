@@ -99,6 +99,7 @@ This Pipeline runs `lint` first, then `build` and `deploy` in parallel. Both
 
 ## Run the buggy Pipeline
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start buggy-pipeline --showlog
 ```
@@ -111,6 +112,7 @@ step.
 
 Get a high-level view of what happened:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
