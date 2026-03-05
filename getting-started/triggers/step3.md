@@ -10,10 +10,13 @@ a webhook.
 kubectl port-forward service/el-github-listener 8080:8080 > /dev/null 2>&1 &
 ```
 
-Wait a moment for the port forward to establish:
+Wait for the EventListener to accept connections:
 
 ```bash
-sleep 2
+for i in $(seq 1 30); do
+  curl -s -o /dev/null -w '%{http_code}' http://localhost:8080 2>/dev/null && break
+  sleep 2
+done
 ```
 
 ## Send a simulated GitHub push event

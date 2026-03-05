@@ -59,7 +59,12 @@ echo "EventListener ready!"
 kubectl port-forward svc/$(kubectl get svc -l eventlistener=multi-trigger-listener \
   -o jsonpath='{.items[0].metadata.name}') 8090:8080 &>/dev/null &
 PF_PID=$!
-sleep 2
+
+# Wait for EventListener to accept connections
+for i in $(seq 1 30); do
+  curl -s -o /dev/null -w '%{http_code}' http://localhost:8090 2>/dev/null && break
+  sleep 2
+done
 
 echo "Sending branch push event..."
 curl -s -X POST http://localhost:8090 \
