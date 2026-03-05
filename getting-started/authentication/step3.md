@@ -78,19 +78,30 @@ kubectl exec deployment/gitea -- gitea admin user create \
 ```
 
 ```bash
-# Create a private repository with a file
-curl -s -X POST "http://$(kubectl get svc gitea -o jsonpath='{.spec.clusterIP}'):3000/api/v1/user/repos" \
-  -u tekton-user:tekton-pass \
-  -H "Content-Type: application/json" \
-  -d '{"name": "private-repo", "private": true, "auto_init": true}'
+# Create a private repository with a file (retry in case Gitea user creation is still propagating)
+GITEA_IP=$(kubectl get svc gitea -o jsonpath='{.spec.clusterIP}')
+for i in $(seq 1 10); do
+  RESULT=$(curl -s -w "%{http_code}" -X POST "http://${GITEA_IP}:3000/api/v1/user/repos" \
+    -u tekton-user:tekton-pass \
+    -H "Content-Type: application/json" \
+    -d '{"name": "private-repo", "private": true, "auto_init": true}')
+  HTTP_CODE="${RESULT: -3}"
+  if [ "$HTTP_CODE" = "201" ] || [ "$HTTP_CODE" = "409" ]; then
+    echo "Repository created (HTTP $HTTP_CODE)"
+    break
+  fi
+  echo "Waiting for Gitea user/API... (attempt $i/10, HTTP $HTTP_CODE)"
+  sleep 3
+done
 ```
 
 ```bash
 # Add a file to the repo
-curl -s -X POST "http://$(kubectl get svc gitea -o jsonpath='{.spec.clusterIP}'):3000/api/v1/repos/tekton-user/private-repo/contents/hello.txt" \
+GITEA_IP=$(kubectl get svc gitea -o jsonpath='{.spec.clusterIP}')
+curl -sf -X POST "http://${GITEA_IP}:3000/api/v1/repos/tekton-user/private-repo/contents/hello.txt" \
   -u tekton-user:tekton-pass \
   -H "Content-Type: application/json" \
-  -d '{"content": "'$(echo -n "Hello from a private repo!" | base64)'", "message": "Add hello.txt"}'
+  -d '{"content": "'$(echo -n "Hello from a private repo!" | base64)'", "message": "Add hello.txt"}' || true
 ```
 
 ## Create Tekton credentials for the Gitea instance
