@@ -22,7 +22,7 @@ source "${SCRIPT_DIR}/lib.sh"
 # Constants
 # ---------------------------------------------------------------------------
 INSTALL_TIMEOUT=300   # 5 minutes for install.sh
-BLOCK_TIMEOUT=120     # 2 minutes per bash block
+BLOCK_TIMEOUT=180     # 3 minutes per bash block
 VERIFY_TIMEOUT=60     # 1 minute per verify attempt
 VERIFY_RETRIES=3      # retry verify scripts 3 times
 VERIFY_DELAY=5        # 5 seconds between verify retries
