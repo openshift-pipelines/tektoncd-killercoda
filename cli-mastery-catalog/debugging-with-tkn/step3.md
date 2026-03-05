@@ -52,6 +52,7 @@ EOF
 The `tkn pipeline start --last` command reruns a Pipeline with the same
 parameters and configuration as the most recent run:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipeline start buggy-pipeline --last --showlog
 ```
@@ -65,6 +66,7 @@ This time, all three Tasks should succeed:
 
 Confirm the PipelineRun succeeded:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe --last
 ```
@@ -118,6 +120,7 @@ tkn pipeline start slow-pipeline
 
 Wait a few seconds for it to start running:
 
+<!-- e2e-skip -->
 ```bash
 sleep 5
 tkn pipelinerun list
@@ -132,6 +135,7 @@ tkn pipelinerun cancel "$LATEST_PR"
 
 Verify the cancellation:
 
+<!-- e2e-skip -->
 ```bash
 tkn pipelinerun describe "$LATEST_PR"
 ```

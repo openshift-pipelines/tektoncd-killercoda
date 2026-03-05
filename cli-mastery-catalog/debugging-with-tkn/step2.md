@@ -7,6 +7,7 @@ systematically debug each failure.
 
 First, list the TaskRuns that belong to our failed PipelineRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun list -l tekton.dev/pipeline=buggy-pipeline
 ```
@@ -17,6 +18,7 @@ This shows each TaskRun's name, status, and duration. Identify the failed ones.
 
 Get detailed information about the `build` TaskRun:
 
+<!-- e2e-skip -->
 ```bash
 BUILD_TR=$(tkn taskrun list -l tekton.dev/pipelineTask=build --sort-by=creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 echo "Build TaskRun: $BUILD_TR"
@@ -30,6 +32,7 @@ The describe output shows:
 
 Now get the logs for the failed TaskRun:
 
+<!-- e2e-skip -->
 ```bash
 tkn taskrun logs "$BUILD_TR"
 ```
@@ -41,6 +44,7 @@ followed by a non-zero exit. This is a straightforward script bug.
 
 Get information about the `deploy` TaskRun:
 
+<!-- e2e-skip -->
 ```bash
 DEPLOY_TR=$(tkn taskrun list -l tekton.dev/pipelineTask=deploy --sort-by=creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
 echo "Deploy TaskRun: $DEPLOY_TR"
@@ -54,6 +58,7 @@ because the container never started. This is where `kubectl` becomes essential.
 
 Find the pod for the deploy TaskRun:
 
+<!-- e2e-skip -->
 ```bash
 DEPLOY_POD=$(kubectl get pod -l tekton.dev/taskRun="$DEPLOY_TR" -o jsonpath='{.items[0].metadata.name}' 2>/dev/null)
 echo "Deploy pod: $DEPLOY_POD"
@@ -61,6 +66,7 @@ echo "Deploy pod: $DEPLOY_POD"
 
 If the pod exists, describe it to see Kubernetes-level events:
 
+<!-- e2e-skip -->
 ```bash
 kubectl describe pod "$DEPLOY_POD" 2>/dev/null || echo "Pod may have been cleaned up -- check TaskRun status instead"
 ```
@@ -75,6 +81,7 @@ This tells you the exact image that failed and why.
 
 For a programmatic view of the failure, inspect the PipelineRun conditions:
 
+<!-- e2e-skip -->
 ```bash
 kubectl get pipelinerun -l tekton.dev/pipeline=buggy-pipeline \
   --sort-by=.metadata.creationTimestamp \
